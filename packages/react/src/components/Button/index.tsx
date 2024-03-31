@@ -21,10 +21,11 @@ export const Button = ({
     ['font-default font-medium leading-text']: true,
 
     [`text-white`]: variant === 'filled',
-    [`text-neutral700 active:text-brand600`]: variant === 'outline',
-    [`text-brand500 hover:text-brand400 active:text-brand600`]:
+    [`text-neutral700 active:enabled:text-brand600 disabled:!text-neutral600`]:
+      variant === 'outline',
+    [`text-brand500 hover:enabled:text-brand400 active:enabled:text-brand600`]:
       variant === 'subtle',
-    [`text-brand500 active:text-white`]: variant === 'light',
+    [`text-brand500 active:enabled:text-white`]: variant === 'light',
     ['!text-neutral700']: disabled,
 
     ['text-button-xs']: size === 'xs',
@@ -43,9 +44,10 @@ export const Button = ({
 
     [`bg-brand500 hover:enabled:bg-brand400 active:enabled:!bg-brand600 disabled:bg-neutral100`]:
       variant === 'filled',
-    ['bg-neutral400 border border-neutral400 hover:enabled:border-brand400  disabled:border-neutral600 ']:
+    ['border border-neutral400 hover:enabled:border-brand400  disabled:border-neutral600 ']:
       variant === 'outline',
-    [`bg-brand0 hover:bg-brand200 active:!bg-brand600`]: variant === 'light',
+    [`bg-brand0 hover:enabled:bg-brand200 active:enabled:!bg-brand600  disabled:!bg-neutral100`]:
+      variant === 'light',
 
     ['px-3 py-2 gap-1']: size === 'xs' || size === 'sm',
     ['px-6 py-4 gap-2']: size === 'md' || size === 'lg' || size === 'xl',

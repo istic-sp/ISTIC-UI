@@ -21,7 +21,7 @@ export const TextInput = ({
   ...rest
 }: TextInputProps): JSX.Element => {
   const inputClasses = clsx({
-    ['border outline-none rounded-[5px] justify-center items-center gap-2.5 inline-flex']:
+    ['border outline-none shadow-none rounded-[5px] justify-center items-center gap-2.5 inline-flex']:
       true,
     ['font-default font-regular text-neutral800 leading-text placeholder:text-neutral600']:
       true,
@@ -32,6 +32,11 @@ export const TextInput = ({
     [!disabled ? 'bg-white' : 'bg-neutral100']: true,
     ['text-xs px-3 py-2']: size === 'xs',
     ['text-sm px-4 py-3']: size === 'lg',
+    ['input:-webkit-autofill']: {
+      '-webkit-text-fill-color': 'currentColor',
+      '-webkit-box-shadow': '0 0 0px 1000px transparent inset',
+      transition: 'background-color 5000s ease-in-out 0s',
+    },
   });
 
   const wrapperClasses = clsx({
@@ -40,7 +45,7 @@ export const TextInput = ({
   });
 
   const labelClasses = clsx({
-    ['font-default leading-text font-bold inline-flex gap-1 justify-start items-center align-middle']:
+    ['font-default leading-text font-medium inline-flex gap-1 justify-start items-center align-middle']:
       true,
     ['text-xs']: size === 'xs',
     ['text-sm']: size === 'lg',

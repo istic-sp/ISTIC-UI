@@ -20,7 +20,7 @@ export const TextArea = ({
   ...rest
 }: TextAreaProps): JSX.Element => {
   const inputClasses = clsx({
-    ['border outline-none rounded-[5px] justify-center items-center gap-2.5 inline-flex p-3']:
+    ['border outline-none shadow-none rounded-[5px] justify-center items-center gap-2.5 inline-flex p-3']:
       true,
     ['font-default font-regular text-sm text-neutral800 leading-text placeholder:text-neutral600']:
       true,
@@ -29,6 +29,11 @@ export const TextArea = ({
       : 'border-neutral400 active:!border-neutral400 focus:border-brand500']:
       true,
     [!disabled ? 'bg-white' : 'bg-neutral100']: true,
+    ['input:-webkit-autofill']: {
+      '-webkit-text-fill-color': 'currentColor',
+      '-webkit-box-shadow': '0 0 0px 1000px transparent inset',
+      transition: 'background-color 5000s ease-in-out 0s',
+    },
   });
 
   const wrapperClasses = clsx({
@@ -37,10 +42,9 @@ export const TextArea = ({
   });
 
   const labelClasses = clsx({
-    ['font-default leading-text font-bold inline-flex gap-1 justify-start items-center align-middle']:
+    ['font-default leading-text font-medium inline-flex gap-1 justify-start items-center align-middle text-sm']:
       true,
   });
-
   const errorLabelClasses = clsx({
     ['font-default leading-text font-regular text-error inline-flex justify-start items-center align-middle']:
       true,

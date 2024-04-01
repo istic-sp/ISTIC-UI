@@ -33,7 +33,7 @@ module.exports = {
         neutral0: '#f8f9fa',
       },
       fontFamily: {
-        default: ['Rubik', 'sans-serif'],
+        default: ['Mulish', 'sans-serif'],
       },
       fontSize: {
         xs: '0.75rem',

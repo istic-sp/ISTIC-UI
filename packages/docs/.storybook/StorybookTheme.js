@@ -1,7 +1,6 @@
-import { create } from "@storybook/theming/create";
+import { create } from '@storybook/theming/create';
 
 export default create({
-  base: "dark",
-  brandTitle: "STICK UI",
-  brandTarget: "_self",
+  brandTitle: 'STICK UI',
+  brandTarget: '_self',
 });

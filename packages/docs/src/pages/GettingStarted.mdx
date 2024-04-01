@@ -29,8 +29,11 @@ You must merge with your tailwind config with ours, because our components are b
 ```
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  other configs...
-
+   ...other configs
+   content:{
+    ...other content,
+    './node_modules/@stick-ui/lib/**/*.{js,ts,jsx,tsx,mdx}',
+   },
    theme: {
     extend: {
       colors: {
@@ -61,7 +64,7 @@ module.exports = {
         neutral0: '#f8f9fa',
       },
       fontFamily: {
-        default: ['Rubik', 'sans-serif'],
+        default: ['Mulish', 'sans-serif'],
       },
       fontSize: {
         xs: '0.75rem',

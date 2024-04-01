@@ -1,5 +1,17 @@
 # @stick-ui/react
 
+## 1.1.2
+
+### Patch Changes
+
+- Adjust password input types
+
+## 1.1.1
+
+### Patch Changes
+
+- Adjust input style details
+
 ## 1.1.0
 
 ### Minor Changes

@@ -1,10 +1,11 @@
 'use client';
-import React, { useState } from 'react';
+import React, { InputHTMLAttributes, useState } from 'react';
 import clsx from 'clsx';
 
 import { RiEyeLine, RiEyeCloseLine } from 'react-icons/ri';
 
-export interface PasswordInputProps {
+export interface PasswordInputProps
+  extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
   label: string;
   size?: 'xs' | 'lg';
   grow?: boolean;

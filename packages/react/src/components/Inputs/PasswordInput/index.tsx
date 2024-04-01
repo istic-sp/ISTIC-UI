@@ -28,12 +28,21 @@ export const PasswordInput = ({
   const [onFocus, setOnFocus] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
+  const inputAndIconWrapperClasses = clsx({
+    [!disabled ? 'bg-white' : 'bg-neutral100']: true,
+    ['inline-flex border rounded-[5px]']: true,
+    [error
+      ? 'border-error'
+      : onFocus
+        ? 'border-brand500'
+        : 'border-neutral400 active:!border-neutral400']: true,
+  });
+
   const inputClasses = clsx({
     ['outline-none shadow-none justify-center rounded-[5px] items-center gap-2.5 inline-flex']:
       true,
     ['font-default font-regular text-neutral800 leading-text placeholder:text-neutral600']:
       true,
-    [!disabled ? 'bg-white' : 'bg-neutral100']: true,
     ['text-xs pl-3 py-2']: size === 'xs',
     ['text-sm pl-4 py-3']: size === 'lg',
     ['w-full']: grow,
@@ -42,15 +51,6 @@ export const PasswordInput = ({
       '-webkit-box-shadow': '0 0 0px 1000px transparent inset',
       transition: 'background-color 5000s ease-in-out 0s',
     },
-  });
-
-  const inputAndIconWrapperClasses = clsx({
-    ['inline-flex border rounded-[5px]']: true,
-    [error
-      ? 'border-error'
-      : onFocus
-        ? 'border-brand500'
-        : 'border-neutral400 active:!border-neutral400']: true,
   });
 
   const wrapperClasses = clsx({

@@ -24,7 +24,7 @@ const meta: Meta<typeof TextArea> = {
 };
 
 export default meta;
-export const Filled: StoryObj = {
+export const Default: StoryObj = {
   args: {
     label: 'label',
     placeholder: 'Text here',

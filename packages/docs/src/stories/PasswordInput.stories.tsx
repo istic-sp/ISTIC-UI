@@ -30,7 +30,7 @@ const meta: Meta<typeof PasswordInput> = {
 };
 
 export default meta;
-export const Filled: StoryObj = {
+export const Default: StoryObj = {
   args: {
     size: 'xs',
     label: 'label',

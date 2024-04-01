@@ -1,12 +1,12 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { TextInput } from '@stick-ui/lib';
+import { PasswordInput } from '@stick-ui/lib';
 
-TextInput.displayName = 'TextInput';
+PasswordInput.displayName = 'PasswordInput';
 
-const meta: Meta<typeof TextInput> = {
-  title: 'STICK UI/Components/Core/Inputs/TextInput',
-  component: TextInput,
+const meta: Meta<typeof PasswordInput> = {
+  title: 'STICK UI/Components/Core/Inputs/PasswordInput',
+  component: PasswordInput,
   tags: ['autodocs'],
   argTypes: {
     size: {
@@ -34,7 +34,7 @@ export const Filled: StoryObj = {
   args: {
     size: 'xs',
     label: 'label',
-    placeholder: 'Text here',
+    placeholder: 'Password here',
     grow: true,
     disabled: false,
     required: true,

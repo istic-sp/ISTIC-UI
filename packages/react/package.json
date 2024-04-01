@@ -37,6 +37,7 @@
   "types": "dist/index.d.ts",
   "dependencies": {
     "caniuse-lite": "^1.0.30001603",
-    "clsx": "^2.1.0"
+    "clsx": "^2.1.0",
+    "react-icons": "^5.0.1"
   }
 }

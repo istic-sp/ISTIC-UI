@@ -25,10 +25,7 @@ export const TextInput = ({
       true,
     ['font-default font-regular text-neutral800 leading-text placeholder:text-neutral600']:
       true,
-    [error
-      ? 'border-error'
-      : 'border-neutral400 active:!border-neutral400 focus:border-brand500']:
-      true,
+    [error ? 'border-error' : 'border-neutral400 focus:border-brand500']: true,
     [!disabled ? 'bg-white' : 'bg-neutral100']: true,
     ['text-xs px-3 py-2']: size === 'xs',
     ['text-sm px-4 py-3']: size === 'lg',

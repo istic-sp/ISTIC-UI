@@ -25,26 +25,32 @@ export const PasswordInput = ({
   error,
   ...rest
 }: PasswordInputProps): JSX.Element => {
+  const [onFocus, setOnFocus] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
   const inputClasses = clsx({
-    ['border outline-none shadow-none rounded-[5px] justify-center items-center gap-2.5 inline-flex']:
+    ['outline-none shadow-none justify-center rounded-[5px] items-center gap-2.5 inline-flex']:
       true,
     ['font-default font-regular text-neutral800 leading-text placeholder:text-neutral600']:
       true,
-    [error
-      ? 'border-error'
-      : 'border-neutral400 active:!border-neutral400 focus:border-brand500']:
-      true,
     [!disabled ? 'bg-white' : 'bg-neutral100']: true,
-    ['text-xs px-3 py-2']: size === 'xs',
-    ['text-sm px-4 py-3']: size === 'lg',
+    ['text-xs pl-3 py-2']: size === 'xs',
+    ['text-sm pl-4 py-3']: size === 'lg',
     ['w-full']: grow,
     ['input:-webkit-autofill']: {
       '-webkit-text-fill-color': 'currentColor',
       '-webkit-box-shadow': '0 0 0px 1000px transparent inset',
       transition: 'background-color 5000s ease-in-out 0s',
     },
+  });
+
+  const inputAndIconWrapperClasses = clsx({
+    ['inline-flex border rounded-[5px]']: true,
+    [error
+      ? 'border-error'
+      : onFocus
+        ? 'border-brand500'
+        : 'border-neutral400 active:!border-neutral400']: true,
   });
 
   const wrapperClasses = clsx({
@@ -65,10 +71,9 @@ export const PasswordInput = ({
     ['text-xs']: size === 'xs',
     ['text-sm']: size === 'lg',
   });
+
   const togglePasswordIconClasses = clsx({
-    ['absolute inset-y-0 right-0 flex items-center pl-2 pr-3 m-1 focus:outline-none']:
-      true,
-    [!disabled ? 'bg-white' : 'bg-neutral100']: true,
+    ['flex items-center px-3 focus:outline-none']: true,
   });
 
   const iconStyle = clsx({
@@ -86,11 +91,13 @@ export const PasswordInput = ({
           {required && <p className="text-error">*</p>}
         </label>
       )}
-      <div className="relative">
+      <div className={inputAndIconWrapperClasses}>
         <input
           {...rest}
           type={showPassword ? 'text' : 'password'}
           className={inputClasses}
+          onFocus={() => setOnFocus(true)}
+          onBlur={() => setOnFocus(false)}
           required={required}
           disabled={disabled}
         />

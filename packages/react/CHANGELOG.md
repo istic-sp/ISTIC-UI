@@ -1,5 +1,11 @@
 # @stick-ui/react
 
+## 1.1.3
+
+### Patch Changes
+
+- Update inputs style
+
 ## 1.1.2
 
 ### Patch Changes

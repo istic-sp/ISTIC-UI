@@ -24,10 +24,7 @@ export const TextArea = ({
       true,
     ['font-default font-regular text-sm text-neutral800 leading-text placeholder:text-neutral600']:
       true,
-    [error
-      ? 'border-error'
-      : 'border-neutral400 active:!border-neutral400 focus:border-brand500']:
-      true,
+    [error ? 'border-error' : 'border-neutral400 focus:border-brand500']: true,
     [!disabled ? 'bg-white' : 'bg-neutral100']: true,
     ['input:-webkit-autofill']: {
       '-webkit-text-fill-color': 'currentColor',

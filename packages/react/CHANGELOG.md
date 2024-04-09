@@ -1,5 +1,11 @@
 # @stick-ui/react
 
+## 1.2.0
+
+### Minor Changes
+
+- Create Icon, Heading and Text components
+
 ## 1.1.4
 
 ### Patch Changes

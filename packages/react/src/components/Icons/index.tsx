@@ -10,7 +10,7 @@ interface IconProps {
 const Icon: React.FC<IconProps> = ({
   name,
   size = 20,
-  color = 'currentColor',
+  color = 'text-neutral900',
 }) => {
   const IconComponent = icons[name];
 
@@ -18,10 +18,10 @@ const Icon: React.FC<IconProps> = ({
     console.error(`Icon "${name}" not found.`);
     return null;
   }
-  return <IconComponent size={size} color={color} />;
+  return <IconComponent size={size} className={color} />;
 };
 
-const icons = {
+export const icons = {
   // Arrows
   'arrow-down-s': RiIcons.RiArrowDownSLine,
   'arrow-left': RiIcons.RiArrowLeftLine,

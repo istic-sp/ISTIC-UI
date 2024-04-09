@@ -16,17 +16,11 @@ const meta: Meta<typeof Heading> = {
         defaultValue: { summary: 'h2' },
       },
     },
-    color: {
-      options: [
-        'text-success',
-        'text-error',
-        'text-info',
-        'text-warning',
-        'text-neutral700',
-      ],
+    weight: {
+      options: ['regular', 'medium', 'bold'],
       control: { type: 'select' },
       table: {
-        defaultValue: { summary: 'text-neutral700' },
+        defaultValue: { summary: 'regular' },
       },
     },
   },
@@ -49,7 +43,7 @@ export default meta;
 export const Default: StoryObj = {
   args: {
     level: 'h2',
-    color: 'text-neutral700',
+    weight: 'regular',
     children: 'Text here',
   },
 };

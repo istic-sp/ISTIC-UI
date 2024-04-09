@@ -4,7 +4,6 @@ import clsx from 'clsx';
 export interface TextAreaProps
   extends Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, 'size'> {
   label: string;
-  size?: 'xs' | 'lg';
   grow?: boolean;
   error?: {
     description: string;

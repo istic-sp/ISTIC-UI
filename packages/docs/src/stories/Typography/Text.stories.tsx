@@ -20,20 +20,7 @@ const meta: Meta<typeof Text> = {
       options: ['regular', 'medium', 'bold'],
       control: { type: 'select' },
       table: {
-        defaultValue: { summary: 'medium' },
-      },
-    },
-    color: {
-      options: [
-        'text-success',
-        'text-error',
-        'text-info',
-        'text-warning',
-        'text-neutral700',
-      ],
-      control: { type: 'select' },
-      table: {
-        defaultValue: { summary: 'text-neutral700' },
+        defaultValue: { summary: 'regular' },
       },
     },
   },
@@ -57,8 +44,7 @@ export default meta;
 export const Default: StoryObj = {
   args: {
     size: 'md',
-    weight: 'medium',
-    color: 'text-neutral700',
+    weight: 'regular',
     children: 'Text here',
   },
 };

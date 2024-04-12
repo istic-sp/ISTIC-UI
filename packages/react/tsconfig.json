@@ -1,4 +1,6 @@
 {
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", ".turbo"],
   "compilerOptions": {
     "target": "es5",
     "esModuleInterop": true,

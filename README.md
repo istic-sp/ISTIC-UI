@@ -4,9 +4,8 @@ Welcome to our STICK Design System! This repository contains the components and 
 
 ## Table of Contents
 
-1. [Introduction](#introduction)
-2. [Getting Started](#getting-started)
-3. [Usage](#usage)
+1. [Introduction](https://merces-dev.github.io/STICK-UI/?path=/docs/stick-ui-introduction--documentation)
+2. [Getting Started](https://merces-dev.github.io/STICK-UI/?path=/docs/stick-ui-getting-started--documentation)
 
 ## Introduction
 

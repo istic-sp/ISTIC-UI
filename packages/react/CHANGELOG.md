@@ -1,5 +1,11 @@
 # @stick-ui/react
 
+## 1.3.2
+
+### Patch Changes
+
+- Adjust SideBar width prop
+
 ## 1.3.1
 
 ### Patch Changes

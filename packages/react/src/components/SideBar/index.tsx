@@ -15,7 +15,7 @@ export interface NavItem {
 }
 
 export interface SideBarProps {
-  logo: string;
+  logo: ReactNode;
   footer?: ReactNode;
   items: NavItem[];
   width?: string;

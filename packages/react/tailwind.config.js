@@ -32,9 +32,6 @@ module.exports = {
         neutral100: '#f1f3f5',
         neutral0: '#f8f9fa',
       },
-      fontFamily: {
-        default: ['Mulish', 'sans-serif'],
-      },
       fontSize: {
         xs: '0.75rem',
         sm: '0.875rem',

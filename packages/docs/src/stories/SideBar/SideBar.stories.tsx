@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Icon, SideBar } from '@stick-ui/lib';
+import { Heading, Icon, SideBar } from '@stick-ui/lib';
 
 SideBar.displayName = 'SideBar';
 
@@ -75,7 +75,9 @@ export const Default: StoryObj = {
       },
     ],
     logo: (
-      <img src="https://seeklogo.com/images/G/generic-globe-logo-16C502EA47-seeklogo.com.png" />
+      <Heading level="h2" weight="bold">
+        Company
+      </Heading>
     ),
     footer: <div>Footer</div>,
   },

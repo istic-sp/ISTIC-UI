@@ -1,5 +1,11 @@
 # @stick-ui/react
 
+## 1.3.3
+
+### Patch Changes
+
+- Adjust font-default import
+
 ## 1.3.2
 
 ### Patch Changes

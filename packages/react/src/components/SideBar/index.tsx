@@ -72,11 +72,15 @@ export const SideBar = ({
 }: SideBarProps): JSX.Element => {
   const sidebarClasses = clsx(
     'p-4 h-screen bg-white flex flex-col justify-between',
-    `w-[${width}]`,
   );
 
   return (
-    <div className={sidebarClasses}>
+    <div
+      className={sidebarClasses}
+      style={{
+        width: width,
+      }}
+    >
       <div>
         <div className="flex justify-center items-center border-b-[0.5px] pb-4 mb-4">
           {logo}

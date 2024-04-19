@@ -1,4 +1,4 @@
-# @stick-ui/react
+# @stick-ui/lib
 
 ## 1.3.3
 

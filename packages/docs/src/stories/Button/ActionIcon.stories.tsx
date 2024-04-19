@@ -1,20 +1,24 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from '@stick-ui/lib';
+import { ActionIcon, icons } from '@stick-ui/lib';
 
-Button.displayName = 'Button';
+ActionIcon.displayName = 'ActionIcon';
 
-const meta: Meta<typeof Button> = {
-  title: 'STICK UI/Components/Core/Buttons/Button',
-  component: Button,
+const meta: Meta<typeof ActionIcon> = {
+  title: 'STICK UI/Components/Core/Buttons/ActionIcon',
+  component: ActionIcon,
   tags: ['autodocs'],
   argTypes: {
     size: {
-      options: ['xs', 'sm', 'md', 'lg', 'xl'],
+      options: ['xs', 'lg'],
       control: { type: 'select' },
       table: {
-        defaultValue: { summary: 'md' },
+        defaultValue: { summary: 'xs' },
       },
+    },
+    iconName: {
+      options: [...Object.keys(icons).map((i) => i)],
+      control: { type: 'select' },
     },
     variant: {
       options: ['filled', 'outline', 'light', 'subtle'],
@@ -43,36 +47,32 @@ export default meta;
 export const Filled: StoryObj = {
   args: {
     variant: 'filled',
-    size: 'md',
-    label: 'Text Button',
-    grow: false,
+    size: 'xs',
+    iconName: 'archive',
     disabled: false,
   },
 };
 export const Outline: StoryObj = {
   args: {
     variant: 'outline',
-    size: 'md',
-    label: 'Text Button',
-    grow: false,
+    size: 'xs',
+    iconName: 'archive',
     disabled: false,
   },
 };
 export const Subtle: StoryObj = {
   args: {
     variant: 'subtle',
-    size: 'md',
-    label: 'Text Button',
-    grow: false,
+    size: 'xs',
+    iconName: 'archive',
     disabled: false,
   },
 };
 export const Light: StoryObj = {
   args: {
     variant: 'light',
-    size: 'md',
-    label: 'Text Button',
-    grow: false,
+    size: 'xs',
+    iconName: 'archive',
     disabled: false,
   },
 };

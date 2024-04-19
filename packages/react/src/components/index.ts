@@ -1,4 +1,5 @@
-export { Button } from './Button';
+export { Button } from './Buttons/Button';
+export { ActionIcon } from './Buttons/ActionIcon';
 export { TextInput } from './Inputs/TextInput';
 export { PasswordInput } from './Inputs/PasswordInput';
 export { TextArea } from './Inputs/TextArea';

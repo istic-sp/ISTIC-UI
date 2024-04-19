@@ -1,4 +1,10 @@
-# @stick-ui/react
+# @stick-ui/lib
+
+## 1.4.0
+
+### Minor Changes
+
+- Create ActionIcon component
 
 ## 1.3.3
 

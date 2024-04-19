@@ -19,7 +19,7 @@ module.exports = {
         brand300: '#8BACFF',
         brand200: '#B1C9FF',
         brand100: '#D8E5FF',
-        brand0: '#D8E5FF',
+        brand0: '#F4F7FF',
 
         neutral900: '#212529',
         neutral800: '#343a40',

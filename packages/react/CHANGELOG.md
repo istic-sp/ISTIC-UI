@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.5.0
+
+### Minor Changes
+
+- Create Avatar and Product components
+
 ## 1.4.0
 
 ### Minor Changes

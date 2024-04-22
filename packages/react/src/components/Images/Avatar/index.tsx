@@ -16,6 +16,7 @@ export const Avatar: React.FC<Props> = ({ image, size = 'sm' }) => {
     'w-16 h-16': size === 'md',
     'w-24 h-24': size === 'lg',
   });
+
   const iconProps = {
     color: 'inherit',
     size: size === 'xs' || size === 'sm' ? 16 : size === 'md' ? 24 : 32,
@@ -30,25 +31,9 @@ export const Avatar: React.FC<Props> = ({ image, size = 'sm' }) => {
     position: 'relative',
   };
 
-  const overlayStyle: React.CSSProperties = {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
-    borderRadius: '50%',
-    display: image ? 'flex' : 'none',
-    justifyContent: 'center',
-    alignItems: 'center',
-  };
-
   return (
     <div className={avatarClasses} style={avatarStyle}>
-      {image ? (
-        <div style={overlayStyle}></div>
-      ) : (
-        <Icon name="user" {...iconProps} />
-      )}
+      {!image && <Icon name="user" {...iconProps} />}
     </div>
   );
 };

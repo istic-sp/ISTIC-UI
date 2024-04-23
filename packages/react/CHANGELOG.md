@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.6.2
+
+### Patch Changes
+
+- Remove use of window in SideBar
+
 ## 1.6.1
 
 ### Patch Changes

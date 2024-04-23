@@ -74,7 +74,7 @@ export const Button = ({
       {iconProps && iconProps.iconPosition === 'left' && (
         <Icon name={iconProps.iconName} {...iconValues} />
       )}
-      <div>{label}</div>
+      <div className="whitespace-nowrap overflow-hidden">{label}</div>
       {iconProps && iconProps.iconPosition === 'right' && (
         <Icon name={iconProps.iconName} {...iconValues} />
       )}

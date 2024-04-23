@@ -12,28 +12,36 @@ export interface NavSubItem {
 export interface NavItem {
   title: string;
   subItems: NavSubItem[];
+  activeItem: string;
 }
 
 export interface SideBarProps {
   logo: ReactNode;
-  footer?: ReactNode;
+  activeItem: string;
   items: NavItem[];
+  footer?: ReactNode;
   width?: string;
 }
 
-const SubNav = ({ title, subItems }: NavItem) => (
+const SubNav = ({ title, subItems, activeItem }: NavItem) => (
   <div className="flex flex-col gap-y-2">
     <Text size="xs" color="text-neutral600" weight="regular">
       {title}
     </Text>
     {subItems.map((subItem, index) => (
-      <NavLink key={index} subItem={subItem} />
+      <NavLink key={index} subItem={subItem} activeItem={activeItem} />
     ))}
   </div>
 );
 
-const NavLink = ({ subItem }: { subItem: NavSubItem }) => {
-  const isActive = window.location.pathname === subItem.path;
+const NavLink = ({
+  subItem,
+  activeItem,
+}: {
+  subItem: NavSubItem;
+  activeItem: string;
+}) => {
+  const isActive = activeItem === subItem.path;
 
   const linkClasses = clsx(
     'flex w-full flex-row items-center gap-x-2 p-2 rounded-[5px]',
@@ -68,6 +76,7 @@ export const SideBar = ({
   logo,
   items,
   footer,
+  activeItem,
   width = '250px',
 }: SideBarProps): JSX.Element => {
   const sidebarClasses = clsx(
@@ -87,7 +96,7 @@ export const SideBar = ({
         </div>
         <nav className="flex flex-col gap-y-2">
           {items.map((item, index) => (
-            <SubNav key={index} {...item} />
+            <SubNav key={index} {...item} activeItem={activeItem} />
           ))}
         </nav>
       </div>

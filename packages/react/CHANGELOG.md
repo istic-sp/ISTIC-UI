@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.8.0
+
+### Minor Changes
+
+- Create Badge and BadgeStatus components
+
 ## 1.7.5
 
 ### Patch Changes

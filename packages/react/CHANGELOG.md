@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.7.5
+
+### Patch Changes
+
+- Add width property to inputs
+
 ## 1.7.4
 
 ### Patch Changes

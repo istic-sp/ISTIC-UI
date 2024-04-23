@@ -2,6 +2,7 @@ export { Button } from './Buttons/Button';
 export { ActionIcon } from './Buttons/ActionIcon';
 export { TextInput } from './Inputs/TextInput';
 export { PasswordInput } from './Inputs/PasswordInput';
+export { SearchInput } from './Inputs/SearchInput';
 export { TextArea } from './Inputs/TextArea';
 export { Heading } from './Typography/Heading';
 export { Text } from './Typography/Text';

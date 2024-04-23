@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.6.1
+
+### Patch Changes
+
+- Adjust emptyValues types in TableProps and export TableColumn interface
+
 ## 1.6.0
 
 ### Minor Changes

@@ -43,11 +43,12 @@ export const Button = ({
     ['box-border rounded-[5px]']: true,
     ['disabled:cursor-not-allowed outline-none']: true,
 
-    [`bg-brand500 hover:enabled:bg-brand400 active:enabled:!bg-brand600 disabled:bg-neutral100`]:
+    [`border border-transparent bg-brand500 hover:enabled:bg-brand400 active:enabled:!bg-brand600 disabled:bg-neutral100`]:
       variant === 'filled',
     ['border border-neutral400 hover:enabled:border-brand400  disabled:border-neutral600 ']:
       variant === 'outline',
-    [`bg-brand0 hover:enabled:bg-brand200 active:enabled:!bg-brand600  disabled:!bg-neutral100`]:
+    ['border border-transparent ']: variant === 'subtle',
+    [`border border-transparent bg-brand0 hover:enabled:bg-brand200 active:enabled:!bg-brand600 disabled:!bg-neutral100`]:
       variant === 'light',
 
     ['px-3 py-2']: size === 'xs' || size === 'sm',

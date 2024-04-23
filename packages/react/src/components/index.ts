@@ -11,3 +11,5 @@ export { Icon, icons } from './Icons';
 export { Avatar } from './Images/Avatar';
 export { Product } from './Images/Product';
 export { Table, TableColumn } from './Table';
+export { Badge } from './Badges/Badge';
+export { StatusBadge } from './Badges/StatusBadge';

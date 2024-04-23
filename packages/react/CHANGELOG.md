@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.7.0
+
+### Minor Changes
+
+- Create SearchInput component
+
 ## 1.6.3
 
 ### Patch Changes

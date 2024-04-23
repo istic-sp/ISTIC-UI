@@ -42,8 +42,8 @@ export const PasswordInput = ({
       true,
     ['font-default font-regular text-neutral800 leading-text placeholder:text-neutral600']:
       true,
-    ['text-xs pl-3 py-2']: size === 'xs',
-    ['text-sm pl-4 py-3']: size === 'lg',
+    ['text-xs pl-3 py-2 h-[36px]']: size === 'xs',
+    ['text-sm pl-4 py-3 h-[44px]']: size === 'lg',
     ['w-full']: grow,
     ['input:-webkit-autofill']: {
       '-webkit-text-fill-color': 'currentColor',

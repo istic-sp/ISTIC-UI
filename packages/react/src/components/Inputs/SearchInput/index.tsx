@@ -41,8 +41,8 @@ export const SearchInput = ({
     ['outline-none shadow-none justify-center rounded-[5px] text-sm disabled:text-neutral600 items-center gap-2.5 inline-flex']:
       true,
 
-    ['pl-3 py-2']: size === 'xs',
-    ['pl-4 py-3']: size === 'lg',
+    ['pl-3 py-2 h-[36px]']: size === 'xs',
+    ['pl-4 py-3 h-[44px]']: size === 'lg',
     ['w-full']: grow,
     ['input:-webkit-autofill']: {
       '-webkit-text-fill-color': 'currentColor',

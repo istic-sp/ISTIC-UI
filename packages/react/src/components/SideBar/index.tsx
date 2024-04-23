@@ -12,9 +12,10 @@ export interface NavSubItem {
 export interface NavItem {
   title: string;
   subItems: NavSubItem[];
+}
+interface SubNav extends NavItem {
   activeItem: string;
 }
-
 export interface SideBarProps {
   logo: ReactNode;
   activeItem: string;
@@ -23,7 +24,7 @@ export interface SideBarProps {
   width?: string;
 }
 
-const SubNav = ({ title, subItems, activeItem }: NavItem) => (
+const SubNav = ({ title, subItems, activeItem }: SubNav) => (
   <div className="flex flex-col gap-y-2">
     <Text size="xs" color="text-neutral600" weight="regular">
       {title}

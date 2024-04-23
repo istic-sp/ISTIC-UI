@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.6.3
+
+### Patch Changes
+
+- Fix NavItem types in SideBar
+
 ## 1.6.2
 
 ### Patch Changes

@@ -3,7 +3,7 @@ import React, { ReactNode } from 'react';
 import { Text } from '../Typography/Text';
 import { Icon } from '../Icons';
 
-interface TableColumn<T> {
+export interface TableColumn<T> {
   index: string;
   label: string;
   width?: string;
@@ -11,7 +11,7 @@ interface TableColumn<T> {
 }
 
 interface TableProps<T> {
-  emptyValues?: { icon: ReactNode; title: string; subTitle: string };
+  emptyValues?: { icon?: ReactNode; title?: string; subTitle?: string };
   columns: TableColumn<T>[];
   data: T[];
 }

@@ -5,6 +5,7 @@ export interface TextAreaProps
   extends Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, 'size'> {
   label?: string;
   grow?: boolean;
+  width?: string;
   error?: {
     description: string;
   };
@@ -15,6 +16,7 @@ export const TextArea = ({
   grow = true,
   disabled = false,
   required = false,
+  width,
   error,
   ...rest
 }: TextAreaProps): JSX.Element => {
@@ -59,6 +61,7 @@ export const TextArea = ({
         className={inputClasses}
         required={required}
         disabled={disabled}
+        style={width ? { width } : {}}
       />
       {error && (
         <label className={errorLabelClasses}>{error.description}</label>

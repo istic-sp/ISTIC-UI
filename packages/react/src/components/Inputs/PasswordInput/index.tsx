@@ -10,6 +10,7 @@ export interface PasswordInputProps
   grow?: boolean;
   disabled?: boolean;
   required?: boolean;
+  width?: string;
   error?: {
     description: string;
   };
@@ -21,6 +22,7 @@ export const PasswordInput = ({
   grow = true,
   disabled = false,
   required = false,
+  width,
   error,
   ...rest
 }: PasswordInputProps): JSX.Element => {
@@ -99,6 +101,7 @@ export const PasswordInput = ({
           onBlur={() => setOnFocus(false)}
           required={required}
           disabled={disabled}
+          style={width ? { width } : {}}
         />
         <button
           type="button"

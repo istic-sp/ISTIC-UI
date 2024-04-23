@@ -6,6 +6,7 @@ export interface TextInputProps
   label?: string;
   size?: 'xs' | 'lg';
   grow?: boolean;
+  width?: string;
   error?: {
     description: string;
   };
@@ -17,6 +18,7 @@ export const TextInput = ({
   grow = true,
   disabled = false,
   required = false,
+  width,
   error,
   ...rest
 }: TextInputProps): JSX.Element => {
@@ -68,6 +70,7 @@ export const TextInput = ({
         className={inputClasses}
         required={required}
         disabled={disabled}
+        style={width ? { width } : {}}
       />
       {error && (
         <label className={errorLabelClasses}>{error.description}</label>

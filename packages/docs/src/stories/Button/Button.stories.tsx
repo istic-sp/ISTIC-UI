@@ -16,6 +16,7 @@ const meta: Meta<typeof Button> = {
         defaultValue: { summary: 'md' },
       },
     },
+
     variant: {
       options: ['filled', 'outline', 'light', 'subtle'],
       control: { type: 'select' },
@@ -42,6 +43,10 @@ const meta: Meta<typeof Button> = {
 export default meta;
 export const Filled: StoryObj = {
   args: {
+    iconProps: {
+      iconPosition: 'left',
+      iconName: 'add',
+    },
     variant: 'filled',
     size: 'md',
     label: 'Text Button',

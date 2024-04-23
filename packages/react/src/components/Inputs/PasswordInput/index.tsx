@@ -1,4 +1,3 @@
-'use client';
 import React, { InputHTMLAttributes, useState } from 'react';
 import clsx from 'clsx';
 

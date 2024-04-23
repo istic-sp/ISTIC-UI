@@ -1,10 +1,11 @@
-import React, { type ButtonHTMLAttributes, type ReactNode } from 'react';
+import React, { type ButtonHTMLAttributes } from 'react';
 import clsx from 'clsx';
+import { Icon, icons } from '../../Icons';
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  label: string;
+  label?: string;
   variant?: 'filled' | 'outline' | 'subtle' | 'light';
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-  iconProps?: { icon: ReactNode; iconPosition: 'right' | 'left' };
+  iconProps?: { iconName: keyof typeof icons; iconPosition: 'right' | 'left' };
   grow?: boolean;
 }
 
@@ -38,7 +39,7 @@ export const Button = ({
   const buttonClasses = clsx({
     [textClasses]: true,
 
-    ['flex justify-center items-center text-center']: true,
+    ['flex justify-center items-center text-center h-auto']: true,
     ['box-border rounded-[5px]']: true,
     ['disabled:cursor-not-allowed outline-none']: true,
 
@@ -49,17 +50,34 @@ export const Button = ({
     [`bg-brand0 hover:enabled:bg-brand200 active:enabled:!bg-brand600  disabled:!bg-neutral100`]:
       variant === 'light',
 
-    ['px-3 py-2 gap-1']: size === 'xs' || size === 'sm',
-    ['px-6 py-4 gap-2']: size === 'md' || size === 'lg' || size === 'xl',
+    ['px-3 py-2']: size === 'xs' || size === 'sm',
+    ['px-6 py-4']: size === 'md' || size === 'lg' || size === 'xl',
+    ['gap-1']: size === 'xs',
+    ['gap-2']: size === 'sm' || size === 'md' || size === 'lg' || size === 'xl',
 
     ['w-full']: grow,
   });
+  const iconValues = {
+    color: 'inherit',
+    size:
+      size === 'xs'
+        ? 18
+        : size === 'sm' || size === 'md'
+          ? 20
+          : size === 'lg'
+            ? 24
+            : 32,
+  };
 
   return (
     <button {...rest} className={buttonClasses} disabled={disabled}>
-      {iconProps && iconProps.iconPosition === 'left' && iconProps.icon}
+      {iconProps && iconProps.iconPosition === 'left' && (
+        <Icon name={iconProps.iconName} {...iconValues} />
+      )}
       <div>{label}</div>
-      {iconProps && iconProps.iconPosition === 'right' && iconProps.icon}
+      {iconProps && iconProps.iconPosition === 'right' && (
+        <Icon name={iconProps.iconName} {...iconValues} />
+      )}
     </button>
   );
 };

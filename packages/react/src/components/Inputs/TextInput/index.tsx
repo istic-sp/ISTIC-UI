@@ -3,7 +3,7 @@ import clsx from 'clsx';
 
 export interface TextInputProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
-  label: string;
+  label?: string;
   size?: 'xs' | 'lg';
   grow?: boolean;
   error?: {

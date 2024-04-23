@@ -4,7 +4,7 @@ import { Icon } from '../../Icons';
 
 export interface SearchInputProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
-  label: string;
+  label?: string;
   size?: 'xs' | 'lg';
   grow?: boolean;
   disabled?: boolean;

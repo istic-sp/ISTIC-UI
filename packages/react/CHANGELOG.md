@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.7.1
+
+### Patch Changes
+
+- Adjust Button label whitespace and overflow
+
 ## 1.7.0
 
 ### Minor Changes

@@ -5,7 +5,7 @@ import { RiEyeLine, RiEyeCloseLine } from 'react-icons/ri';
 
 export interface PasswordInputProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
-  label: string;
+  label?: string;
   size?: 'xs' | 'lg';
   grow?: boolean;
   disabled?: boolean;

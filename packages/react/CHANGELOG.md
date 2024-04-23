@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.7.3
+
+### Patch Changes
+
+- Adjust inputs height
+
 ## 1.7.2
 
 ### Patch Changes

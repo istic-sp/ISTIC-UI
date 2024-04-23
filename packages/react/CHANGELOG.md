@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.7.2
+
+### Patch Changes
+
+- Adjust label in inputs to not be a required property
+
 ## 1.7.1
 
 ### Patch Changes

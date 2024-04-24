@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.8.2
+
+### Patch Changes
+
+- Adjust table response on minor screens
+
 ## 1.8.1
 
 ### Patch Changes

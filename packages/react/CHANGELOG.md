@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.8.1
+
+### Patch Changes
+
+- Create width and align properties on table columns
+
 ## 1.8.0
 
 ### Minor Changes

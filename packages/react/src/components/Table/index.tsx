@@ -19,10 +19,10 @@ interface TableProps<T> {
 
 export const Table = <T,>({ columns, data, emptyValues }: TableProps<T>) => {
   const wrapperClasses = clsx({
-    ['flex items-center justify-center flex-col w-full']: true,
+    ['flex items-start justify-center flex-col w-full']: true,
   });
   const tableClasses = clsx({
-    ['w-full']: true,
+    ['w-full overflow-x-auto overflow-y-hidden']: true,
   });
   const theadClasses = clsx({
     ['text-xs font-default text-neutral700 border-t border-b border-neutral100 py-3']:

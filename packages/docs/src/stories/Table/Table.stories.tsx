@@ -59,6 +59,14 @@ export const Default: StoryObj = {
         },
       },
     ],
-    data: [],
+    data: [
+      { name: 'Marcos', age: 19, region: 'Brazil' },
+      {
+        name: 'Pedro Rony',
+        age: 25,
+        region: 'Argentina',
+      },
+      { name: 'Sergito', age: 32, region: 'Uruguay' },
+    ],
   },
 };

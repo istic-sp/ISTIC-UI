@@ -100,10 +100,24 @@ export const Table = <T,>({ columns, data, emptyValues }: TableProps<T>) => {
           {emptyValues?.icon ?? (
             <Icon size={48} color="text-brand500" name="inbox-2" />
           )}
-          <Text color="text-neutral800" weight="regular" size="lg">
-            {emptyValues?.title ?? 'Ainda não há dados cadastrados'}
+          <Text
+            color="text-neutral800"
+            weight="regular"
+            size="lg"
+            style={{
+              textAlign: 'center',
+            }}
+          >
+            {emptyValues?.title ?? 'There is no added items'}
           </Text>
-          <Text color="text-neutral600" weight="regular" size="sm">
+          <Text
+            color="text-neutral600"
+            weight="regular"
+            size="sm"
+            style={{
+              textAlign: 'center',
+            }}
+          >
             {emptyValues?.subTitle}
           </Text>
         </div>

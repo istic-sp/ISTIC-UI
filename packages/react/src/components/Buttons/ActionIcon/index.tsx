@@ -2,7 +2,6 @@ import React, { type ButtonHTMLAttributes } from 'react';
 import clsx from 'clsx';
 import { Icon, icons } from '../../Icons';
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  label: string;
   variant?: 'filled' | 'outline' | 'subtle' | 'light';
   size?: 'xs' | 'lg';
   iconName: keyof typeof icons;

@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Avatar, Table } from '@stick-ui/lib';
+import { ActionIcon, Avatar, Table } from '@stick-ui/lib';
 
 Table.displayName = 'Table';
 
@@ -31,6 +31,7 @@ export const Default: StoryObj = {
       {
         index: 'name',
         label: 'Name',
+        width: '200px',
         render: (data) => {
           return (
             <div
@@ -38,6 +39,7 @@ export const Default: StoryObj = {
                 display: 'flex',
                 alignItems: 'center',
                 gap: 8,
+                width: '100%',
               }}
             >
               <Avatar size="xs" />
@@ -46,8 +48,16 @@ export const Default: StoryObj = {
           );
         },
       },
-      { index: 'age', label: 'Age' },
       { index: 'region', label: 'Region' },
+      { index: 'age', label: 'Age', align: 'end' },
+      {
+        index: 'actions',
+        label: '',
+        width: '30px',
+        render: () => {
+          return <ActionIcon variant="subtle" iconName="settings" size="xs" />;
+        },
+      },
     ],
     data: [
       { name: 'Marcos', age: 19, region: 'Brazil' },

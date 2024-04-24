@@ -7,6 +7,7 @@ export interface TableColumn<T> {
   index: string;
   label: string;
   width?: string;
+  align?: 'left' | 'center' | 'right';
   render?: (data: T) => React.ReactNode;
 }
 
@@ -21,24 +22,46 @@ export const Table = <T,>({ columns, data, emptyValues }: TableProps<T>) => {
     ['flex items-center justify-center flex-col w-full']: true,
   });
   const tableClasses = clsx({
-    ['w-full text-start']: true,
+    ['w-full']: true,
   });
   const theadClasses = clsx({
     ['text-xs font-default text-neutral700 border-t border-b border-neutral100 py-3']:
       true,
   });
   const theadThClasses = clsx({
-    ['py-3 font-default font-regular text-start']: true,
+    ['py-3 font-default font-regular']: true,
   });
   const tbodyTrClasses = clsx({
     ['border-b border-neutral100']: true,
   });
   const tbodyTdClasses = clsx({
-    ['text-sm font-default font-regular text-neutral700 py-5 w-40']: true,
+    ['text-sm font-default font-regular text-neutral700 py-5']: true,
   });
   const noDataClasses = clsx({
     ['w-full flex flex-col items-center justify-center py-24']: true,
   });
+
+  const generateCellStyle = (
+    column: TableColumn<T>,
+    index: number,
+  ): React.CSSProperties => {
+    const style: React.CSSProperties = {};
+    const alignment = column.align || 'left';
+    style.textAlign = alignment;
+    style.paddingInline = 16;
+    if (column.width) {
+      style.width = column.width;
+    }
+    if (index === 0) {
+      style.paddingLeft = 0;
+    }
+    if (index === columns.length - 1) {
+      style.paddingRight = 0;
+    }
+
+    return style;
+  };
+
   const isEmpty = data?.length <= 0;
   return (
     <div className={wrapperClasses}>
@@ -46,7 +69,11 @@ export const Table = <T,>({ columns, data, emptyValues }: TableProps<T>) => {
         <thead className={theadClasses}>
           <tr>
             {columns.map((column, index) => (
-              <th className={theadThClasses} key={index}>
+              <th
+                className={theadThClasses}
+                style={generateCellStyle(column, index)}
+                key={index}
+              >
                 {column.label}
               </th>
             ))}
@@ -56,7 +83,11 @@ export const Table = <T,>({ columns, data, emptyValues }: TableProps<T>) => {
           {data.map((row, rowIndex) => (
             <tr className={tbodyTrClasses} key={rowIndex}>
               {columns.map((column, colIndex) => (
-                <td className={tbodyTdClasses} key={colIndex}>
+                <td
+                  className={tbodyTdClasses}
+                  style={generateCellStyle(column, colIndex)}
+                  key={colIndex}
+                >
                   {column.render ? column.render(row) : row[column.index]}
                 </td>
               ))}

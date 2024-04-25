@@ -3,12 +3,14 @@ import React from 'react';
 
 interface StatusBadgeProps {
   isActive: boolean;
+  grow?: boolean;
   activeText?: string;
   inactiveText?: string;
 }
 
 export const StatusBadge = ({
   isActive,
+  grow,
   activeText = 'Active',
   inactiveText = 'Inactive',
 }: StatusBadgeProps) => {
@@ -18,6 +20,7 @@ export const StatusBadge = ({
     ['text-sm font-default font-regular']: true,
     ['bg-success text-success']: isActive,
     ['bg-error text-error']: !isActive,
+    ['w-full flex flex-row items-center justify-center']: grow,
   });
   const ellipsisClasses = clsx({
     ['w-[5px] h-[5px] rounded-full']: true,

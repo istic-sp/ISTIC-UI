@@ -26,7 +26,7 @@ export const Table = <T,>({
   pagination,
 }: TableProps<T>) => {
   const wrapperClasses = clsx(
-    'flex items-center justify-center flex-col w-full',
+    'flex items-start justify-center flex-col w-full overflow-x-hidden overflow-y-hidden',
   );
   const tableClasses = clsx('w-full overflow-x-auto overflow-y-hidden');
   const theadClasses = clsx(
@@ -65,36 +65,38 @@ export const Table = <T,>({
   const isEmpty = data?.length <= 0;
   return (
     <div className={wrapperClasses}>
-      <table className={tableClasses}>
-        <thead className={theadClasses}>
-          <tr>
-            {columns.map((column, index) => (
-              <th
-                className={theadThClasses}
-                style={generateCellStyle(column, index)}
-                key={index}
-              >
-                {column.label}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((row, rowIndex) => (
-            <tr className={tbodyTrClasses} key={rowIndex}>
-              {columns.map((column, colIndex) => (
-                <td
-                  className={tbodyTdClasses}
-                  style={generateCellStyle(column, colIndex)}
-                  key={colIndex}
+      <div>
+        <table className={tableClasses}>
+          <thead className={theadClasses}>
+            <tr>
+              {columns.map((column, index) => (
+                <th
+                  className={theadThClasses}
+                  style={generateCellStyle(column, index)}
+                  key={index}
                 >
-                  {column.render ? column.render(row) : row[column.index]}
-                </td>
+                  {column.label}
+                </th>
               ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {data.map((row, rowIndex) => (
+              <tr className={tbodyTrClasses} key={rowIndex}>
+                {columns.map((column, colIndex) => (
+                  <td
+                    className={tbodyTdClasses}
+                    style={generateCellStyle(column, colIndex)}
+                    key={colIndex}
+                  >
+                    {column.render ? column.render(row) : row[column.index]}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
       {!isEmpty && pagination && (
         <div className="flex items-center justify-center w-full pt-4">
           <Pagination pagination={pagination} />

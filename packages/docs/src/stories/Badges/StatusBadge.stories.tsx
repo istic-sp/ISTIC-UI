@@ -38,6 +38,7 @@ const meta: Meta<typeof StatusBadge> = {
 export default meta;
 export const Active: StoryObj = {
   args: {
+    grow: false,
     isActive: true,
     activeText: 'Active',
     inactiveText: 'Inactive',
@@ -45,6 +46,7 @@ export const Active: StoryObj = {
 };
 export const Inactive: StoryObj = {
   args: {
+    grow: false,
     isActive: false,
     activeText: 'Active',
     inactiveText: 'Inactive',

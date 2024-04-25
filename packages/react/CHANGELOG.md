@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.9.0
+
+### Minor Changes
+
+- Create table component
+
 ## 1.8.2
 
 ### Patch Changes

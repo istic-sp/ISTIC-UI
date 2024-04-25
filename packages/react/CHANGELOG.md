@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.9.1
+
+### Patch Changes
+
+- Create grow property on StatusBadge
+
 ## 1.9.0
 
 ### Minor Changes

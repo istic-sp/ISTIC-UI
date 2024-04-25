@@ -21,8 +21,6 @@ const ClickableColorItem: React.FC<ClickableColorItemProps> = ({
     input.select();
     document.execCommand('copy');
     document.body.removeChild(input);
-
-    console.log('Hex value copied to clipboard:', hexValue);
   };
 
   return (

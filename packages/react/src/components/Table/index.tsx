@@ -1,7 +1,8 @@
+import React from 'react';
 import clsx from 'clsx';
-import React, { ReactNode } from 'react';
 import { Text } from '../Typography/Text';
 import { Icon } from '../Icons';
+import { Pagination, PaginationProps } from './Pagination';
 
 export interface TableColumn<T> {
   index: string;
@@ -12,34 +13,33 @@ export interface TableColumn<T> {
 }
 
 interface TableProps<T> {
-  emptyValues?: { icon?: ReactNode; title?: string; subTitle?: string };
   columns: TableColumn<T>[];
   data: T[];
+  emptyValues?: { icon?: React.ReactNode; title?: string; subTitle?: string };
+  pagination?: PaginationProps;
 }
 
-export const Table = <T,>({ columns, data, emptyValues }: TableProps<T>) => {
-  const wrapperClasses = clsx({
-    ['flex items-start justify-center flex-col w-full']: true,
-  });
-  const tableClasses = clsx({
-    ['w-full overflow-x-auto overflow-y-hidden']: true,
-  });
-  const theadClasses = clsx({
-    ['text-xs font-default text-neutral700 border-t border-b border-neutral100 py-3']:
-      true,
-  });
-  const theadThClasses = clsx({
-    ['py-3 font-default font-regular']: true,
-  });
-  const tbodyTrClasses = clsx({
-    ['border-b border-neutral100']: true,
-  });
-  const tbodyTdClasses = clsx({
-    ['text-sm font-default font-regular text-neutral700 py-5']: true,
-  });
-  const noDataClasses = clsx({
-    ['w-full flex flex-col items-center justify-center py-24']: true,
-  });
+export const Table = <T,>({
+  columns,
+  data,
+  emptyValues,
+  pagination,
+}: TableProps<T>) => {
+  const wrapperClasses = clsx(
+    'flex items-center justify-center flex-col w-full',
+  );
+  const tableClasses = clsx('w-full overflow-x-auto overflow-y-hidden');
+  const theadClasses = clsx(
+    'text-xs font-default text-neutral700 border-t border-b border-neutral100 py-3',
+  );
+  const theadThClasses = clsx('py-3 font-default font-regular');
+  const tbodyTrClasses = clsx('border-b border-neutral100');
+  const tbodyTdClasses = clsx(
+    'text-sm font-default font-regular text-neutral700 py-5',
+  );
+  const noDataClasses = clsx(
+    'w-full flex flex-col items-center justify-center py-24',
+  );
 
   const generateCellStyle = (
     column: TableColumn<T>,
@@ -95,6 +95,12 @@ export const Table = <T,>({ columns, data, emptyValues }: TableProps<T>) => {
           ))}
         </tbody>
       </table>
+      {!isEmpty && pagination && (
+        <div className="flex items-center justify-center w-full pt-4">
+          <Pagination pagination={pagination} />
+        </div>
+      )}
+
       {isEmpty && (
         <div className={noDataClasses}>
           {emptyValues?.icon ?? (

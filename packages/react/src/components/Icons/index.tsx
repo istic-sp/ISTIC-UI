@@ -15,7 +15,6 @@ const Icon: React.FC<IconProps> = ({
   const IconComponent = icons[name];
 
   if (!IconComponent) {
-    console.error(`Icon "${name}" not found.`);
     return null;
   }
   return <IconComponent size={size} className={color} />;

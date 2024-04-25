@@ -18,7 +18,7 @@ export const ActionIcon = ({
     ['font-default font-medium leading-text']: true,
 
     [`text-white`]: variant === 'filled',
-    [`text-neutral700 active:enabled:text-brand600 disabled:!text-neutral600`]:
+    [`text-neutral700 active:enabled:text-brand600 disabled:!text-neutral500`]:
       variant === 'outline',
     [`text-brand500 hover:enabled:text-brand400 active:enabled:text-brand600`]:
       variant === 'subtle',
@@ -38,7 +38,7 @@ export const ActionIcon = ({
 
     [`border border-transparent  bg-brand500 hover:enabled:bg-brand400 active:enabled:!bg-brand600 disabled:bg-neutral100`]:
       variant === 'filled',
-    ['border border-neutral400 hover:enabled:border-brand400  disabled:border-neutral600']:
+    ['border border-neutral600 hover:enabled:border-brand400 disabled:border-neutral400 disabled:bg-neutral100']:
       variant === 'outline',
     ['border border-transparent ']: variant === 'subtle',
     [`border border-transparent bg-brand0 hover:enabled:bg-brand200 active:enabled:!bg-brand600  disabled:!bg-neutral100`]:

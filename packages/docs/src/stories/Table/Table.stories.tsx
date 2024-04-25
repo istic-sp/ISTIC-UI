@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ActionIcon, Avatar, Table } from '@stick-ui/lib';
 
 Table.displayName = 'Table';
+Avatar.displayName = 'Avatar';
 
 const meta: Meta<typeof Table> = {
   title: 'STICK UI/Components/Core/Table',
@@ -27,6 +28,11 @@ const meta: Meta<typeof Table> = {
 export default meta;
 export const Default: StoryObj = {
   args: {
+    pagination: {
+      total: 10,
+      pageCurrent: 6,
+      onPaginate: () => null,
+    },
     columns: [
       {
         index: 'name',

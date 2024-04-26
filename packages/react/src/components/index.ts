@@ -14,3 +14,4 @@ export { Table, TableColumn } from './Table';
 export { Badge } from './Badges/Badge';
 export { StatusBadge } from './Badges/StatusBadge';
 export { Modal } from './Modals/Modal';
+export { DropdownMenu, DropdownMenuProps } from './DropdownMenu';

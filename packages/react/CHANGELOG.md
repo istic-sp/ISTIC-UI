@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.9.2
+
+### Patch Changes
+
+- Adjust table overflow
+
 ## 1.9.1
 
 ### Patch Changes

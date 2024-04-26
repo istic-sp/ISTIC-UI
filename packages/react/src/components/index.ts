@@ -13,3 +13,4 @@ export { Product } from './Images/Product';
 export { Table, TableColumn } from './Table';
 export { Badge } from './Badges/Badge';
 export { StatusBadge } from './Badges/StatusBadge';
+export { Modal } from './Modals/Modal';

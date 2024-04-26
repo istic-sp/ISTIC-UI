@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.11.0
+
+### Minor Changes
+
+- Create DropdownMenu component
+
 ## 1.10.0
 
 ### Minor Changes

@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.10.0
+
+### Minor Changes
+
+- Create Modal component
+
 ## 1.9.2
 
 ### Patch Changes

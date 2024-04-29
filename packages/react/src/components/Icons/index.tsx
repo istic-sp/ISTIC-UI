@@ -113,7 +113,7 @@ export const icons = {
   'share-circle': RiIcons.RiShareCircleLine,
   slash: RiIcons.RiForbidLine,
   substract: RiIcons.RiSubtractLine,
-  trash: RiIcons.RiDeleteBin2Line,
+  trash: RiIcons.RiDeleteBin7Line,
   upload: RiIcons.RiUploadLine,
   time: RiIcons.RiTimeLine,
 

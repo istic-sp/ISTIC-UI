@@ -26,9 +26,9 @@ export const Table = <T,>({
   pagination,
 }: TableProps<T>) => {
   const wrapperClasses = clsx(
-    'flex items-start justify-center flex-col w-full overflow-x-hidden overflow-y-hidden',
+    'flex items-start z-0 justify-center flex-col w-full ',
   );
-  const tableClasses = clsx('w-full overflow-x-auto overflow-y-hidden');
+  const tableClasses = clsx('w-full  overflow-x-auto');
   const theadClasses = clsx(
     'text-xs font-default text-neutral700 border-t border-b border-neutral100 py-3',
   );
@@ -65,7 +65,7 @@ export const Table = <T,>({
   const isEmpty = data?.length <= 0;
   return (
     <div className={wrapperClasses}>
-      <div className="w-full overflow-x-auto overflow-y-hidden">
+      <div className="w-full overflow-auto  md:overflow-visible">
         <table className={tableClasses}>
           <thead className={theadClasses}>
             <tr>

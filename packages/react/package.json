@@ -1,7 +1,7 @@
 {
   "name": "@stick-ui/lib",
   "description": "",
-  "version": "1.11.4",
+  "version": "1.11.5",
   "scripts": {
     "dev": "rollup -c --watch",
     "build": "rollup -c"

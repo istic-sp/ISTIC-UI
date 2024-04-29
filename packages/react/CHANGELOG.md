@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.11.5
+
+### Patch Changes
+
+- Adjust inputs label size
+
 ## 1.11.4
 
 ### Patch Changes

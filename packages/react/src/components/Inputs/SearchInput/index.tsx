@@ -59,17 +59,13 @@ export const SearchInput = ({
   });
 
   const labelClasses = clsx({
-    ['font-default leading-text font-medium inline-flex gap-1 justify-start items-center align-middle']:
+    ['font-default text-xs leading-text font-medium inline-flex gap-1 justify-start items-center align-middle']:
       true,
-    ['text-xs']: size === 'xs',
-    ['text-sm']: size === 'lg',
   });
 
   const errorLabelClasses = clsx({
-    ['font-default leading-text font-regular text-error inline-flex justify-start items-center align-middle']:
+    ['font-default text-xs leading-text font-regular text-error inline-flex justify-start items-center align-middle']:
       true,
-    ['text-xs']: size === 'xs',
-    ['text-sm']: size === 'lg',
   });
 
   const iconClasses = clsx({

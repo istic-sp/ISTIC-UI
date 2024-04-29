@@ -40,11 +40,11 @@ export const TextArea = ({
   });
 
   const labelClasses = clsx({
-    ['font-default leading-text font-medium inline-flex gap-1 justify-start items-center align-middle text-sm']:
+    ['font-default text-xs leading-text font-medium inline-flex gap-1 justify-start items-center align-middle']:
       true,
   });
   const errorLabelClasses = clsx({
-    ['font-default leading-text font-regular text-error inline-flex justify-start items-center align-middle']:
+    ['font-default text-xs leading-text font-regular text-error inline-flex justify-start items-center align-middle']:
       true,
   });
 

@@ -56,7 +56,7 @@ const DropdownMenu = ({ mainItem, items }: DropdownMenuProps) => {
   );
 
   return (
-    <div className="absolute">
+    <div className="relative">
       <div
         ref={dropdownRef}
         className="absolute right-[100%] top-1/2 transform -translate-y-1/2"

@@ -56,10 +56,10 @@ const DropdownMenu = ({ mainItem, items }: DropdownMenuProps) => {
   );
 
   return (
-    <div className="relative">
+    <div className="absolute">
       <div
         ref={dropdownRef}
-        className="absolute left-[-200%] top-1/2 transform -translate-y-1/2"
+        className="absolute right-[100%] top-1/2 transform -translate-y-1/2"
         style={{ width: 150 }}
       >
         {isOpen && (

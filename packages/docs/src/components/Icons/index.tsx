@@ -4,7 +4,7 @@ import { Icon, Text, icons } from '@stick-ui/lib';
 export const IconItems: React.FC = () => {
   const iconItems = Object.keys(icons).map((key) => {
     return (
-      <div>
+      <div key={key}>
         <div
           style={{
             display: 'flex',

@@ -65,7 +65,7 @@ const DropdownMenu = ({ mainItem, items }: DropdownMenuProps) => {
         {isOpen && (
           <ul className="bg-white p-2 rounded-[5px] w-auto list-none">
             {items.map((item, index) => (
-              <li key={index}>
+              <li key={item.iconName + index}>
                 <button
                   className={buttonClasses}
                   disabled={item.disabled}

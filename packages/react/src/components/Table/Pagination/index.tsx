@@ -60,7 +60,7 @@ const Pagination: React.FC<IPagination> = ({ pagination }) => {
         return (
           <>
             <PaginationButton
-              key={page}
+              key={index}
               active={page === pageCurrent}
               label={page.toString()}
               onClick={() => handlePageChange(page)}
@@ -68,8 +68,11 @@ const Pagination: React.FC<IPagination> = ({ pagination }) => {
             {showingPages[index + 1] != undefined &&
               !(showingPages[index + 1] === page + 1) && (
                 <div className="flex flex-row gap-[2px]">
-                  {[0, 1, 2].map(() => (
-                    <div className="w-0.5 h-0.5 bg-neutral600 rounded-full" />
+                  {[0, 1, 2].map((key) => (
+                    <div
+                      key={key}
+                      className="w-0.5 h-0.5 bg-neutral600 rounded-full"
+                    />
                   ))}
                 </div>
               )}

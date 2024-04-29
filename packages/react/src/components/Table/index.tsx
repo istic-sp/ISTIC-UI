@@ -65,7 +65,7 @@ export const Table = <T,>({
   const isEmpty = data?.length <= 0;
   return (
     <div className={wrapperClasses}>
-      <div className="w-full overflow-x-auto">
+      <div className="w-full overflow-x-auto overflow-y-hidden">
         <table className={tableClasses}>
           <thead className={theadClasses}>
             <tr>

@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.11.2
+
+### Patch Changes
+
+- Adjust dropdownMenu position
+
 ## 1.11.1
 
 ### Patch Changes

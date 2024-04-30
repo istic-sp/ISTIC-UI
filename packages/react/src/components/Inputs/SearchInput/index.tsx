@@ -54,7 +54,7 @@ export const SearchInput = ({
   });
 
   const wrapperClasses = clsx({
-    ['flex flex-col']: true,
+    ['flex flex-col gap-1 ']: true,
     ['w-full']: grow,
   });
 

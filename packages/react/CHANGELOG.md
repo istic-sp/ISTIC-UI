@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.12.0
+
+### Minor Changes
+
+- Create Select component
+
 ## 1.11.7
 
 ### Patch Changes

@@ -1,5 +1,9 @@
 export { Button } from './Buttons/Button';
 export { ActionIcon } from './Buttons/ActionIcon';
+export {
+  SegmentedControl,
+  SegmentedControlsProps,
+} from './Buttons/SegmentedControl';
 export { TextInput } from './Inputs/TextInput';
 export { PasswordInput } from './Inputs/PasswordInput';
 export { SearchInput } from './Inputs/SearchInput';

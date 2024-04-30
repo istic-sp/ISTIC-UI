@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.11.7
+
+### Patch Changes
+
+- Adjust inputs gap
+
 ## 1.11.6
 
 ### Patch Changes

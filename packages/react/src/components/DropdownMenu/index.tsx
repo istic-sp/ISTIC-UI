@@ -25,8 +25,8 @@ const DropdownMenu = ({ mainItem, items }: DropdownMenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = useCallback(() => {
-    setIsOpen(!isOpen);
-  }, [isOpen]);
+    setIsOpen((prevIsOpen) => !prevIsOpen);
+  }, []);
 
   const handleOutsideClick = useCallback((event: MouseEvent) => {
     if (
@@ -45,15 +45,35 @@ const DropdownMenu = ({ mainItem, items }: DropdownMenuProps) => {
   }, [handleOutsideClick]);
 
   const buttonClasses = clsx(
-    'flex w-full p-2 gap-2 rounded-[5px] border border-neutral100 justify-start items-center text-center h-auto box-border disabled:cursor-not-allowed outline-none',
+    'flex w-full p-2 gap-2 rounded-[5px] border border-neutral100 justify-start items-center text-center h-auto box-border disabled:cursor-not-allowed outline-none font-default font-medium leading-text text-sm',
     {
-      ['font-default font-medium leading-text text-sm']: true,
-      [`text-neutral800 hover:enabled:text-brand400 active:enabled:text-white disabled:text-neutral400`]:
+      'text-neutral800 hover:enabled:text-brand400 active:enabled:text-white disabled:text-neutral400':
         true,
-      [`border border-transparent bg-white hover:enabled:bg-brand0 active:enabled:!bg-brand600 disabled:bg-neutral100`]:
+      'border border-transparent bg-white hover:enabled:bg-brand0 active:enabled:!bg-brand600 disabled:bg-neutral100':
         true,
     },
   );
+
+  const renderDropdownItems = () => {
+    return (
+      <ul className="bg-white border border-neutral400 p-2 mr-1 rounded-[5px] w-auto list-none">
+        {items.map((item, index) => (
+          <li key={item.iconName + index}>
+            <button
+              className={buttonClasses}
+              disabled={item.disabled}
+              onClick={item.onClick}
+            >
+              <Icon name={item.iconName} color="inherit" />
+              <div className="whitespace-nowrap overflow-hidden">
+                {item.label}
+              </div>
+            </button>
+          </li>
+        ))}
+      </ul>
+    );
+  };
 
   return (
     <div className="relative">
@@ -62,24 +82,7 @@ const DropdownMenu = ({ mainItem, items }: DropdownMenuProps) => {
         className="absolute right-[100%] top-1/2 transform -translate-y-1/2"
         style={{ width: 150 }}
       >
-        {isOpen && (
-          <ul className="bg-white p-2 rounded-[5px] w-auto list-none">
-            {items.map((item, index) => (
-              <li key={item.iconName + index}>
-                <button
-                  className={buttonClasses}
-                  disabled={item.disabled}
-                  onClick={item.onClick}
-                >
-                  <Icon name={item.iconName} color="inherit" />
-                  <div className="whitespace-nowrap overflow-hidden">
-                    {item.label}
-                  </div>
-                </button>
-              </li>
-            ))}
-          </ul>
-        )}
+        {isOpen && renderDropdownItems()}
       </div>
       <div>{React.cloneElement(mainItem, { onClick: toggleDropdown })}</div>
     </div>

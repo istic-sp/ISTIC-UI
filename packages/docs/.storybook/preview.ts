@@ -9,7 +9,15 @@ const preview: Preview = {
       },
     },
     backgrounds: {},
-    options: {},
+    options: {
+      storySort: {
+        method: 'alphabetical',
+        order: [
+          'STICK UI',
+          ['Introduction', 'Getting Started', 'Components', 'Tokens'],
+        ],
+      },
+    },
   },
 };
 

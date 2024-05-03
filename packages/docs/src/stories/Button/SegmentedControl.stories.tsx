@@ -28,6 +28,7 @@ export const Default = () => {
           { value: '2', label: 'Value 2' },
           { value: '3', label: 'Value 3' },
         ]}
+        grow
         value={value}
         onChange={function (value: string): void {
           setValue(value);

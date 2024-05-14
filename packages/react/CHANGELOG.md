@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.13.2
+
+### Patch Changes
+
+- Adjust inputs ref
+
 ## 1.13.1
 
 ### Patch Changes

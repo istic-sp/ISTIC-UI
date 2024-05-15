@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.15.0
+
+### Minor Changes
+
+- create Radio component
+
 ## 1.14.0
 
 ### Minor Changes

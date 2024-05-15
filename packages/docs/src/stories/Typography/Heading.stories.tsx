@@ -2,8 +2,6 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Heading } from '@stick-ui/lib';
 
-Heading.displayName = 'Heading';
-
 const meta: Meta<typeof Heading> = {
   title: 'STICK UI/Components/Core/Typography/Heading',
   component: Heading,

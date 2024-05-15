@@ -133,3 +133,4 @@ export const Table = <T,>({
     </div>
   );
 };
+Table.displayName = 'Table';

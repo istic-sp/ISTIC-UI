@@ -54,3 +54,4 @@ export const ActionIcon = ({
     </button>
   );
 };
+ActionIcon.displayName = 'ActionIcon';

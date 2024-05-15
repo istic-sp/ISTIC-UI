@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { SegmentedControl } from '@stick-ui/lib';
 import { Meta } from '@storybook/react';
 
-SegmentedControl.displayName = 'SegmentedControl';
-
 const meta: Meta<typeof SegmentedControl> = {
   title: 'STICK UI/Components/Core/Buttons/SegmentedControl',
   component: SegmentedControl,

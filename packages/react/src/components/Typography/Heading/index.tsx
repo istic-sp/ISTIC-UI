@@ -31,3 +31,4 @@ export const Heading = ({
 
   return <ElementType {...rest} className={headingClasses} />;
 };
+Heading.displayName = 'Heading';

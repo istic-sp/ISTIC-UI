@@ -88,5 +88,6 @@ const DropdownMenu = ({ mainItem, items }: DropdownMenuProps) => {
     </div>
   );
 };
+DropdownMenu.displayName = 'DropdownMenu';
 
 export { DropdownMenu, DropdownMenuProps };

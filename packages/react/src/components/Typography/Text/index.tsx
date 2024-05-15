@@ -29,3 +29,4 @@ export const Text = ({
 
   return <p {...rest} className={textClasses} />;
 };
+Text.displayName = 'Text';

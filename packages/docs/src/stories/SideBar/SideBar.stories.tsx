@@ -2,8 +2,6 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Heading, Icon, SideBar } from '@stick-ui/lib';
 
-SideBar.displayName = 'SideBar';
-
 const meta: Meta<typeof SideBar> = {
   title: 'STICK UI/Components/Core/SideBar',
   component: SideBar,

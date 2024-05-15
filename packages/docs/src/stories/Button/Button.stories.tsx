@@ -2,8 +2,6 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from '@stick-ui/lib';
 
-Button.displayName = 'Button';
-
 const meta: Meta<typeof Button> = {
   title: 'STICK UI/Components/Core/Buttons/Button',
   component: Button,

@@ -2,7 +2,6 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { ActionIcon, Avatar, Table } from '@stick-ui/lib';
 
-Table.displayName = 'Table';
 Avatar.displayName = 'Avatar';
 
 const meta: Meta<typeof Table> = {

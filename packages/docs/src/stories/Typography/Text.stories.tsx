@@ -2,8 +2,6 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Text } from '@stick-ui/lib';
 
-Text.displayName = 'Text';
-
 const meta: Meta<typeof Text> = {
   title: 'STICK UI/Components/Core/Typography/Text',
   component: Text,

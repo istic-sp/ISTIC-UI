@@ -30,4 +30,5 @@ const SegmentedControl = ({
     </div>
   );
 };
+SegmentedControl.displayName = 'SegmentedControl';
 export { SegmentedControl, SegmentedControlsProps };

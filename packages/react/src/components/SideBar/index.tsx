@@ -105,5 +105,6 @@ export const SideBar = ({
     </div>
   );
 };
+SideBar.displayName = 'SideBar';
 
 export default SideBar;

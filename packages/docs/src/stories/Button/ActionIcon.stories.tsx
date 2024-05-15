@@ -2,8 +2,6 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { ActionIcon, icons } from '@stick-ui/lib';
 
-ActionIcon.displayName = 'ActionIcon';
-
 const meta: Meta<typeof ActionIcon> = {
   title: 'STICK UI/Components/Core/Buttons/ActionIcon',
   component: ActionIcon,

@@ -2,8 +2,6 @@ import React from 'react';
 import { ActionIcon, DropdownMenu } from '@stick-ui/lib';
 import { Meta } from '@storybook/react';
 
-DropdownMenu.displayName = 'DropdownMenu';
-
 const meta: Meta<typeof DropdownMenu> = {
   title: 'STICK UI/Components/Core/DropdownMenu',
   component: DropdownMenu,

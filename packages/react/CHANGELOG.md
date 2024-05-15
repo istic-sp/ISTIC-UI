@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.14.0
+
+### Minor Changes
+
+- create Checkbox component
+
 ## 1.13.2
 
 ### Patch Changes

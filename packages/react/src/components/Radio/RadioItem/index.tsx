@@ -1,23 +1,28 @@
 import React from 'react';
-import clsx from 'clsx';
-import { Text } from '../Typography/Text';
-import { Icon } from '../Icons';
+import clsx from 'clsx'; // Import clsx
+import { Icon } from '../../Icons';
+import { Text } from '../../Typography/Text';
 
-interface CheckboxProps {
+interface RadioItemProps {
   label: string;
+  value: string;
   checked?: boolean;
   disabled?: boolean;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const Checkbox: React.FC<CheckboxProps> = ({
+const RadioItem: React.FC<RadioItemProps> = ({
   label,
+  value,
   checked = false,
   disabled = false,
   onChange,
 }) => {
-  const checkboxClasses = clsx(
-    'h-[16px] w-[16px] flex items-center justify-center rounded-[3px] border',
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (onChange) onChange(event);
+  };
+  const radioItemClasses = clsx(
+    'h-[16px] w-[16px] flex items-center justify-center rounded-full border',
     {
       'bg-neutral200 border-neutral400': disabled,
       'bg-brand600 border-brand500': checked && !disabled,
@@ -27,13 +32,14 @@ const Checkbox: React.FC<CheckboxProps> = ({
   return (
     <label className="inline-flex items-center gap-2">
       <input
-        type="checkbox"
+        type="radio"
         className="hidden"
+        value={value}
         checked={checked}
-        onChange={onChange}
+        onChange={handleChange}
         disabled={disabled}
       />
-      <span className={checkboxClasses}>
+      <span className={radioItemClasses}>
         {disabled ? (
           <Icon size={10} name={'substract'} color="text-neutral400" />
         ) : (
@@ -47,4 +53,4 @@ const Checkbox: React.FC<CheckboxProps> = ({
   );
 };
 
-export { Checkbox, CheckboxProps };
+export { RadioItem, RadioItemProps };

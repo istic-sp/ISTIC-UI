@@ -3,7 +3,7 @@ import clsx from 'clsx'; // Import clsx
 import { Text } from '../../Typography/Text';
 import { Icon } from '../../Icons';
 
-interface ModalProps {
+export interface ModalProps {
   children: ReactNode;
   title: string;
   isOpen: boolean;

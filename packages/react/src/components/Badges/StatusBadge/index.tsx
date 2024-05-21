@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import React from 'react';
 
-interface StatusBadgeProps {
+export interface StatusBadgeProps {
   isActive: boolean;
   grow?: boolean;
   activeText?: string;

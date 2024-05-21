@@ -1,7 +1,8 @@
 import React, { type ButtonHTMLAttributes } from 'react';
 import clsx from 'clsx';
 import { Icon, icons } from '../../Icons';
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ActionIconProps
+  extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'filled' | 'outline' | 'subtle' | 'light';
   size?: 'xs' | 'lg';
   iconName: keyof typeof icons;
@@ -13,7 +14,7 @@ export const ActionIcon = ({
   disabled = false,
   iconName,
   ...rest
-}: ButtonProps): JSX.Element => {
+}: ActionIconProps): JSX.Element => {
   const textClasses = clsx({
     ['font-default font-medium leading-text']: true,
 

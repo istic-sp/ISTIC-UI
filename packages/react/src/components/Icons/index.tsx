@@ -1,7 +1,7 @@
 import React from 'react';
 import * as RiIcons from 'react-icons/ri';
 
-interface IconProps {
+export interface IconProps {
   name: keyof typeof icons;
   size?: number;
   color?: string;

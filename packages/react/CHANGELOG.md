@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.15.1
+
+### Patch Changes
+
+- Export all components props
+
 ## 1.15.0
 
 ### Minor Changes

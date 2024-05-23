@@ -23,6 +23,7 @@ interface SelectProps {
   rightSection?: React.ReactNode;
   searchable?: boolean;
   clearable?: boolean;
+  defaultValue?: string;
 }
 
 const Select = forwardRef<HTMLInputElement, SelectProps>(
@@ -39,11 +40,19 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
       clearable = false,
       onSelect,
       error,
+      defaultValue,
       ...rest
     },
     ref,
   ) => {
-    const [searchQuery, setSearchQuery] = useState('');
+    const getDefaultLabel = (value: string | undefined) => {
+      const selectedOption = options.find((option) => option.value === value);
+      return selectedOption ? selectedOption.label : '';
+    };
+
+    const [searchQuery, setSearchQuery] = useState(
+      getDefaultLabel(defaultValue),
+    );
     const [showOptions, setShowOptions] = useState(false);
     const selectRef = useRef<HTMLDivElement>(null);
 
@@ -53,6 +62,10 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
         document.removeEventListener('mousedown', handleClickOutside);
       };
     }, []);
+
+    useEffect(() => {
+      setSearchQuery(getDefaultLabel(defaultValue));
+    }, [defaultValue, options]);
 
     const handleClickOutside = (event: MouseEvent) => {
       if (

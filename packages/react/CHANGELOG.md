@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.15.2
+
+### Patch Changes
+
+- Add defaultValue prop to Select component
+
 ## 1.15.1
 
 ### Patch Changes

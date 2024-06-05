@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, forwardRef } from 'react';
 import clsx from 'clsx';
 import { Icon, icons } from '../../Icons';
+import { Loader } from '../../Loader';
 
 interface Option {
   label: string;
@@ -24,6 +25,7 @@ interface SelectProps {
   searchable?: boolean;
   clearable?: boolean;
   defaultValue?: string;
+  isLoading?: boolean;
 }
 
 const Select = forwardRef<HTMLInputElement, SelectProps>(
@@ -41,6 +43,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
       onSelect,
       error,
       defaultValue,
+      isLoading,
       ...rest
     },
     ref,
@@ -100,8 +103,8 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
 
     const filteredOptions = searchable
       ? options.filter((option) =>
-          option.label.toLowerCase().includes(searchQuery.toLowerCase()),
-        )
+        option.label.toLowerCase().includes(searchQuery.toLowerCase()),
+      )
       : options;
 
     const wrapperClasses = clsx('relative flex flex-col gap-1', {
@@ -155,6 +158,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
       'absolute mt-1 flex flex-col w-full top-full z-50',
     );
     const iconProps = { size: 18, color: 'text-brand500' };
+
     return (
       <div ref={selectRef} className={wrapperClasses}>
         {label && (
@@ -182,16 +186,18 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
           >
             {rightSection ? (
               rightSection
-            ) : clearable && searchQuery.length ? (
-              <button onClick={(e) => clearSelect(e)}>
-                <Icon name={'close'} {...iconProps} />
-              </button>
-            ) : (
-              <Icon name="arrow-down-s" {...iconProps} />
-            )}
+            ) :
+              isLoading ? (<Loader size='xs' color='brand500' width='slim' />) :
+                clearable && searchQuery.length ? (
+                  <button onClick={(e) => clearSelect(e)}>
+                    <Icon name={'close'} {...iconProps} />
+                  </button>
+                ) : (
+                  <Icon name="arrow-down-s" {...iconProps} />
+                )}
           </div>
         </div>
-        {showOptions && filteredOptions.length > 0 && (
+        {showOptions && !isLoading && filteredOptions.length > 0 && (
           <div className={pickerClasses}>
             <ul className="bg-white border border-neutral400 p-2 rounded-[5px] w-auto list-none">
               {filteredOptions.map((option, index) => (

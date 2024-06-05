@@ -4,9 +4,10 @@ import clsx from 'clsx';
 export interface LoaderProps {
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     color?: string
+    width?: 'slim' | 'bold';
 }
 
-export const Loader = ({size = 'md', color = 'white'}: LoaderProps) => {
+export const Loader = ({ size = 'md', color = 'white', width = 'bold' }: LoaderProps) => {
 
     const loaderClasses = clsx({
         ['w-4 h-4']: size === 'xs',
@@ -17,7 +18,7 @@ export const Loader = ({size = 'md', color = 'white'}: LoaderProps) => {
 
         ['overflow-hidden']: true,
 
-        ['border-4 border-solid rounded-full']: true,
+        [`border-${width === 'bold' ? '4' : '2'} border-solid rounded-full`]: true,
         [`border-${color}`]: true,
         ['border-b-transparent']: true,
         ['inline-block']: true,
@@ -27,6 +28,6 @@ export const Loader = ({size = 'md', color = 'white'}: LoaderProps) => {
     })
 
     return (
-        <span className={loaderClasses}/>
+        <span className={loaderClasses} />
     );
 };

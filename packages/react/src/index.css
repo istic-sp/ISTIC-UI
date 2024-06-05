@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .border-b-transparent {
+    border-bottom-color: transparent;
+  }
+
+  .loader::before {
+    @apply transform translate-y-0 opacity-100;
+  }
+}

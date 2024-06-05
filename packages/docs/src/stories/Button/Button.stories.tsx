@@ -50,6 +50,7 @@ export const Filled: StoryObj = {
     label: 'Text Button',
     grow: false,
     disabled: false,
+    isLoading: false,
   },
 };
 export const Outline: StoryObj = {
@@ -59,6 +60,7 @@ export const Outline: StoryObj = {
     label: 'Text Button',
     grow: false,
     disabled: false,
+    isLoading: false,
   },
 };
 export const Subtle: StoryObj = {
@@ -68,6 +70,7 @@ export const Subtle: StoryObj = {
     label: 'Text Button',
     grow: false,
     disabled: false,
+    isLoading: false,
   },
 };
 export const Light: StoryObj = {
@@ -77,5 +80,6 @@ export const Light: StoryObj = {
     label: 'Text Button',
     grow: false,
     disabled: false,
+    isLoading: false,
   },
 };

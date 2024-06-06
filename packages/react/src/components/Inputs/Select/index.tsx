@@ -103,8 +103,8 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
 
     const filteredOptions = searchable
       ? options.filter((option) =>
-        option.label.toLowerCase().includes(searchQuery.toLowerCase()),
-      )
+          option.label.toLowerCase().includes(searchQuery.toLowerCase()),
+        )
       : options;
 
     const wrapperClasses = clsx('relative flex flex-col gap-1', {
@@ -186,15 +186,15 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
           >
             {rightSection ? (
               rightSection
-            ) :
-              isLoading ? (<Loader size='xs' color='brand500' width='slim' />) :
-                clearable && searchQuery.length ? (
-                  <button onClick={(e) => clearSelect(e)}>
-                    <Icon name={'close'} {...iconProps} />
-                  </button>
-                ) : (
-                  <Icon name="arrow-down-s" {...iconProps} />
-                )}
+            ) : isLoading ? (
+              <Loader size="xs" color="brand500" width="slim" />
+            ) : clearable && searchQuery.length ? (
+              <button onClick={(e) => clearSelect(e)}>
+                <Icon name={'close'} {...iconProps} />
+              </button>
+            ) : (
+              <Icon name="arrow-down-s" {...iconProps} />
+            )}
           </div>
         </div>
         {showOptions && !isLoading && filteredOptions.length > 0 && (

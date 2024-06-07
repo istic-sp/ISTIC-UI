@@ -18,6 +18,7 @@ export { Product, ProductProps } from './Images/Product';
 export { Table, TableColumn } from './Table';
 export { Badge, BadgeProps } from './Badges/Badge';
 export { StatusBadge, StatusBadgeProps } from './Badges/StatusBadge';
+export { Drawer, DrawerProps } from './Drawer';
 export { Modal, ModalProps } from './Modals/Modal';
 export { DropdownMenu, DropdownMenuProps } from './DropdownMenu';
 export { Checkbox, CheckboxProps } from './Checkbox';

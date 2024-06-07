@@ -60,6 +60,41 @@ module.exports = {
         text: '150%',
         title: '150%',
       },
+      keyframes: {
+        'fade-in': {
+          '0%': {
+            opacity: 0,
+          },
+          '100%': {
+            opacity: 0.4,
+          },
+        },
+        'fade-in-left': {
+          '0%': {
+            opacity: 0,
+            transform: 'translate3d(-100%, 0, 0)',
+          },
+          '100%': {
+            opacity: 1,
+            transform: 'translate3d(0, 0, 0)',
+          },
+        },
+        'fade-in-right': {
+          '0%': {
+            opacity: 0,
+            transform: 'translate3d(100%, 0, 0)',
+          },
+          '100%': {
+            opacity: 1,
+            transform: 'translate3d(0, 0, 0)',
+          },
+        },
+      },
+      animation: {
+        fadeIn: 'fade-in .2s ease-in-out',
+        fadeInLeft: 'fade-in-left .2s ease-in-out',
+        fadeInRight: 'fade-in-right .2s ease-in-out',
+      }
     },
   },
   plugins: [],

@@ -13,11 +13,11 @@ export interface TabsProps {
   grow?: boolean;
 }
 
-export const Tabs: React.FC<TabsProps> = ({ tabs, grow = false }) => {
+export const Tabs: React.FC<TabsProps> = ({ tabs, grow = true }) => {
   const [activeTab, setActiveTab] = React.useState(0);
 
   const tabsContainerClasses = clsx({
-    [`grid grid-cols-${tabs.length}`]: grow,
+    [`grid grid-flow-col auto-cols-fr`]: grow,
     ['flex']: !grow,
   });
 

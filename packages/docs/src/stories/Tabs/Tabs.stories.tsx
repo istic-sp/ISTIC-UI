@@ -10,11 +10,9 @@ const meta: Meta<typeof Tabs> = {
   argTypes: {},
 };
 export const Default = () => {
-  const [openTabs, setOpenTabs] = useState(false);
   return (
     <>
       <Tabs
-      grow
         tabs={[
           {
             title: 'Tab 1',
@@ -30,16 +28,6 @@ export const Default = () => {
             title: 'Tab 3',
             iconProps: { iconName: 'add' },
             content: <div>Tab 3 Content</div>,
-          },
-          {
-            title: 'Tab 4',
-            iconProps: { iconName: 'add' },
-            content: <div>Tab 4 Content</div>,
-          },
-          {
-            title: 'Tab 5',
-            iconProps: { iconName: 'add' },
-            content: <div>Tab 5 Content</div>,
           },
         ]}
       />

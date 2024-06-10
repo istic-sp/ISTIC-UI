@@ -6,8 +6,4 @@
   .border-b-transparent {
     border-bottom-color: transparent;
   }
-
-  .loader::before {
-    @apply transform translate-y-0 opacity-100;
-  }
 }

@@ -3,13 +3,13 @@ import clsx from 'clsx';
 
 export interface LoaderProps {
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-  color?: string;
+  color?: 'border-slate-100' | 'border-brand500';
   width?: 'slim' | 'bold';
 }
 
 export const Loader = ({
   size = 'md',
-  color = 'white',
+  color = 'border-slate-100',
   width = 'bold',
 }: LoaderProps) => {
   const loaderClasses = clsx({
@@ -21,13 +21,13 @@ export const Loader = ({
 
     ['overflow-hidden']: true,
 
-    [`border-${width === 'bold' ? '4' : '2'} border-solid rounded-full`]: true,
-    [`border-${color}`]: true,
+    [`border-solid border-4 rounded-full`]: true,
+    [width === 'slim' ? 'border-2' : 'border-4']: true,
+    [color]: true,
     ['border-b-transparent']: true,
     ['inline-block']: true,
     ['box-border']: true,
     ['animate-spin']: true,
-    ['border-bottom-color:transparent']: true,
   });
 
   return <span className={loaderClasses} />;

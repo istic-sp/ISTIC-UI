@@ -18,11 +18,11 @@ const meta: Meta<typeof Loader> = {
       options: ['slim', 'bold'],
       control: { type: 'select' },
       table: {
-        defaultValue: { summary: '4' },
+        defaultValue: { summary: 'bold' },
       },
     },
     color: {
-      options: ['white', 'brand500'],
+      options: ['border-slate-100', 'border-brand500'],
       control: { type: 'select' },
       table: {
         defaultValue: { summary: 'white' },
@@ -46,5 +46,6 @@ const meta: Meta<typeof Loader> = {
 
 export default meta;
 export const Default: StoryObj = {
-  args: { size: 'md', color: '' },
+  name: 'Loader',
+  args: { size: 'md', color: 'border-slate-100' },
 };

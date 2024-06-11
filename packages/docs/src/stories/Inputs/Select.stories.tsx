@@ -33,6 +33,7 @@ export const Default: StoryObj = {
     placeholder: 'Text here',
     grow: true,
     disabled: false,
+    isLoading: false,
     required: true,
     options: [
       { label: 'Value 1', value: 1 },

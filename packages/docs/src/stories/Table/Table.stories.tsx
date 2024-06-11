@@ -71,7 +71,7 @@ export const Default: StoryObj = {
         age: 25,
         region: 'Argentina',
       },
-      { name: 'Sergito', age: 32, region: 'Uruguay' },
+      { name: 'Eduardo', age: 32, region: 'França' },
     ],
   },
 };

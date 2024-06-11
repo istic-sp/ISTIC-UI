@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
@@ -32,9 +32,6 @@ export default {
         neutral100: '#f1f3f5',
         neutral0: '#f8f9fa',
       },
-      fontFamily: {
-        default: ['Mulish', 'sans-serif'],
-      },
       fontSize: {
         xs: '0.75rem',
         sm: '0.875rem',
@@ -62,6 +59,42 @@ export default {
       lineHeight: {
         text: '150%',
         title: '150%',
+      },
+      keyframes: {
+        'fade-in-up': {
+          '0%': {
+            opacity: 0,
+            transform: 'translate3d(-50%, 100%, 0)',
+          },
+          '100%': {
+            opacity: 1,
+            transform: 'translate3d(-50%, -50%, 0)',
+          },
+        },
+        'fade-out-up': {
+          '0%': {
+            opacity: 1,
+          },
+          '100%': {
+            opacity: 0,
+            transform: 'translate3d(0, -100%, 0)',
+          },
+        },
+        'fade-in-down': {
+          '0%': {
+            opacity: 0,
+            transform: 'translate3d(0, -100%, 0)',
+          },
+          '100%': {
+            opacity: 1,
+            transform: 'translate3d(0, 0, 0)',
+          },
+        },
+      },
+      animation: {
+        fadeInUp: 'fade-in-up 0.3s ease-in-out',
+        fadeInDown: 'fade-in-down 0.2s ease-in-out',
+        fadeOutUp: 'fade-out-up 0.2s ease-in-out',
       },
     },
   },

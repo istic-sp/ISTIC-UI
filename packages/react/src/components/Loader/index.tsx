@@ -3,7 +3,7 @@ import clsx from 'clsx';
 
 export interface LoaderProps {
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-  color?: 'border-slate-100' | 'border-brand500';
+  color?: string;
   width?: 'slim' | 'bold';
 }
 

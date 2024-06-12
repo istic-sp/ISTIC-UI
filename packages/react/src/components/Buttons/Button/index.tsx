@@ -1,4 +1,4 @@
-import React, { type ButtonHTMLAttributes } from 'react';
+import React, { useEffect, useRef, type ButtonHTMLAttributes } from 'react';
 import clsx from 'clsx';
 import { Icon, icons } from '../../Icons';
 import { Loader } from '../../Loader';
@@ -22,6 +22,15 @@ export const Button = ({
   iconProps,
   ...rest
 }: ButtonProps): JSX.Element => {
+  const isFirstRender = useRef(true);
+
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+  }, []);
+
   const textClasses = clsx({
     ['font-default font-medium leading-text']: true,
 
@@ -119,7 +128,7 @@ export const Button = ({
         </>
       ) : (
         <div
-          className={`animate-fadeInDown transition-transform flex items-center justify-center ${gapClasses}`}
+          className={`${isFirstRender.current ? '' : 'animate-fadeInDown'} transition-transform flex items-center justify-center ${gapClasses}`}
         >
           {iconProps && iconProps.iconPosition === 'left' && (
             <Icon name={iconProps.iconName} {...iconValues} />

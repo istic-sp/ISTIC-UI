@@ -15,10 +15,16 @@ const meta: Meta<typeof Chip> = {
         defaultValue: { summary: 'filled' },
       },
     },
-    notification: {
+    badge: {
       control: { type: 'number' },
       table: {
         defaultValue: { summary: 0 },
+      },
+    },
+    checkIcon: {
+      control: { type: 'boolean' },
+      table: {
+        defaultValue: { summary: true },
       },
     },
   },
@@ -41,5 +47,6 @@ export default meta;
 export const Default: StoryObj = {
   args: {
     label: 'Chip',
+    questionTooltip: { title: 'Title Example', children: <p>Text Example</p> },
   },
 };

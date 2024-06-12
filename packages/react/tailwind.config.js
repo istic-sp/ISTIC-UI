@@ -61,6 +61,30 @@ module.exports = {
         title: '150%',
       },
     },
+    keyframes: {
+      chipFadeIn: {
+        '0%': { opacity: 0 },
+        '100%': { opacity: 1 },
+      },
+
+      'chip-scale-rigth': {
+        '0%': {
+          transform: 'scaleX(0.6)',
+          transformOrigin: '0% 0%',
+          opacity: 1,
+        },
+        '100%': {
+          transform: 'scaleX(1)',
+          transformOrigin: '0% 0%',
+          opacity: 1,
+        },
+      },
+    },
+    animation: {
+      'chip-fade-in': 'chipFadeIn .3s ease-in-out',
+      'chip-scale-rigth':
+        'chip-scale-rigth .3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
+    },
   },
   plugins: [],
 };

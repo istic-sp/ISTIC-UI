@@ -5,7 +5,6 @@ import { Meta } from '@storybook/react';
 const meta: Meta<typeof DropdownMenu> = {
   title: 'STICK UI/Components/Core/DropdownMenu',
   component: DropdownMenu,
-
   argTypes: {},
 };
 export const Default = () => {

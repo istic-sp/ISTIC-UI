@@ -9,34 +9,34 @@ const meta: Meta<typeof Drawer> = {
 
   argTypes: {
     children: {
-      description: 'Content to be displayed inside the modal body.',
+      description: 'Content to be displayed inside the drawer body.',
     },
     title: {
-      description: 'Text to be displayed as the title of the modal.',
+      description: 'Text to be displayed as the title of the drawer.',
     },
     isOpen: {
       description:
-        'Controls the visibility of the modal (true to open, false to close).',
+        'Controls the visibility of the drawer (true to open, false to close).',
     },
     onClose: {
       description:
-        'Function to be called when the modal is closed (e.g., clicking outside or close button).',
+        'Function to be called when the drawer is closed (e.g., clicking outside or close button).',
     },
     className: {
       description:
-        'Optional string to add custom classes to the modal container.',
+        'Optional string to add custom classes to the drawer container.',
     },
     overlayClassName: {
       description:
-        'Optional string to add custom classes to the modal overlay.',
+        'Optional string to add custom classes to the drawer overlay.',
     },
     contentClassName: {
       description:
-        'Optional string to add custom classes to the modal content area.',
+        'Optional string to add custom classes to the drawer content area.',
     },
     ariaLabel: {
       description:
-        'Optional string to describe the modal content for accessibility.',
+        'Optional string to describe the drawer content for accessibility.',
     },
   },
 };

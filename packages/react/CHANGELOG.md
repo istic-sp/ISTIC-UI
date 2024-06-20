@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.17.1
+
+### Patch Changes
+
+- Add align prop to DropdownMenu
+
 ## 1.17.0
 
 ### Minor Changes

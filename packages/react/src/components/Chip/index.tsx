@@ -54,7 +54,7 @@ export const Chip: React.FC<ChipProps> = ({
     ['whitespace-nowrap']: true,
     [filledChipClasses]: variant === 'filled',
     [outlineChipClasses]: variant === 'outline',
-    ['animate-chip-scale-rigth']: isActive && checkIcon,
+    ['animate-chipScaleRight']: isActive && checkIcon,
     ['transfrom-all ease-in-out duration-300']: true,
   });
 
@@ -68,7 +68,7 @@ export const Chip: React.FC<ChipProps> = ({
         }}
       >
         {isActive && checkIcon && (
-          <div className={'animate-chip-fade-in'}>
+          <div className={'animate-chipFadeIn'}>
             <Icon name="check" color={iconColor} />
           </div>
         )}

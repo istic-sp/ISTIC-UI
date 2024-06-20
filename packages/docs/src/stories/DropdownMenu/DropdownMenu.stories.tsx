@@ -17,6 +17,11 @@ const meta: Meta<DropdownMenuProps> = {
         '"right" or "left", Position of the dropdown menu relative to the main item.',
       defaultValue: { summary: 'left' },
     },
+    align: {
+      description:
+        '"center", "top" or "bottom", Alignment of the dropdown menu relative to the main item.',
+      defaultValue: { summary: 'left' },
+    },
   },
 };
 
@@ -43,6 +48,7 @@ export const Default = () => (
         { iconName: 'trash', label: 'Exclude', onClick: () => null },
       ]}
       position="left"
+      align="bottom"
     />
   </div>
 );

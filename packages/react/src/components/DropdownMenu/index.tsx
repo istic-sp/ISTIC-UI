@@ -19,12 +19,14 @@ interface DropdownMenuProps {
   mainItem: ReactElement<{ onClick: () => void }>;
   items: DropdownMenuItem[];
   position?: 'left' | 'right';
+  align?: 'top' | 'bottom' | 'center';
 }
 
 const DropdownMenu = ({
   mainItem,
   items = [],
   position = 'left',
+  align = 'center',
 }: DropdownMenuProps) => {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(false);
@@ -83,13 +85,16 @@ const DropdownMenu = ({
   const positionClasses = clsx({
     ['right-full']: position === 'left',
     ['left-full ml-1']: position === 'right',
+    ['top-1/2 -translate-y-1/2']: align === 'center',
+    ['bottom-0']: align === 'top',
+    ['top-0']: align === 'bottom',
   });
 
   return (
     <div className="relative">
       <div
         ref={dropdownRef}
-        className={`absolute ${positionClasses} top-1/2 transform -translate-y-1/2`}
+        className={`absolute ${positionClasses} transform `}
         style={{ width: 150 }}
       >
         {isOpen && renderDropdownItems()}

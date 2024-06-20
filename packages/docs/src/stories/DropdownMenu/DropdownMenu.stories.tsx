@@ -20,7 +20,7 @@ const meta: Meta<DropdownMenuProps> = {
     align: {
       description:
         '"center", "top" or "bottom", Alignment of the dropdown menu relative to the main item.',
-      defaultValue: { summary: 'left' },
+      defaultValue: { summary: 'center' },
     },
   },
 };

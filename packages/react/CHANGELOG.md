@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.16.0
+
+### Minor Changes
+
+- Create Loader component
+
 ## 1.15.2
 
 ### Patch Changes

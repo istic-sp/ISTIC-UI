@@ -1,38 +1,49 @@
-import { useState } from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { Tabs } from '@stick-ui/lib';
-import { Meta } from '@storybook/react';
 
 Tabs.displayName = 'Tabs';
+
 const meta: Meta<typeof Tabs> = {
   title: 'STICK UI/Components/Core/Tabs',
   component: Tabs,
-
-  argTypes: {},
-};
-export const Default = () => {
-  return (
-    <>
-      <Tabs
-        tabs={[
-          {
-            title: 'Tab 1',
-            iconProps: { iconName: 'add' },
-            content: <div>Tab 1 Content</div>,
-          },
-          {
-            title: 'Tab 2',
-            iconProps: { iconName: 'add' },
-            content: <div>Tab 2 Content</div>,
-          },
-          {
-            title: 'Tab 3',
-            iconProps: { iconName: 'add' },
-            content: <div>Tab 3 Content</div>,
-          },
-        ]}
-      />
-    </>
-  );
+  tags: ['autodocs'],
+  argTypes: {
+    onChange: { description: 'Tabs value handler (onClick)' },
+  },
+  decorators: [
+    (Story) => (
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export default meta;
+export const Default: StoryObj = {
+  args: {
+    grow: true,
+    value: 1,
+
+    tabs: [
+      {
+        title: 'Tab 1',
+        iconProps: { iconName: 'add' },
+      },
+      {
+        title: 'Tab 2',
+        iconProps: { iconName: 'add' },
+      },
+      {
+        title: 'Tab 3',
+        iconProps: { iconName: 'add' },
+      },
+    ],
+  },
+};

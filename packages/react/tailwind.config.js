@@ -89,12 +89,46 @@ module.exports = {
             transform: 'translate3d(0, 0, 0)',
           },
         },
+        'fade-in-up': {
+          '0%': { opacity: 0, transform: 'translate3d(-50%, 100%, 0)' },
+          '100%': { opacity: 1, transform: 'translate3d(-50%, -50%, 0)' },
+        },
+        'fade-out-up': {
+          '0%': { opacity: 1 },
+          '100%': { opacity: 0, transform: 'translate3d(0, -100%, 0)' },
+        },
+        'fade-in-down': {
+          '0%': { opacity: 0, transform: 'translate3d(0, -100%, 0)' },
+          '100%': { opacity: 1, transform: 'translate3d(0, 0, 0)' },
+        },
+        'chip-fade-in': {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 },
+        },
+        'chip-scale-right': {
+          '0%': {
+            transform: 'scaleX(0.6)',
+            transformOrigin: '0% 0%',
+            opacity: 1,
+          },
+          '100%': {
+            transform: 'scaleX(1)',
+            transformOrigin: '0% 0%',
+            opacity: 1,
+          },
+        },
       },
       animation: {
         fadeIn: 'fade-in .2s ease-in-out',
         fadeInLeft: 'fade-in-left .2s ease-in-out',
         fadeInRight: 'fade-in-right .2s ease-in-out',
-      }
+        fadeInUp: 'fade-in-up 0.3s ease-in-out',
+        fadeInDown: 'fade-in-down 0.2s ease-in-out',
+        fadeOutUp: 'fade-out-up 0.2s ease-in-out',
+        chipFadeIn: 'chip-fade-in 0.3s ease-in-out',
+        chipScaleRight:
+          'chip-scale-right 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
+      },
     },
   },
   plugins: [],

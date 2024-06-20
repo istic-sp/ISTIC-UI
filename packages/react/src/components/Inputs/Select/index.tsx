@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, forwardRef } from 'react';
 import clsx from 'clsx';
 import { Icon, icons } from '../../Icons';
+import { Loader } from '../../Loader';
 
 interface Option {
   label: string;
@@ -24,6 +25,7 @@ interface SelectProps {
   searchable?: boolean;
   clearable?: boolean;
   defaultValue?: string;
+  isLoading?: boolean;
 }
 
 const Select = forwardRef<HTMLInputElement, SelectProps>(
@@ -41,6 +43,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
       onSelect,
       error,
       defaultValue,
+      isLoading,
       ...rest
     },
     ref,
@@ -155,6 +158,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
       'absolute mt-1 flex flex-col w-full top-full z-50',
     );
     const iconProps = { size: 18, color: 'text-brand500' };
+
     return (
       <div ref={selectRef} className={wrapperClasses}>
         {label && (
@@ -182,6 +186,8 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
           >
             {rightSection ? (
               rightSection
+            ) : isLoading ? (
+              <Loader size="xs" color="border-brand500" width="slim"/>
             ) : clearable && searchQuery.length ? (
               <button onClick={(e) => clearSelect(e)}>
                 <Icon name={'close'} {...iconProps} />
@@ -191,7 +197,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
             )}
           </div>
         </div>
-        {showOptions && filteredOptions.length > 0 && (
+        {showOptions && !isLoading && filteredOptions.length > 0 && (
           <div className={pickerClasses}>
             <ul className="bg-white border border-neutral400 p-2 rounded-[5px] w-auto list-none">
               {filteredOptions.map((option, index) => (

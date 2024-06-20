@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.17.0
+
+### Minor Changes
+
+- Create Tabs, Drawer and Chips components
+
 ## 1.16.0
 
 ### Minor Changes

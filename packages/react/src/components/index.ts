@@ -23,5 +23,6 @@ export { Modal, ModalProps } from './Modals/Modal';
 export { DropdownMenu, DropdownMenuProps } from './DropdownMenu';
 export { Checkbox, CheckboxProps } from './Checkbox';
 export { Radio, RadioProps } from './Radio/Radio';
+export { Tabs, TabsProps } from './Tabs';
 export { Chip, ChipProps } from './Chip';
 export { ChipTooltip, ChipTooltipProps } from './Chip/ChipTooltip';

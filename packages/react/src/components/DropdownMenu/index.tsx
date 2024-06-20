@@ -23,8 +23,8 @@ interface DropdownMenuProps {
 
 const DropdownMenu = ({
   mainItem,
-  items,
-  position = 'right',
+  items = [],
+  position = 'left',
 }: DropdownMenuProps) => {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(false);
@@ -81,8 +81,8 @@ const DropdownMenu = ({
   };
 
   const positionClasses = clsx({
-    ['right-full']: position === 'right',
-    ['left-full ml-1']: position === 'left',
+    ['right-full']: position === 'left',
+    ['left-full ml-1']: position === 'right',
   });
 
   return (

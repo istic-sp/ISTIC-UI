@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.18.0
+
+### Minor Changes
+
+- Create Accordion component
+
 ## 1.17.1
 
 ### Patch Changes

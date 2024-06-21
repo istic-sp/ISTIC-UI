@@ -27,6 +27,6 @@ export const Text = ({
     ['font-bold']: weight === 'bold',
   });
 
-  return <p {...rest} className={textClasses} />;
+  return <p {...rest} className={textClasses} style={rest.style} />;
 };
 Text.displayName = 'Text';

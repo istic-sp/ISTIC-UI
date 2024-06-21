@@ -7,7 +7,7 @@ const meta: Meta<typeof SideBar> = {
   component: SideBar,
   tags: ['autodocs'],
   argTypes: {
-    logo: { description: 'ReactNode' },
+    logo: { description: 'ReactNode', control: { type: 'text' } },
     footer: {
       description: 'ReactNode',
     },

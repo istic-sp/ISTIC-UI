@@ -37,6 +37,7 @@ export const icons = {
 
   // Business
   archive: RiIcons.RiArchiveLine,
+  'article-line': RiIcons.RiArticleLine,
   'bar-chart': RiIcons.RiBarChartLine,
   calendar: RiIcons.RiCalendarLine,
   'file-list-3': RiIcons.RiFileList3Line,
@@ -122,6 +123,7 @@ export const icons = {
   group: RiIcons.RiGroupLine,
   user: RiIcons.RiUserLine,
   'user-add': RiIcons.RiUserAddLine,
+  'camera-line': RiIcons.RiCameraLine,
 
   //Weather
   moon: RiIcons.RiMoonLine,

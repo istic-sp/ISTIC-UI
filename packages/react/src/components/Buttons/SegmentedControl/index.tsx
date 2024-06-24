@@ -20,6 +20,7 @@ const SegmentedControl = ({
       {data.map((i, key) => (
         <Button
           grow
+          type="button"
           size="xs"
           key={key}
           variant={value === i.value ? 'filled' : 'light'}

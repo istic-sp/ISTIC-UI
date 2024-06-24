@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.18.2
+
+### Patch Changes
+
+- Add 'use client' directive to Button, DropdownMenu and Select
+
 ## 1.18.1
 
 ### Patch Changes

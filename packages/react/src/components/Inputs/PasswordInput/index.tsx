@@ -69,8 +69,10 @@ export const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
     });
 
     const errorLabelClasses = clsx({
-      ['font-default text-xs leading-text font-regular text-error inline-flex justify-start items-center align-middle']:
+      ['font-default leading-text font-regular text-error inline-flex justify-start items-center align-middle']:
         true,
+      ['text-xs']: size === 'xs',
+      ['text-sm']: size === 'lg',
     });
 
     const togglePasswordIconClasses = clsx({

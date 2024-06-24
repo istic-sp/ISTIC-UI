@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.18.3
+
+### Patch Changes
+
+- Adjust error description in Inputs to be optional
+
 ## 1.18.2
 
 ### Patch Changes

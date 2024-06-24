@@ -36,7 +36,7 @@ export const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
     const inputAndIconWrapperClasses = clsx({
       [!disabled ? 'bg-white' : 'bg-neutral100']: true,
       ['inline-flex border rounded-[5px]']: true,
-      [error
+      [error?.description
         ? 'border-error'
         : onFocus
           ? 'border-brand500'
@@ -80,7 +80,7 @@ export const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
     const iconStyle = clsx({
       ['text-xs']: size === 'xs',
       ['text-lg']: size === 'lg',
-      ['text-error']: error,
+      ['text-error']: error?.description,
       ['text-neutral600']: disabled,
     });
 
@@ -117,7 +117,7 @@ export const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
             )}
           </button>
         </div>
-        {error && (
+        {error?.description && (
           <label className={errorLabelClasses}>{error.description}</label>
         )}
       </div>

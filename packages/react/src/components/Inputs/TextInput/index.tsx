@@ -30,8 +30,9 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
         true,
       ['font-default font-regular text-neutral800 leading-text placeholder:text-neutral600']:
         true,
-      [error ? 'border-error' : 'border-neutral400 focus:border-brand500']:
-        true,
+      [error?.description
+        ? 'border-error'
+        : 'border-neutral400 focus:border-brand500']: true,
       [!disabled ? 'bg-white' : 'bg-neutral100']: true,
       ['text-xs px-3 py-2 h-[36px]']: size === 'xs',
       ['text-sm px-4 py-3 h-[44px]']: size === 'lg',
@@ -75,7 +76,7 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
           disabled={disabled}
           style={width ? { width } : {}}
         />
-        {error && (
+        {error?.description && (
           <label className={errorLabelClasses}>{error.description}</label>
         )}
       </div>

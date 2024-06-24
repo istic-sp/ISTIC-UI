@@ -187,7 +187,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
             {rightSection ? (
               rightSection
             ) : isLoading ? (
-              <Loader size="xs" color="border-brand500" width="slim"/>
+              <Loader size="xs" color="border-brand500" width="slim" />
             ) : clearable && searchQuery.length ? (
               <button onClick={(e) => clearSelect(e)}>
                 <Icon name={'close'} {...iconProps} />
@@ -219,7 +219,9 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
             </ul>
           </div>
         )}
-        {error && <div className={errorLabelClasses}>{error.description}</div>}
+        {error?.description && (
+          <div className={errorLabelClasses}>{error.description}</div>
+        )}
       </div>
     );
   },

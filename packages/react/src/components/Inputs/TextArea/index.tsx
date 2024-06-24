@@ -29,8 +29,9 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
         true,
       ['font-default font-regular text-sm text-neutral800 leading-text placeholder:text-neutral600']:
         true,
-      [error ? 'border-error' : 'border-neutral400 focus:border-brand500']:
-        true,
+      [error?.description
+        ? 'border-error'
+        : 'border-neutral400 focus:border-brand500']: true,
       [!disabled ? 'bg-white' : 'bg-neutral100']: true,
       ['input:-webkit-autofill']: {
         '-webkit-text-fill-color': 'currentColor',
@@ -69,7 +70,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
           disabled={disabled}
           style={width ? { width } : {}}
         />
-        {error && (
+        {error?.description && (
           <label className={errorLabelClasses}>{error.description}</label>
         )}
       </div>

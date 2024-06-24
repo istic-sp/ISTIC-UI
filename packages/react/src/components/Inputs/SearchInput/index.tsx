@@ -35,7 +35,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       ['font-default font-regular leading-text placeholder:text-neutral600']:
         true,
       ['inline-flex border rounded-[5px]']: true,
-      [error
+      [error?.description
         ? 'border-error'
         : onFocus
           ? 'border-brand500'
@@ -103,7 +103,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
             />
           </div>
         </div>
-        {error && (
+        {error?.description && (
           <label className={errorLabelClasses}>{error.description}</label>
         )}
       </div>

@@ -38,5 +38,6 @@ export const Default: StoryObj = {
     grow: true,
     disabled: false,
     required: true,
+    error: { description: '' },
   },
 };

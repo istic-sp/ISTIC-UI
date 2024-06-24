@@ -35,6 +35,7 @@ export const Default: StoryObj = {
     disabled: false,
     isLoading: false,
     required: true,
+    error: { description: '' },
     options: [
       { label: 'Value 1', value: 1 },
       { label: 'Value 2', value: 2 },

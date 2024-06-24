@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.18.1
+
+### Patch Changes
+
+- Adjust error handling in inputs and adjust SegmentedControl buttons to don't enable onSubmit in form's
+
 ## 1.18.0
 
 ### Minor Changes

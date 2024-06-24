@@ -1,3 +1,4 @@
+'use client';
 import React, { useState, useEffect, useRef, forwardRef } from 'react';
 import clsx from 'clsx';
 import { Icon, icons } from '../../Icons';

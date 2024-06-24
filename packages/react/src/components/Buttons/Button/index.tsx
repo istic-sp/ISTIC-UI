@@ -1,3 +1,4 @@
+'use client';
 import React, { useEffect, useRef, type ButtonHTMLAttributes } from 'react';
 import clsx from 'clsx';
 import { Icon, icons } from '../../Icons';

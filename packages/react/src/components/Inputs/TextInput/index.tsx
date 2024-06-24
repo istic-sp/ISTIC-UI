@@ -8,7 +8,7 @@ export interface TextInputProps
   grow?: boolean;
   width?: string;
   error?: {
-    description: string;
+    description?: string;
   };
 }
 export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(

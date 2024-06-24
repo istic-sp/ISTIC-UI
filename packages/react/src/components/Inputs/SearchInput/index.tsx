@@ -11,7 +11,7 @@ export interface SearchInputProps
   required?: boolean;
   width?: string;
   error?: {
-    description: string;
+    description?: string;
   };
 }
 export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(

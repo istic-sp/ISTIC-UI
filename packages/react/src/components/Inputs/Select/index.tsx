@@ -20,7 +20,7 @@ interface SelectProps {
   disabled?: boolean;
   placeholder?: string;
   error?: {
-    description: string;
+    description?: string;
   };
   rightSection?: React.ReactNode;
   searchable?: boolean;

@@ -12,7 +12,7 @@ export interface PasswordInputProps
   required?: boolean;
   width?: string;
   error?: {
-    description: string;
+    description?: string;
   };
 }
 

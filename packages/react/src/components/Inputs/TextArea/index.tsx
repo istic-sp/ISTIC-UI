@@ -7,7 +7,7 @@ export interface TextAreaProps
   grow?: boolean;
   width?: string;
   error?: {
-    description: string;
+    description?: string;
   };
 }
 

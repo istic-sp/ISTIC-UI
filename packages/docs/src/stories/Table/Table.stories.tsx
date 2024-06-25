@@ -8,7 +8,13 @@ const meta: Meta<typeof Table> = {
   title: 'STICK UI/Components/Core/Table',
   component: Table,
   tags: ['autodocs'],
-  argTypes: {},
+  argTypes: {
+    height: {
+      control: {
+        type: 'number',
+      },
+    },
+  },
   decorators: [
     (Story) => (
       <div
@@ -27,6 +33,8 @@ const meta: Meta<typeof Table> = {
 export default meta;
 export const Default: StoryObj = {
   args: {
+    isLoading: true,
+    height: undefined,
     pagination: {
       total: 10,
       pageCurrent: 6,

@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 import clsx from 'clsx';
 import { Text } from '../Typography/Text';
 import { Icon } from '../Icons';
 import { Pagination, PaginationProps } from './Pagination';
+import { Loader } from '../Loader';
 
 export interface TableColumn<T> {
   index: string;
@@ -17,6 +19,8 @@ interface TableProps<T> {
   data: T[];
   emptyValues?: { icon?: React.ReactNode; title?: string; subTitle?: string };
   pagination?: PaginationProps;
+  isLoading?: boolean;
+  height?: string;
 }
 
 export const Table = <T,>({
@@ -24,20 +28,29 @@ export const Table = <T,>({
   data,
   emptyValues,
   pagination,
+  isLoading = true,
+  height,
 }: TableProps<T>) => {
   const wrapperClasses = clsx(
     'flex items-start z-0 justify-center flex-col w-full ',
   );
-  const tableClasses = clsx('w-full  overflow-x-auto');
+  const tableWrapperClasses = clsx('w-full overflow-x-auto');
+  const tableClasses = clsx('w-full');
   const theadClasses = clsx(
     'text-xs font-default text-neutral700 border-t border-b border-neutral100 py-3',
   );
   const theadThClasses = clsx('py-3 font-default font-regular');
+  const tbodyWrapperClasses = clsx(
+    height ? 'block max-h-full overflow-y-auto' : '',
+  );
   const tbodyTrClasses = clsx('border-b border-neutral100');
   const tbodyTdClasses = clsx(
     'text-sm font-default font-regular text-neutral700 py-5',
   );
   const noDataClasses = clsx(
+    'w-full flex flex-col items-center justify-center py-24',
+  );
+  const loadingClasses = clsx(
     'w-full flex flex-col items-center justify-center py-24',
   );
 
@@ -63,9 +76,10 @@ export const Table = <T,>({
   };
 
   const isEmpty = data?.length <= 0;
+
   return (
     <div className={wrapperClasses}>
-      <div className="w-full overflow-auto  md:overflow-visible">
+      <div className={tableWrapperClasses}>
         <table className={tableClasses}>
           <thead className={theadClasses}>
             <tr>
@@ -80,30 +94,49 @@ export const Table = <T,>({
               ))}
             </tr>
           </thead>
-          <tbody>
-            {data.map((row, rowIndex) => (
-              <tr className={tbodyTrClasses} key={rowIndex}>
-                {columns.map((column, colIndex) => (
-                  <td
-                    className={tbodyTdClasses}
-                    style={generateCellStyle(column, colIndex)}
-                    key={colIndex}
-                  >
-                    {column.render ? column.render(row) : row[column.index]}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
         </table>
+        <div
+          className={tbodyWrapperClasses}
+          style={height ? { height } : undefined}
+        >
+          <table className={tableClasses}>
+            <tbody>
+              {isLoading ? (
+                <tr>
+                  <td colSpan={columns.length} className={tbodyTdClasses}>
+                    <div className={loadingClasses}>
+                      <Loader size="xl" width="slim" color="border-brand500" />
+                    </div>
+                  </td>
+                </tr>
+              ) : (
+                data.map((row, rowIndex) => (
+                  <tr className={tbodyTrClasses} key={rowIndex}>
+                    {columns.map((column, colIndex) => (
+                      <td
+                        className={tbodyTdClasses}
+                        style={generateCellStyle(column, colIndex)}
+                        key={colIndex}
+                      >
+                        {column.render
+                          ? column.render(row)
+                          : (row as any)[column.index]}
+                      </td>
+                    ))}
+                  </tr>
+                ))
+              )}
+            </tbody>
+          </table>
+        </div>
       </div>
-      {!isEmpty && pagination && (
+      {!isEmpty && !isLoading && pagination && (
         <div className="flex items-center justify-center w-full pt-4">
           <Pagination pagination={pagination} />
         </div>
       )}
 
-      {isEmpty && (
+      {isEmpty && !isLoading && (
         <div className={noDataClasses}>
           {emptyValues?.icon ?? (
             <Icon size={48} color="text-brand500" name="inbox-2" />

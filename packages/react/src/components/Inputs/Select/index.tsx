@@ -26,6 +26,7 @@ interface SelectProps {
   clearable?: boolean;
   defaultValue?: string;
   isLoading?: boolean;
+  pickerHeight?: string;
 }
 
 const Select = forwardRef<HTMLInputElement, SelectProps>(
@@ -44,6 +45,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
       error,
       defaultValue,
       isLoading,
+      pickerHeight = '30dvh',
       ...rest
     },
     ref,
@@ -154,9 +156,17 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
     const rightSectionClasses = clsx(
       'flex items-center justify-center h-full pr-3',
     );
+
+    const pickerStyles: React.CSSProperties = {
+      maxHeight: pickerHeight,
+      overflowY: 'auto' as 'scroll' | 'auto' | 'visible' | 'hidden' | undefined,
+      scrollbarWidth: 'none',
+    };
+
     const pickerClasses = clsx(
       'absolute mt-1 flex flex-col w-full top-full z-50',
     );
+
     const iconProps = { size: 18, color: 'text-brand500' };
 
     return (
@@ -199,7 +209,10 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
         </div>
         {showOptions && !isLoading && filteredOptions.length > 0 && (
           <div className={pickerClasses}>
-            <ul className="bg-white border border-neutral400 p-2 rounded-[5px] w-auto list-none">
+            <ul
+              className="bg-white border border-neutral400 p-2 rounded-[5px] w-auto list-none"
+              style={pickerStyles}
+            >
               {filteredOptions.map((option, index) => (
                 <li key={option.value + index}>
                   <button

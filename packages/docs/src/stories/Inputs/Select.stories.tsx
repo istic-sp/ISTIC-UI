@@ -8,7 +8,37 @@ const meta: Meta<typeof Select> = {
   title: 'STICK UI/Components/Core/Inputs/Select',
   component: Select,
   tags: ['autodocs'],
-  argTypes: {},
+  argTypes: {
+    pickerHeight: {
+      description: 'Max height of the picker',
+      control: {
+        type: 'text',
+      },
+      defaultValue: {
+        summary: '30dvh',
+      },
+    },
+    isLoading: {
+      defaultValue: {
+        summary: 'false',
+      },
+    },
+    required: {
+      defaultValue: {
+        summary: 'false',
+      },
+    },
+    disabled: {
+      defaultValue: {
+        summary: 'false',
+      },
+    },
+    grow: {
+      defaultValue: {
+        summary: 'true',
+      },
+    },
+  },
   decorators: [
     (Story) => (
       <div
@@ -36,6 +66,7 @@ export const Default: StoryObj = {
     isLoading: false,
     required: true,
     error: { description: '' },
+    pickerHeight: '30dvh',
     options: [
       { label: 'Value 1', value: 1 },
       { label: 'Value 2', value: 2 },

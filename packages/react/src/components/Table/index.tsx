@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 import clsx from 'clsx';
 import { Text } from '../Typography/Text';
@@ -29,20 +28,15 @@ export const Table = <T,>({
   emptyValues,
   pagination,
   isLoading = false,
-  height,
 }: TableProps<T>) => {
   const wrapperClasses = clsx(
     'flex items-start z-0 justify-center flex-col w-full ',
   );
-  const tableWrapperClasses = clsx('w-full overflow-x-auto');
-  const tableClasses = clsx('w-full');
+  const tableClasses = clsx('w-full overflow-x-auto');
   const theadClasses = clsx(
     'text-xs font-default text-neutral700 border-t border-b border-neutral100 py-3',
   );
   const theadThClasses = clsx('py-3 font-default font-regular');
-  const tbodyWrapperClasses = clsx(
-    height ? 'block max-h-full overflow-y-auto' : '',
-  );
   const tbodyTrClasses = clsx('border-b border-neutral100');
   const tbodyTdClasses = clsx(
     'text-sm font-default font-regular text-neutral700 py-5',
@@ -71,15 +65,13 @@ export const Table = <T,>({
     if (index === columns.length - 1) {
       style.paddingRight = 0;
     }
-
     return style;
   };
 
   const isEmpty = data?.length <= 0;
-
   return (
     <div className={wrapperClasses}>
-      <div className={tableWrapperClasses}>
+      <div className="w-full overflow-auto  md:overflow-visible">
         <table className={tableClasses}>
           <thead className={theadClasses}>
             <tr>
@@ -94,42 +86,28 @@ export const Table = <T,>({
               ))}
             </tr>
           </thead>
-        </table>
-        <div
-          className={tbodyWrapperClasses}
-          style={height ? { height } : undefined}
-        >
-          <table className={tableClasses}>
-            <tbody>
-              {isLoading ? (
-                <tr>
-                  <td colSpan={columns.length} className={tbodyTdClasses}>
-                    <div className={loadingClasses}>
-                      <Loader size="xl" width="slim" color="border-brand500" />
-                    </div>
+          <tbody style={isLoading ? { display: 'none' } : {}}>
+            {data.map((row, rowIndex) => (
+              <tr className={tbodyTrClasses} key={rowIndex}>
+                {columns.map((column, colIndex) => (
+                  <td
+                    className={tbodyTdClasses}
+                    style={generateCellStyle(column, colIndex)}
+                    key={colIndex}
+                  >
+                    {column.render ? column.render(row) : row[column.index]}
                   </td>
-                </tr>
-              ) : (
-                data.map((row, rowIndex) => (
-                  <tr className={tbodyTrClasses} key={rowIndex}>
-                    {columns.map((column, colIndex) => (
-                      <td
-                        className={tbodyTdClasses}
-                        style={generateCellStyle(column, colIndex)}
-                        key={colIndex}
-                      >
-                        {column.render
-                          ? column.render(row)
-                          : (row as any)[column.index]}
-                      </td>
-                    ))}
-                  </tr>
-                ))
-              )}
-            </tbody>
-          </table>
-        </div>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
+      {isLoading && (
+        <div className={loadingClasses}>
+          <Loader size="xl" width="slim" color="border-brand500" />
+        </div>
+      )}
       {!isEmpty && !isLoading && pagination && (
         <div className="flex items-center justify-center w-full pt-4">
           <Pagination pagination={pagination} />

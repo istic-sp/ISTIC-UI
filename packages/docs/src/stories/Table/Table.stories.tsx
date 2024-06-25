@@ -34,7 +34,6 @@ export default meta;
 export const Default: StoryObj = {
   args: {
     isLoading: false,
-    height: undefined,
     pagination: {
       total: 10,
       pageCurrent: 6,

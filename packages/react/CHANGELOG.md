@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.18.7
+
+### Patch Changes
+
+- Set isLoading to false as default in Table component
+
 ## 1.18.6
 
 ### Patch Changes

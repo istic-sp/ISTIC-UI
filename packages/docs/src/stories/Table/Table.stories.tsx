@@ -33,7 +33,7 @@ const meta: Meta<typeof Table> = {
 export default meta;
 export const Default: StoryObj = {
   args: {
-    isLoading: true,
+    isLoading: false,
     height: undefined,
     pagination: {
       total: 10,

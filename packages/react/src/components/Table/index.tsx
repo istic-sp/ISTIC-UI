@@ -28,7 +28,7 @@ export const Table = <T,>({
   data,
   emptyValues,
   pagination,
-  isLoading = true,
+  isLoading = false,
   height,
 }: TableProps<T>) => {
   const wrapperClasses = clsx(

@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.18.8
+
+### Patch Changes
+
+- Adjust loading in table
+
 ## 1.18.7
 
 ### Patch Changes

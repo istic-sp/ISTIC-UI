@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.18.6
+
+### Patch Changes
+
+- Update Table and Select components. Table => new props isLoading and height. Select => new prop pickerHeight
+
 ## 1.18.5
 
 ### Patch Changes

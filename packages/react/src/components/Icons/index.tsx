@@ -79,6 +79,7 @@ export const icons = {
 
   // Logo
   facebook: RiIcons.RiFacebookLine,
+  whatsapp: RiIcons.RiWhatsappLine,
 
   // Map
   'map-pin-2': RiIcons.RiMapPin2Line,

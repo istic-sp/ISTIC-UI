@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.18.12
+
+### Patch Changes
+
+- Update zIndex for ChipTooltip, Drawer and Modal components
+
 ## 1.18.11
 
 ### Patch Changes

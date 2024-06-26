@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.18.11
+
+### Patch Changes
+
+- Remove unused property from Drawer component
+
 ## 1.18.10
 
 ### Patch Changes

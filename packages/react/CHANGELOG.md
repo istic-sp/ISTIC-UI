@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.18.9
+
+### Patch Changes
+
+- Add height to table tbody and fix styling issues
+
 ## 1.18.8
 
 ### Patch Changes

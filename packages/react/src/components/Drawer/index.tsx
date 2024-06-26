@@ -28,7 +28,6 @@ const Drawer: React.FC<DrawerProps> = ({
   contentClassName,
   ariaLabel,
 }) => {
-
   const sizes = {
     sm: 'w-64 h-full',
     md: 'w-96 h-full',
@@ -53,19 +52,19 @@ const Drawer: React.FC<DrawerProps> = ({
   const contentClasses = clsx(
     'relative bg-white p-4',
     sizes[size],
-    position === 'right' ? 'rounded-l-lg animate-fadeInRight' : 'rounded-r-lg animate-fadeInLeft',
+    position === 'right'
+      ? 'rounded-l-lg animate-fadeInRight'
+      : 'rounded-r-lg animate-fadeInLeft',
     contentClassName,
   );
 
   return (
-    <div
-      className={drawerClasses}
-      role="dialog"
-      aria-drawer="true"
-      aria-labelledby={ariaLabel}
-    >
+    <div className={drawerClasses} role="dialog" aria-labelledby={ariaLabel}>
       <div className={overlayClasses}>
-        <div className="fixed inset-0 bg-black opacity-40 animate-fadeIn" onClick={onClose} />
+        <div
+          className="fixed inset-0 bg-black opacity-40 animate-fadeIn"
+          onClick={onClose}
+        />
         <div className={contentClasses}>
           <div className="flex items-center flex-row w-full justify-between pb-2">
             <Text size="lg" weight="medium" color={colorCloseTitle}>

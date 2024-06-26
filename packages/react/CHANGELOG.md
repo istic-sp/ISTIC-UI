@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.18.10
+
+### Patch Changes
+
+- Add Whatsapp logo to Icons
+
 ## 1.18.9
 
 ### Patch Changes

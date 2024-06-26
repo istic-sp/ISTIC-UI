@@ -9,9 +9,14 @@ const meta: Meta<typeof Table> = {
   component: Table,
   tags: ['autodocs'],
   argTypes: {
+
     height: {
       control: {
         type: 'number',
+      },
+      description: 'Height of the tbody',
+      table: {
+        defaultValue: { summary: 'undefined' },
       },
     },
   },
@@ -44,7 +49,7 @@ export const Default: StoryObj = {
         index: 'name',
         label: 'Name',
         width: '200px',
-        render: (data) => {
+        render: (data: any) => {
           return (
             <div
               style={{
@@ -61,6 +66,8 @@ export const Default: StoryObj = {
         },
       },
       { index: 'region', label: 'Region' },
+      { index: 'age', label: 'Age', align: 'end' },
+      { index: 'age', label: 'Age', align: 'end' },
       { index: 'age', label: 'Age', align: 'end' },
       {
         index: 'actions',
@@ -79,6 +86,8 @@ export const Default: StoryObj = {
         region: 'Argentina',
       },
       { name: 'Eduardo', age: 32, region: 'França' },
+      { name: 'Eduardo', age: 32, region: 'França' },
     ],
+    height: undefined,
   },
 };

@@ -28,13 +28,16 @@ export const Table = <T,>({
   emptyValues,
   pagination,
   isLoading = false,
+  height,
 }: TableProps<T>) => {
   const wrapperClasses = clsx(
-    'flex items-start z-0 justify-center flex-col w-full ',
+    'flex items-start z-0 justify-center flex-col w-full',
   );
-  const tableClasses = clsx('w-full overflow-x-auto');
+  const tableWrapperClasses = clsx('w-full overflow-x-auto');
+  const tableClasses = clsx('min-w-full table-fixed');
   const theadClasses = clsx(
-    'text-xs font-default text-neutral700 border-t border-b border-neutral100 py-3',
+    'text-xs font-default text-neutral700 border-t border-b border-neutral100 py-3 bg-white',
+    'sticky top-[-1px] z-10 shadow-sm bg-white'
   );
   const theadThClasses = clsx('py-3 font-default font-regular');
   const tbodyTrClasses = clsx('border-b border-neutral100');
@@ -69,39 +72,42 @@ export const Table = <T,>({
   };
 
   const isEmpty = data?.length <= 0;
+
   return (
     <div className={wrapperClasses}>
-      <div className="w-full overflow-auto  md:overflow-visible">
-        <table className={tableClasses}>
-          <thead className={theadClasses}>
-            <tr>
-              {columns.map((column, index) => (
-                <th
-                  className={theadThClasses}
-                  style={generateCellStyle(column, index)}
-                  key={index}
-                >
-                  {column.label}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody style={isLoading ? { display: 'none' } : {}}>
-            {data.map((row, rowIndex) => (
-              <tr className={tbodyTrClasses} key={rowIndex}>
-                {columns.map((column, colIndex) => (
-                  <td
-                    className={tbodyTdClasses}
-                    style={generateCellStyle(column, colIndex)}
-                    key={colIndex}
+      <div className={tableWrapperClasses}>
+        <div style={{ maxHeight: height, overflowY: 'auto' }}>
+          <table className={tableClasses}>
+            <thead>
+              <tr  className={theadClasses}>
+                {columns.map((column, index) => (
+                  <th
+                    className={theadThClasses}
+                    style={generateCellStyle(column, index)}
+                    key={index}
                   >
-                    {column.render ? column.render(row) : row[column.index]}
-                  </td>
+                    {column.label}
+                  </th>
                 ))}
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody style={isLoading ? { display: 'none' } : {}}>
+              {data.map((row, rowIndex) => (
+                <tr className={tbodyTrClasses} key={rowIndex}>
+                  {columns.map((column, colIndex) => (
+                    <td
+                      className={tbodyTdClasses}
+                      style={generateCellStyle(column, colIndex)}
+                      key={colIndex}
+                    >
+                      {column.render ? column.render(row) : row[column.index]}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
       {isLoading && (
         <div className={loadingClasses}>

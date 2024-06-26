@@ -29,7 +29,7 @@ const Modal: React.FC<ModalProps> = ({
   const colorCloseTitle = 'text-neutral800';
 
   const modalClasses = clsx(
-    'fixed z-10 inset-0 overflow-hidden',
+    'fixed z-50 inset-0 overflow-hidden',
     className,
     isOpen ? '' : 'hidden',
   );

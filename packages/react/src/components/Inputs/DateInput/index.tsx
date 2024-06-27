@@ -34,7 +34,6 @@ export const DateInput: React.FC<DateInputProps> = ({
   size = 'xs',
   grow = true,
   error,
-  selectedDate,
   value,
   defaultValue,
   onDateChange,
@@ -42,28 +41,25 @@ export const DateInput: React.FC<DateInputProps> = ({
   disabled = false,
   style,
 }) => {
-  const [uncontrolledDate, setUncontrolledDate] = useState<string>(
-    defaultValue || '',
-  );
   const [showDatePicker, setShowDatePicker] = useState(false);
   const [currentDate, setCurrentDate] = useState(new Date());
   const dateInputRef = useRef<HTMLDivElement>(null);
 
-  const controlledDate = value !== undefined ? value : uncontrolledDate;
-
   useEffect(() => {
-    if (selectedDate) {
-      setUncontrolledDate(selectedDate);
-    } else if (defaultValue) {
-      setUncontrolledDate(defaultValue);
-    }
-  }, [selectedDate, defaultValue]);
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dateInputRef.current &&
+        !dateInputRef.current.contains(event.target as Node)
+      ) {
+        setShowDatePicker(false);
+      }
+    };
 
-  useEffect(() => {
-    if (value !== undefined) {
-      setUncontrolledDate(value);
-    }
-  }, [value]);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   const formatDate = (date: Date) => {
     const day = String(date.getDate()).padStart(2, '0');
@@ -74,20 +70,19 @@ export const DateInput: React.FC<DateInputProps> = ({
 
   const handleChange = (date: Date) => {
     const formattedDate = formatDate(date);
-    if (value === undefined) {
-      setUncontrolledDate(formattedDate);
-    }
-    setShowDatePicker(false);
     onDateChange?.(formattedDate);
+    setShowDatePicker(false);
   };
 
-  const handleDateClick = (date: number) => {
-    const newDate = new Date(
-      currentDate.getFullYear(),
-      currentDate.getMonth(),
-      date,
-    );
-    handleChange(newDate);
+  const handleDateClick = (date: number, isCurrentMonth: boolean) => {
+    if (isCurrentMonth) {
+      const newDate = new Date(
+        currentDate.getFullYear(),
+        currentDate.getMonth(),
+        date,
+      );
+      handleChange(newDate);
+    }
   };
 
   const toggleDatePicker = () => {
@@ -138,15 +133,39 @@ export const DateInput: React.FC<DateInputProps> = ({
       currentDate.getMonth() + 1,
       0,
     );
-    const daysInMonth: (string | number)[] = [];
 
-    for (let i = startOfMonth.getDay(); i > 0; i--) {
-      daysInMonth.push('');
+    const daysInMonth: { date: number; isCurrentMonth: boolean }[] = [];
+    const prevMonthDays: { date: number; isCurrentMonth: boolean }[] = [];
+    const nextMonthDays: { date: number; isCurrentMonth: boolean }[] = [];
+
+    const prevMonth = new Date(
+      currentDate.getFullYear(),
+      currentDate.getMonth() - 1,
+      1,
+    );
+    const prevMonthEnd = new Date(
+      currentDate.getFullYear(),
+      currentDate.getMonth(),
+      0,
+    );
+    for (
+      let i = prevMonthEnd.getDate() - startOfMonth.getDay() + 1;
+      i <= prevMonthEnd.getDate();
+      i++
+    ) {
+      prevMonthDays.push({ date: i, isCurrentMonth: false });
     }
+
     for (let i = 1; i <= endOfMonth.getDate(); i++) {
-      daysInMonth.push(i);
+      daysInMonth.push({ date: i, isCurrentMonth: true });
     }
-    return daysInMonth;
+
+    const nextMonthStartDay = endOfMonth.getDay();
+    for (let i = 1; i < 7 - nextMonthStartDay; i++) {
+      nextMonthDays.push({ date: i, isCurrentMonth: false });
+    }
+
+    return [...prevMonthDays, ...daysInMonth, ...nextMonthDays];
   };
 
   const calendarDays = generateCalendar();
@@ -175,7 +194,7 @@ export const DateInput: React.FC<DateInputProps> = ({
       currentDate.getMonth(),
       date,
     );
-    return formatDate(selected) === controlledDate;
+    return formatDate(selected) === value;
   };
 
   return (
@@ -192,7 +211,7 @@ export const DateInput: React.FC<DateInputProps> = ({
           onClick={toggleDatePicker}
           style={style?.input}
         >
-          {controlledDate || 'Selecionar data'}
+          {value || defaultValue || 'Selecionar data'}
           <Icon name="calendar" color="text-brand500" />
         </div>
         {showDatePicker && (
@@ -222,19 +241,17 @@ export const DateInput: React.FC<DateInputProps> = ({
               ))}
             </div>
             <div className="grid grid-cols-7">
-              {calendarDays.map((day, index) => (
+              {calendarDays.map(({ date, isCurrentMonth }, index) => (
                 <div
                   key={index}
-                  onClick={() =>
-                    typeof day === 'number' && handleDateClick(day)
-                  }
+                  onClick={() => handleDateClick(date, isCurrentMonth)}
                   className={`justify-center flex items-center font-sans text-sm p-2 cursor-pointer ${
-                    day
+                    isCurrentMonth
                       ? 'text-neutral-800 hover:bg-blue-500 h-8 w-8 hover:text-white rounded-sm'
-                      : ''
-                  } ${isSelectedDate(Number(day)) ? 'bg-blue-500 text-white' : ''}`}
+                      : 'text-neutral-400'
+                  } ${isCurrentMonth && isSelectedDate(date) ? 'bg-blue-500 text-white' : ''}`}
                 >
-                  {day}
+                  {date}
                 </div>
               ))}
             </div>

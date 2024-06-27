@@ -1,8 +1,5 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { TextInput } from '@stick-ui/lib';
-
-TextInput.displayName = 'TextInput';
 
 const meta: Meta<typeof TextInput> = {
   title: 'STICK UI/Components/Core/Inputs/TextInput',

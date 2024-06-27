@@ -28,3 +28,4 @@ export { Tabs, TabsProps } from './Tabs';
 export { Chip, ChipProps } from './Chip';
 export { ChipTooltip, ChipTooltipProps } from './Chip/ChipTooltip';
 export { Accordion, AccordionProps } from './Accordion';
+export { DateInput, DateInputProps } from './Inputs/DateInput';

@@ -1,9 +1,9 @@
+import { DateInput } from '@stick-ui/lib';
 import type { Meta, StoryObj } from '@storybook/react';
-import { TextInput } from '@stick-ui/lib';
 
-const meta: Meta<typeof TextInput> = {
-  title: 'STICK UI/Components/Core/Inputs/TextInput',
-  component: TextInput,
+const meta: Meta<typeof DateInput> = {
+  title: 'STICK UI/Components/Core/Inputs/DateInput',
+  component: DateInput,
   tags: ['autodocs'],
   argTypes: {
     size: {

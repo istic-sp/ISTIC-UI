@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.19.0
+
+### Minor Changes
+
+- Create DateInput component
+
 ## 1.18.12
 
 ### Patch Changes

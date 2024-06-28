@@ -48,13 +48,15 @@ export const Default = (args: DateInputProps) => {
   const [selectedDate, setSelectedDate] = useState(args.defaultValue || '');
 
   return (
-    <DateInput
-      value={selectedDate}
-      onDateChange={(date) => {
-        setSelectedDate(date);
-        args.onDateChange?.(date);
-      }}
-    />
+    <>
+      <DateInput
+        value={selectedDate}
+        onDateChange={(date) => {
+          setSelectedDate(date);
+          args.onDateChange?.(date);
+        }}
+      />
+    </>
   );
 };
 

@@ -20,6 +20,7 @@ export interface DateInputProps {
   error?: {
     description?: string;
   };
+  placeholder?: string;
   selectedDate?: string;
   value?: string;
   defaultValue?: string;
@@ -31,12 +32,13 @@ export interface DateInputProps {
 
 export const DateInput: React.FC<DateInputProps> = ({
   label,
-  size = 'xs',
+  size = 'lg',
   grow = true,
   error,
   value,
   defaultValue,
   onDateChange,
+  placeholder,
   required = false,
   disabled = false,
   style,
@@ -86,20 +88,20 @@ export const DateInput: React.FC<DateInputProps> = ({
   };
 
   const toggleDatePicker = () => {
-    setShowDatePicker(!showDatePicker);
+    setShowDatePicker((state) => !state);
   };
 
   const inputClasses = clsx(
-    'border outline-none shadow-none rounded-[5px] flex justify-between items-center gap-2.5 px-3 cursor-pointer',
+    'border outline-none shadow-none rounded-[5px] flex justify-between items-center gap-2.5 cursor-pointer',
     {
-      'font-sans font-normal text-neutral-800 leading-5 placeholder-neutral-600':
+      'font-default font-normal text-neutral800 leading-5 placeholder-neutral600':
         true,
       'border-error': !!error?.description,
-      'border-neutral-400 focus:border-brand-500': !error?.description,
+      'border-neutral400 focus:border-brand500': !error?.description,
       'bg-white': !disabled,
-      'bg-neutral-100': disabled,
-      'text-xs py-2 h-[36px]': size === 'xs',
-      'text-sm py-3 h-[44px]': size === 'lg',
+      'bg-neutral100': disabled,
+      'text-xs p-2 h-[36px]': size === 'xs',
+      'text-sm p-3 h-[44px]': size === 'lg',
       'w-full': grow,
     },
   );
@@ -109,11 +111,11 @@ export const DateInput: React.FC<DateInputProps> = ({
   });
 
   const labelClasses = clsx(
-    'font-sans text-xs leading-5 font-medium flex gap-1 justify-start items-center',
+    'font-default text-xs leading-5 font-medium flex gap-1 justify-start items-center',
   );
 
   const errorLabelClasses = clsx(
-    'font-sans leading-5 font-normal text-error flex justify-start items-center',
+    'font-default leading-5 font-normal text-error flex justify-start items-center',
     {
       'text-xs': size === 'xs',
       'text-sm': size === 'lg',
@@ -138,11 +140,6 @@ export const DateInput: React.FC<DateInputProps> = ({
     const prevMonthDays: { date: number; isCurrentMonth: boolean }[] = [];
     const nextMonthDays: { date: number; isCurrentMonth: boolean }[] = [];
 
-    const prevMonth = new Date(
-      currentDate.getFullYear(),
-      currentDate.getMonth() - 1,
-      1,
-    );
     const prevMonthEnd = new Date(
       currentDate.getFullYear(),
       currentDate.getMonth(),
@@ -211,13 +208,20 @@ export const DateInput: React.FC<DateInputProps> = ({
           onClick={toggleDatePicker}
           style={style?.input}
         >
-          {value || defaultValue || 'Selecionar data'}
+          <Text
+            size="xs"
+            color={
+              value || defaultValue ? 'text-neutral700' : 'text-neutral600'
+            }
+          >
+            {(value || defaultValue) ?? (placeholder || 'Selecione uma data')}
+          </Text>
           <Icon name="calendar" color="text-brand500" />
         </div>
         {showDatePicker && (
           <div
             ref={dateInputRef}
-            className="bg-white border max-w-64 border-neutral-400 rounded-[5px] shadow-lg mt-1 p-4"
+            className="absolute z-30 bg-white border max-w-64 border-neutral400 rounded-[5px] mt-1 p-4"
             style={style?.datePicker}
           >
             <div className="flex justify-between items-center mb-2">
@@ -245,11 +249,11 @@ export const DateInput: React.FC<DateInputProps> = ({
                 <div
                   key={index}
                   onClick={() => handleDateClick(date, isCurrentMonth)}
-                  className={`justify-center flex items-center font-sans text-sm p-2 cursor-pointer ${
+                  className={`justify-center flex items-center font-default text-sm p-2 cursor-pointer ${
                     isCurrentMonth
-                      ? 'text-neutral-800 hover:bg-blue-500 h-8 w-8 hover:text-white rounded-sm'
-                      : 'text-neutral-400'
-                  } ${isCurrentMonth && isSelectedDate(date) ? 'bg-blue-500 text-white' : ''}`}
+                      ? 'text-neutral800 hover:bg-blue-500 h-8 w-8 hover:text-white rounded-sm'
+                      : 'text-neutral400'
+                  } ${isCurrentMonth && isSelectedDate(date) ? 'bg-brand500 text-white' : ''}`}
                 >
                   {date}
                 </div>

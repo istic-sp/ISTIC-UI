@@ -94,7 +94,7 @@ const DropdownMenu = ({
     <div className="relative">
       <div
         ref={dropdownRef}
-        className={`absolute ${positionClasses} transform `}
+        className={`absolute z-30 ${positionClasses} transform `}
         style={{ width: 150 }}
       >
         {isOpen && renderDropdownItems()}

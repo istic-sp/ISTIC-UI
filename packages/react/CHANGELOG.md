@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.19.2
+
+### Patch Changes
+
+- Add clearable option to DateInput component
+
 ## 1.19.1
 
 ### Patch Changes

@@ -39,18 +39,24 @@ const meta: Meta<typeof DateInput> = {
     disabled: {
       description: 'Is the input disabled.',
     },
+    clearable: {
+      description: 'Is the input value clearable.',
+    },
     style: {
       description: 'Custom styles for the input.',
     },
   },
 };
 export const Default = (args: DateInputProps) => {
-  const [selectedDate, setSelectedDate] = useState(args.defaultValue || '');
+  const [selectedDate, setSelectedDate] = useState<string | undefined>(
+    args.defaultValue || '',
+  );
 
   return (
     <>
       <DateInput
         value={selectedDate}
+        clearable
         onDateChange={(date) => {
           setSelectedDate(date);
           args.onDateChange?.(date);

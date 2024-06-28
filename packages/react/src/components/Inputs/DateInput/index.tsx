@@ -20,11 +20,12 @@ export interface DateInputProps {
   error?: {
     description?: string;
   };
-  placeholder?: string;
   selectedDate?: string;
   value?: string;
   defaultValue?: string;
-  onDateChange?: (date: string) => void;
+  onDateChange?: (date?: string) => void;
+  placeholder?: string;
+  clearable?: boolean;
   required?: boolean;
   disabled?: boolean;
   style?: StyleProps;
@@ -39,6 +40,7 @@ export const DateInput: React.FC<DateInputProps> = ({
   defaultValue,
   onDateChange,
   placeholder,
+  clearable = false,
   required = false,
   disabled = false,
   style,
@@ -70,8 +72,8 @@ export const DateInput: React.FC<DateInputProps> = ({
     return `${day}/${month}/${year}`;
   };
 
-  const handleChange = (date: Date) => {
-    const formattedDate = formatDate(date);
+  const handleChange = (date?: Date) => {
+    const formattedDate = date ? formatDate(date) : undefined;
     onDateChange?.(formattedDate);
     setShowDatePicker(false);
   };
@@ -216,7 +218,13 @@ export const DateInput: React.FC<DateInputProps> = ({
           >
             {(value || defaultValue) ?? (placeholder || 'Selecione uma data')}
           </Text>
-          <Icon name="calendar" color="text-brand500" />
+          {clearable && (value || defaultValue) ? (
+            <div onClick={() => handleChange(undefined)}>
+              <Icon name="close" color="text-brand500" />
+            </div>
+          ) : (
+            <Icon name="calendar" color="text-brand500" />
+          )}
         </div>
         {showDatePicker && (
           <div
@@ -226,12 +234,14 @@ export const DateInput: React.FC<DateInputProps> = ({
           >
             <div className="flex justify-between items-center mb-2">
               <ActionIcon
+                type="button"
                 onClick={handlePrevMonth}
                 variant="subtle"
                 iconName="arrow-left-s"
               />
               <Text size="sm">{formatHeaderDate(currentDate)}</Text>
               <ActionIcon
+                type="button"
                 onClick={handleNextMonth}
                 variant="subtle"
                 iconName="arrow-right-s"

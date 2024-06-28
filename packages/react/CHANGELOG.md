@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.19.1
+
+### Patch Changes
+
+- Update DateInput and DropdownMenu styles
+
 ## 1.19.0
 
 ### Minor Changes

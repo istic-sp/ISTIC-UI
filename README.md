@@ -45,8 +45,6 @@ Nosso design system inclui uma variedade de componentes que atendem a diferentes
    npm install
    ```
 
-````
-
 2. **Rodar em Modo de Desenvolvimento**
 
    Para iniciar o projeto em modo de desenvolvimento, utilize o seguinte comando:
@@ -117,4 +115,7 @@ TURBO_TOKEN: Deve ser criado um token na [Vercel](https://vercel.com/account/tok
 TURBO_TEAM: Identificador do time na [Vercel](https://vercel.com/account/tokens).
 
 Para mais informações acesse [TurboRepo](https://turbo.build/repo/docs/guides/ci-vendors/github-actions)
-````
+
+```
+
+```

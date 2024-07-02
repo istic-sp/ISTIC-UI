@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.20.0
+
+### Minor Changes
+
+- Create Toast component and Hook
+
 ## 1.19.2
 
 ### Patch Changes

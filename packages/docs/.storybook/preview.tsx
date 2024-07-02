@@ -1,4 +1,6 @@
 import type { Preview } from '@storybook/react';
+import React from 'react';
+import { Button, Toast, ToastProvider, useToast } from '@stick-ui/lib';
 
 const preview: Preview = {
   parameters: {
@@ -20,5 +22,11 @@ const preview: Preview = {
     },
   },
 };
-
+export const decorators = [
+  (Story) => (
+    <ToastProvider position="top-right">
+      <Story />
+    </ToastProvider>
+  ),
+];
 export default preview;

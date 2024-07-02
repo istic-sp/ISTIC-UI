@@ -211,7 +211,7 @@ export const DateInput: React.FC<DateInputProps> = ({
           style={style?.input}
         >
           <Text
-            size="xs"
+            size={size === 'xs' ? 'xs' : size === 'lg' ? 'sm' : 'sm'}
             color={
               value || defaultValue ? 'text-neutral700' : 'text-neutral600'
             }
@@ -239,7 +239,9 @@ export const DateInput: React.FC<DateInputProps> = ({
                 variant="subtle"
                 iconName="arrow-left-s"
               />
-              <Text size="sm">{formatHeaderDate(currentDate)}</Text>
+              <Text size={size === 'xs' ? 'xs' : size === 'lg' ? 'sm' : 'sm'}>
+                {formatHeaderDate(currentDate)}
+              </Text>
               <ActionIcon
                 type="button"
                 onClick={handleNextMonth}
@@ -249,7 +251,11 @@ export const DateInput: React.FC<DateInputProps> = ({
             </div>
             <div className="flex justify-around">
               {daysOfWeek.map((day, index) => (
-                <Text key={index} size="sm" color="text-neutral500">
+                <Text
+                  key={index}
+                  size={size === 'xs' ? 'xs' : size === 'lg' ? 'sm' : 'sm'}
+                  color="text-neutral500"
+                >
                   {day}
                 </Text>
               ))}

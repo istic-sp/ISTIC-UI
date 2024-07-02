@@ -22,6 +22,7 @@ const Icon: React.FC<IconProps> = ({
 
 export const icons = {
   // Arrows
+  'arrow-down': RiIcons.RiArrowDownLine,
   'arrow-down-s': RiIcons.RiArrowDownSLine,
   'arrow-left': RiIcons.RiArrowLeftLine,
   'arrow-left-double': RiIcons.RiArrowLeftDoubleLine,
@@ -30,6 +31,7 @@ export const icons = {
   'arrow-right-s': RiIcons.RiArrowRightSLine,
   'arrow-right-double': RiIcons.RiArrowRightDoubleLine,
   'arrow-right-up': RiIcons.RiArrowRightUpLine,
+  'arrow-up': RiIcons.RiArrowUpLine,
 
   // Buildings
   building: RiIcons.RiBuildingLine,
@@ -41,6 +43,7 @@ export const icons = {
   'bar-chart': RiIcons.RiBarChartLine,
   calendar: RiIcons.RiCalendarLine,
   'file-list-3': RiIcons.RiFileList3Line,
+  'file-text-line': RiIcons.RiFileTextLine,
   'inbox-2': RiIcons.RiInbox2Line,
   links: RiIcons.RiLinksLine,
   mail: RiIcons.RiMailLine,
@@ -83,17 +86,20 @@ export const icons = {
 
   // Map
   'map-pin-2': RiIcons.RiMapPin2Line,
+  'treasure-map-line': RiIcons.RiTreasureMapLine,
   truck: RiIcons.RiTruckLine,
 
   // Others
   'box-1': RiIcons.RiBox1Line,
   key: RiIcons.RiKeyLine,
+  'instance-line': RiIcons.RiInstanceLine,
 
   // System
   add: RiIcons.RiAddLine,
   check: RiIcons.RiCheckLine,
   'check-circle': RiIcons.RiCheckboxCircleLine,
   close: RiIcons.RiCloseLine,
+  'close-circle': RiIcons.RiCloseCircleLine,
   dashboard: RiIcons.RiDashboardLine,
   download: RiIcons.RiDownload2Line,
   'error-warning': RiIcons.RiErrorWarningLine,
@@ -117,10 +123,12 @@ export const icons = {
   substract: RiIcons.RiSubtractLine,
   trash: RiIcons.RiDeleteBin7Line,
   upload: RiIcons.RiUploadLine,
+  'upload-cloud-2-line': RiIcons.RiUploadCloud2Line,
   time: RiIcons.RiTimeLine,
 
   //User & Faces
   'account-circle': RiIcons.RiAccountCircleLine,
+  'building-4-line': RiIcons.RiBuilding4Line,
   group: RiIcons.RiGroupLine,
   user: RiIcons.RiUserLine,
   'user-add': RiIcons.RiUserAddLine,
@@ -130,6 +138,9 @@ export const icons = {
   moon: RiIcons.RiMoonLine,
   snowy: RiIcons.RiSnowyLine,
   sun: RiIcons.RiMoonLine,
+
+  //Media
+  'notification-3': RiIcons.RiNotification3Line,
 };
 
 export { Icon };

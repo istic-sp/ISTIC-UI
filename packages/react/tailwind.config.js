@@ -117,6 +117,10 @@ module.exports = {
             opacity: 1,
           },
         },
+        'progress-bar': {
+          '0%': { width: '100%' },
+          '100%': { width: '0%' },
+        },
       },
       animation: {
         fadeIn: 'fade-in .2s ease-in-out',
@@ -128,6 +132,7 @@ module.exports = {
         chipFadeIn: 'chip-fade-in 0.3s ease-in-out',
         chipScaleRight:
           'chip-scale-right 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
+        progressBar: 'progress-bar linear',
       },
     },
   },

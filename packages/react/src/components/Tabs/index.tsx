@@ -2,18 +2,18 @@ import clsx from 'clsx';
 import React from 'react';
 import { Icon, icons } from '../Icons';
 
-// Step 1: Extend the Tab Interface
 export interface Tab {
+  id: string;
   title: string;
   iconProps: { iconName: keyof typeof icons };
-  width?: string; // Optional width property
+  width?: string;
 }
 
 export interface TabsProps {
   tabs: Tab[];
   grow?: boolean;
-  value: number;
-  onChange: (newActiveTab: number) => void;
+  value: string;
+  onChange: (newActiveTabId: string) => void;
 }
 
 export const Tabs: React.FC<TabsProps> = ({
@@ -47,24 +47,24 @@ export const Tabs: React.FC<TabsProps> = ({
     ['text-neutral600']: true,
   });
 
-  const handleTabClick = (index: number) => {
-    onChange(index);
+  const handleTabClick = (tabId: string) => {
+    onChange(tabId);
   };
 
   return (
     <div className={tabsContainerClasses}>
-      {tabs.map((tab, index) => (
+      {tabs.map((tab) => (
         <button
           type="button"
-          key={index}
-          className={`${tabClasses(tab)} ${value === index ? activeTabClasses : inactiveTabClasses}`}
-          onClick={() => handleTabClick(index)}
+          key={tab.id}
+          className={`${tabClasses(tab)} ${value === tab.id ? activeTabClasses : inactiveTabClasses}`}
+          onClick={() => handleTabClick(tab.id)}
           style={{ width: tab.width }}
         >
           <Icon
             name={tab.iconProps.iconName}
             size={20}
-            color={value === index ? 'text-brand500' : 'text-neutral600'}
+            color={value === tab.id ? 'text-brand500' : 'text-neutral600'}
           />
           {tab.title}
         </button>

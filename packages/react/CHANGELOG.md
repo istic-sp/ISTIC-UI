@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.20.1
+
+### Patch Changes
+
+- Adjust DropdownMenu and Tabs button to be type button and Toast do not have a provider
+
 ## 1.20.0
 
 ### Minor Changes

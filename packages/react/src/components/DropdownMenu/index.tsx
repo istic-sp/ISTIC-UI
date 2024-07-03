@@ -67,6 +67,7 @@ const DropdownMenu = ({
         {items.map((item, index) => (
           <li key={item.iconName + index}>
             <button
+              type="button"
               className={buttonClasses}
               disabled={item.disabled}
               onClick={item.onClick}

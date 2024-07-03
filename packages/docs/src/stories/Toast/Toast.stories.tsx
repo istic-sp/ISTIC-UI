@@ -1,107 +1,87 @@
-import {
-  Button,
-  Heading,
-  Text,
-  Toast,
-  ToastProvider,
-  useToast,
-} from '@stick-ui/lib';
-import { Meta } from '@storybook/react';
+import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
+import { Toast } from '@stick-ui/lib';
 
-Toast.displayName = 'Toast';
 const meta: Meta<typeof Toast> = {
   title: 'STICK UI/Components/Core/Toast',
   component: Toast,
-
+  tags: ['autodocs'],
   argTypes: {
     title: {
-      description: 'Title displayed in the toast notification.',
-      type: { name: 'string' },
-      defaultValue: 'Title of the Toast',
+      control: 'text',
+      description: 'Título do toast',
+      type: { name: 'string', required: false },
+      defaultValue: '',
     },
     message: {
-      description: 'Main message content of the toast.',
-      type: { name: 'string' },
-      defaultValue: 'Toast message.',
+      control: 'text',
+      description: 'Conteúdo da mensagem do toast',
+      type: { name: 'string', required: false },
+      defaultValue: '',
     },
     type: {
-      description:
-        'Type of the toast notification. "success | error | info | warning"',
-      type: {
-        name: 'string',
-      },
-      defaultValue: 'success',
+      control: 'radio',
+      options: ['success', 'error', 'info', 'warning'],
+      description: 'Tipo do toast para estilização',
+      type: { name: 'string', required: false },
+      defaultValue: { summary: 'info' },
     },
     durationInMs: {
-      description:
-        'Duration in milliseconds for which the toast remains visible.',
-      type: { name: 'number' },
-      defaultValue: 5000,
+      control: 'number',
+      description: 'Duração em milissegundos antes do toast desaparecer',
+      type: { name: 'number', required: false },
+      defaultValue: { summary: 3000 },
+    },
+    position: {
+      control: 'radio',
+      options: [
+        'top-left',
+        'top-right',
+        'bottom-left',
+        'bottom-right',
+        'top-center',
+        'bottom-center',
+      ],
+      description: 'Posição do toast na tela',
+      type: { name: 'string', required: false },
+      defaultValue: { summary: 'top-right' },
     },
     onClose: {
-      description: 'Callback function invoked when the toast is closed.',
-      type: { name: 'function' },
+      control: 'function',
+      description: 'Função a ser chamada quando o toast é fechado',
+      type: { name: 'function', required: false },
+    },
+    index: {
+      control: 'number',
+      description: 'Índice do toast, usado para empilhar múltiplos toasts',
+      type: { name: 'number', required: false },
+      defaultValue: 0,
     },
   },
-};
-export const Default = () => {
-  const { showToast } = useToast();
-  const handleButtonClick = () => {
-    showToast({
-      title: 'Título do Toast',
-      message: 'Mensagem do Toast.',
-      type: 'success',
-      durationInMs: 5000,
-      onClose: () => {
-        console.log('Toast closed');
-      },
-    });
-    showToast({
-      title: 'Título do Toast',
-      message: 'Mensagem do Toast.',
-      type: 'error',
-      durationInMs: 5000,
-      onClose: () => {
-        console.log('Toast closed');
-      },
-    });
-    showToast({
-      title: 'Título do Toast',
-      message: 'Mensagem do Toast.',
-      type: 'info',
-      durationInMs: 5000,
-      onClose: () => {
-        console.log('Toast closed');
-      },
-    });
-    showToast({
-      title: 'Título do Toast',
-      message: 'Mensagem do Toast.',
-      type: 'warning',
-      durationInMs: 5000,
-      onClose: () => {
-        console.log('Toast closed');
-      },
-    });
-  };
-
-  return (
-    <ToastProvider>
-      <div>
-        <div style={{ paddingBottom: '16px' }}>
-          <Heading>Toast</Heading>
-          <Text>
-            Para utilizar o toast deve se implementar o <b>ToastProvider</b>.
-          </Text>
-          <Text>
-            E então utilizar o hook <b>useToast</b> e chamar a função{' '}
-            <b>showToast</b> com as propriedades definidas abaixo
-          </Text>
-        </div>
-        <Button onClick={handleButtonClick} label="Mostrar Toast" />
+  decorators: [
+    (Story) => (
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: 200,
+        }}
+      >
+        <Story />
       </div>
-    </ToastProvider>
-  );
+    ),
+  ],
 };
 
 export default meta;
+export const Default: StoryObj = {
+  args: {
+    title: 'Esse é o título do Toast',
+    message: 'Esse é o conteúdo do Toast',
+    type: 'success',
+    durationInMs: 200000,
+    position: 'top-right',
+    onClose: () => null,
+  },
+};

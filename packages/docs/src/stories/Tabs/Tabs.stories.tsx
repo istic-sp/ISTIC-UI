@@ -29,18 +29,21 @@ export default meta;
 export const Default: StoryObj = {
   args: {
     grow: true,
-    value: 1,
+    value: '1',
 
     tabs: [
       {
+        id: '1',
         title: 'Tab 1',
         iconProps: { iconName: 'add' },
       },
       {
+        id: '2',
         title: 'Tab 2',
         iconProps: { iconName: 'add' },
       },
       {
+        id: '3',
         title: 'Tab 3',
         iconProps: { iconName: 'add' },
       },

@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.20.2
+
+### Patch Changes
+
+- Update tabs component to use tab id instead of index
+
 ## 1.20.1
 
 ### Patch Changes

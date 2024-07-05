@@ -26,6 +26,7 @@ export interface DateInputProps {
   onDateChange?: (date?: string) => void;
   placeholder?: string;
   clearable?: boolean;
+  withAsterisk?: boolean;
   required?: boolean;
   disabled?: boolean;
   style?: StyleProps;
@@ -42,6 +43,7 @@ export const DateInput: React.FC<DateInputProps> = ({
   placeholder,
   clearable = false,
   required = false,
+  withAsterisk = false,
   disabled = false,
   style,
 }) => {
@@ -201,7 +203,7 @@ export const DateInput: React.FC<DateInputProps> = ({
       {label && (
         <label className={labelClasses} style={style?.label}>
           {label}
-          {required && <span className="text-error">*</span>}
+          {(required || withAsterisk) && <span className="text-error">*</span>}
         </label>
       )}
       <div className="relative">

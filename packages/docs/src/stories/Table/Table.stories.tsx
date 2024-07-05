@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { ActionIcon, Avatar, Table } from '@stick-ui/lib';
+import { ActionIcon, Avatar, DropdownMenu, Table } from '@stick-ui/lib';
 
 Avatar.displayName = 'Avatar';
 
@@ -9,7 +9,15 @@ const meta: Meta<typeof Table> = {
   component: Table,
   tags: ['autodocs'],
   argTypes: {
-
+    minHeight: {
+      control: {
+        type: 'number',
+      },
+      description: 'Min-height of the tbody',
+      table: {
+        defaultValue: { summary: 'undefined' },
+      },
+    },
     height: {
       control: {
         type: 'number',
@@ -39,6 +47,8 @@ export default meta;
 export const Default: StoryObj = {
   args: {
     isLoading: false,
+    minHeight: 300,
+    height: 100,
     pagination: {
       total: 10,
       pageCurrent: 6,
@@ -74,7 +84,30 @@ export const Default: StoryObj = {
         label: '',
         width: '30px',
         render: () => {
-          return <ActionIcon variant="subtle" iconName="settings" size="xs" />;
+          return (
+            <DropdownMenu
+              mainItem={
+                <ActionIcon variant="subtle" iconName="settings" size="xs" />
+              }
+              items={[
+                {
+                  iconName: 'account-circle',
+                  label: 'Profile',
+                  onClick: () => null,
+                },
+                {
+                  iconName: 'account-circle',
+                  label: 'Profile',
+                  onClick: () => null,
+                },
+                {
+                  iconName: 'account-circle',
+                  label: 'Profile',
+                  onClick: () => null,
+                },
+              ]}
+            />
+          );
         },
       },
     ],
@@ -87,7 +120,8 @@ export const Default: StoryObj = {
       },
       { name: 'Eduardo', age: 32, region: 'França' },
       { name: 'Eduardo', age: 32, region: 'França' },
+      { name: 'Eduardo', age: 32, region: 'França' },
+      { name: 'Eduardo', age: 32, region: 'França' },
     ],
-    height: undefined,
   },
 };

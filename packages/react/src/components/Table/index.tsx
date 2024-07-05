@@ -20,6 +20,7 @@ interface TableProps<T> {
   pagination?: PaginationProps;
   isLoading?: boolean;
   height?: string;
+  minHeight?: string;
 }
 
 export const Table = <T,>({
@@ -29,6 +30,7 @@ export const Table = <T,>({
   pagination,
   isLoading = false,
   height,
+  minHeight,
 }: TableProps<T>) => {
   const wrapperClasses = clsx(
     'flex items-start z-0 justify-center flex-col w-full',
@@ -37,7 +39,7 @@ export const Table = <T,>({
   const tableClasses = clsx('min-w-full table-fixed');
   const theadClasses = clsx(
     'text-xs font-default text-neutral700 border-t border-b border-neutral100 py-3 bg-white',
-    'sticky top-[-1px] z-10 shadow-sm bg-white'
+    'sticky top-[-1px] z-10 shadow-sm bg-white',
   );
   const theadThClasses = clsx('py-3 font-default font-regular');
   const tbodyTrClasses = clsx('border-b border-neutral100');
@@ -75,11 +77,11 @@ export const Table = <T,>({
 
   return (
     <div className={wrapperClasses}>
-      <div className={tableWrapperClasses}>
-        <div style={{ maxHeight: height, overflowY: 'auto' }}>
+      <div className={tableWrapperClasses} style={{}}>
+        <div style={{ maxHeight: height, minHeight: minHeight }}>
           <table className={tableClasses}>
             <thead>
-              <tr  className={theadClasses}>
+              <tr className={theadClasses}>
                 {columns.map((column, index) => (
                   <th
                     className={theadThClasses}

@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.20.3
+
+### Patch Changes
+
+- Add withAsterisk for Inputs
+
 ## 1.20.2
 
 ### Patch Changes

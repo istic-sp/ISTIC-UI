@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.20.4
+
+### Patch Changes
+
+- Add withAsterisk for DateInput
+
 ## 1.20.3
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.20.5
+
+### Patch Changes
+
+- Add min-height property to table
+
 ## 1.20.4
 
 ### Patch Changes

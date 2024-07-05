@@ -6,6 +6,7 @@ export interface TextAreaProps
   label?: string;
   grow?: boolean;
   width?: string;
+  withAsterisk?: boolean;
   error?: {
     description?: string;
   };
@@ -17,6 +18,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
       label,
       grow = true,
       disabled = false,
+      withAsterisk = false,
       required = false,
       width,
       error,
@@ -59,7 +61,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
         {label && (
           <label className={labelClasses}>
             {label}
-            {required && <p className="text-error">*</p>}
+            {(required || withAsterisk) && <p className="text-error">*</p>}
           </label>
         )}
         <textarea

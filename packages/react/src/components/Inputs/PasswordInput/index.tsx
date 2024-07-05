@@ -9,6 +9,7 @@ export interface PasswordInputProps
   size?: 'xs' | 'lg';
   grow?: boolean;
   disabled?: boolean;
+  withAsterisk?: boolean;
   required?: boolean;
   width?: string;
   error?: {
@@ -23,6 +24,7 @@ export const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
       size = 'xs',
       grow = true,
       disabled = false,
+      withAsterisk = false,
       required = false,
       width,
       error,
@@ -91,7 +93,7 @@ export const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
         {label && (
           <label className={labelClasses}>
             {label}
-            {required && <p className="text-error">*</p>}
+            {(required || withAsterisk) && <p className="text-error">*</p>}
           </label>
         )}
         <div className={inputAndIconWrapperClasses}>

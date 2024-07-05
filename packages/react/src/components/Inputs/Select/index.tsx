@@ -15,6 +15,7 @@ interface SelectProps {
   onSelect: (option?: { label: string; value: string }) => void;
   label?: string;
   grow?: boolean;
+  withAsterisk?: boolean;
   required?: boolean;
   disabled?: boolean;
   placeholder?: string;
@@ -38,6 +39,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
       placeholder,
       options = [],
       rightSection,
+      withAsterisk = false,
       required = false,
       searchable = false,
       clearable = false,
@@ -135,7 +137,9 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
       {
         'font-default font-regular text-neutral800 leading-text placeholder:text-neutral600':
           true,
-        'border-neutral400': true,
+        [error?.description
+          ? 'border-error'
+          : 'border-neutral400 focus:border-brand500']: true,
         'bg-neutral100': disabled,
         'bg-white': !disabled,
         'text-sm h-[44px]': true,
@@ -174,7 +178,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
         {label && (
           <label className={labelClasses}>
             {label}
-            {required && <p className="text-error">*</p>}
+            {(required || withAsterisk) && <p className="text-error">*</p>}
           </label>
         )}
         <div className={inputWrapperClasses}>

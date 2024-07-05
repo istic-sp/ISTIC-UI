@@ -7,6 +7,7 @@ export interface TextInputProps
   size?: 'xs' | 'lg';
   grow?: boolean;
   width?: string;
+  withAsterisk?: boolean;
   error?: {
     description?: string;
   };
@@ -18,6 +19,7 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
       size = 'xs',
       grow = true,
       disabled = false,
+      withAsterisk = false,
       required = false,
       width,
       error,
@@ -65,7 +67,7 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
         {label && (
           <label className={labelClasses}>
             {label}
-            {required && <p className="text-error">*</p>}
+            {(required || withAsterisk) && <p className="text-error">*</p>}
           </label>
         )}
         <input

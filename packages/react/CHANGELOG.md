@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.21.0
+
+### Minor Changes
+
+- Create NumberInput component
+
 ## 1.20.5
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.21.1
+
+### Patch Changes
+
+- Update NumberInput to handle decimal separator correctly
+
 ## 1.21.0
 
 ### Minor Changes

@@ -1,6 +1,7 @@
 import React, {
   forwardRef,
   useState,
+  useEffect,
   ChangeEvent,
   InputHTMLAttributes,
 } from 'react';
@@ -44,6 +45,14 @@ export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
         ? value.toString().replace('.', decimalSeparator)
         : '',
     );
+
+    useEffect(() => {
+      if (value !== undefined) {
+        setInputValue(value.toString().replace('.', decimalSeparator));
+      } else {
+        setInputValue('');
+      }
+    }, [value, decimalSeparator]);
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
       const rawValue = event.target.value;

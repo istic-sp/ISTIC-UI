@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Modal, NumberInput, TextInput } from '@stick-ui/lib';
+import { Button, Modal, TextInput } from '@stick-ui/lib';
 import { Meta } from '@storybook/react';
 
 Modal.displayName = 'Modal';
@@ -46,18 +46,10 @@ const meta: Meta<typeof Modal> = {
 };
 export const Default = () => {
   const [openModal, setOpenModal] = useState(false);
-  const [value, setValue] = useState<number | undefined>(232.22);
   return (
     <>
       <Button label="Open Modal" onClick={() => setOpenModal(true)} />
-      <NumberInput
-        value={value}
-        decimalSeparator="."
-        onChange={(value) => {
-          console.log(value);
-          setValue(value);
-        }}
-      />
+
       <Modal
         contentWidth={300}
         isOpen={openModal}

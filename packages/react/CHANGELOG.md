@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.22.0
+
+### Minor Changes
+
+- Create Tooltip component
+
 ## 1.21.1
 
 ### Patch Changes

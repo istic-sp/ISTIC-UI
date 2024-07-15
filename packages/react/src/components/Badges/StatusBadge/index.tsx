@@ -19,13 +19,13 @@ export const StatusBadge = ({
       true,
     ['text-sm font-default font-regular']: true,
     ['bg-success text-success']: isActive,
-    ['bg-error text-error']: !isActive,
+    ['bg-neutral600 text-neutral600']: !isActive,
     ['w-full flex flex-row items-center justify-center']: grow,
   });
   const ellipsisClasses = clsx({
     ['w-[5px] h-[5px] rounded-full']: true,
     ['bg-success']: isActive,
-    ['bg-error']: !isActive,
+    ['bg-neutral600']: !isActive,
   });
 
   return (

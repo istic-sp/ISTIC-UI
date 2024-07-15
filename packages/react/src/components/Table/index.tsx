@@ -47,10 +47,10 @@ export const Table = <T,>({
     'text-sm font-default font-regular text-neutral700 py-5',
   );
   const noDataClasses = clsx(
-    'w-full flex flex-col items-center justify-center py-24',
+    'w-full flex flex-col items-center justify-center',
   );
   const loadingClasses = clsx(
-    'w-full flex flex-col items-center justify-center py-24',
+    'w-full flex flex-col items-center justify-center',
   );
 
   const generateCellStyle = (

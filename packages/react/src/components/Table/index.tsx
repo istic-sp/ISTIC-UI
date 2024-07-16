@@ -47,10 +47,10 @@ export const Table = <T,>({
     'text-sm font-default font-regular text-neutral700 py-5',
   );
   const noDataClasses = clsx(
-    'w-full flex flex-col items-center justify-center',
+    'w-full flex flex-col items-center justify-center py-12',
   );
   const loadingClasses = clsx(
-    'w-full flex flex-col items-center justify-center',
+    'w-full flex flex-col items-center justify-center py-12',
   );
 
   const generateCellStyle = (
@@ -109,44 +109,44 @@ export const Table = <T,>({
               ))}
             </tbody>
           </table>
+          {isLoading && (
+            <div className={loadingClasses}>
+              <Loader size="xl" width="slim" color="border-brand500" />
+            </div>
+          )}
+          {isEmpty && !isLoading && (
+            <div className={noDataClasses}>
+              {emptyValues?.icon ?? (
+                <Icon size={48} color="text-brand500" name="inbox-2" />
+              )}
+              <Text
+                color="text-neutral800"
+                weight="regular"
+                size="lg"
+                style={{
+                  textAlign: 'center',
+                }}
+              >
+                {emptyValues?.title ?? 'There is no added items'}
+              </Text>
+              <Text
+                color="text-neutral600"
+                weight="regular"
+                size="sm"
+                style={{
+                  textAlign: 'center',
+                }}
+              >
+                {emptyValues?.subTitle}
+              </Text>
+            </div>
+          )}
         </div>
       </div>
-      {isLoading && (
-        <div className={loadingClasses}>
-          <Loader size="xl" width="slim" color="border-brand500" />
-        </div>
-      )}
+
       {!isEmpty && !isLoading && pagination && (
         <div className="flex items-center justify-center w-full pt-4">
           <Pagination pagination={pagination} />
-        </div>
-      )}
-
-      {isEmpty && !isLoading && (
-        <div className={noDataClasses}>
-          {emptyValues?.icon ?? (
-            <Icon size={48} color="text-brand500" name="inbox-2" />
-          )}
-          <Text
-            color="text-neutral800"
-            weight="regular"
-            size="lg"
-            style={{
-              textAlign: 'center',
-            }}
-          >
-            {emptyValues?.title ?? 'There is no added items'}
-          </Text>
-          <Text
-            color="text-neutral600"
-            weight="regular"
-            size="sm"
-            style={{
-              textAlign: 'center',
-            }}
-          >
-            {emptyValues?.subTitle}
-          </Text>
         </div>
       )}
     </div>

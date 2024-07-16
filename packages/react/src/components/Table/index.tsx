@@ -47,10 +47,10 @@ export const Table = <T,>({
     'text-sm font-default font-regular text-neutral700 py-5',
   );
   const noDataClasses = clsx(
-    'w-full flex flex-col items-center justify-center py-12',
+    'w-full h-full flex flex-col items-center justify-center',
   );
   const loadingClasses = clsx(
-    'w-full flex flex-col items-center justify-center py-12',
+    'w-full h-full flex flex-col items-center justify-center',
   );
 
   const generateCellStyle = (
@@ -74,11 +74,14 @@ export const Table = <T,>({
   };
 
   const isEmpty = data?.length <= 0;
-
+  const isEmptyAndNotLoading = isEmpty && !isLoading;
+  const shouldDisplayEmptyOrLoadingState = isEmptyAndNotLoading || isLoading;
   return (
     <div className={wrapperClasses}>
       <div className={tableWrapperClasses} style={{}}>
-        <div style={{ maxHeight: height, minHeight: minHeight }}>
+        <div
+          style={{ maxHeight: height, minHeight: minHeight, height: minHeight }}
+        >
           <table className={tableClasses}>
             <thead>
               <tr className={theadClasses}>
@@ -109,36 +112,40 @@ export const Table = <T,>({
               ))}
             </tbody>
           </table>
-          {isLoading && (
-            <div className={loadingClasses}>
-              <Loader size="xl" width="slim" color="border-brand500" />
-            </div>
-          )}
-          {isEmpty && !isLoading && (
-            <div className={noDataClasses}>
-              {emptyValues?.icon ?? (
-                <Icon size={48} color="text-brand500" name="inbox-2" />
+          {shouldDisplayEmptyOrLoadingState && (
+            <div className="h-full flex flex-col items-center justify-center">
+              {isLoading && (
+                <div className={loadingClasses}>
+                  <Loader size="xl" width="slim" color="border-brand500" />
+                </div>
               )}
-              <Text
-                color="text-neutral800"
-                weight="regular"
-                size="lg"
-                style={{
-                  textAlign: 'center',
-                }}
-              >
-                {emptyValues?.title ?? 'There is no added items'}
-              </Text>
-              <Text
-                color="text-neutral600"
-                weight="regular"
-                size="sm"
-                style={{
-                  textAlign: 'center',
-                }}
-              >
-                {emptyValues?.subTitle}
-              </Text>
+              {isEmpty && !isLoading && (
+                <div className={noDataClasses}>
+                  {emptyValues?.icon ?? (
+                    <Icon size={48} color="text-brand500" name="inbox-2" />
+                  )}
+                  <Text
+                    color="text-neutral800"
+                    weight="regular"
+                    size="lg"
+                    style={{
+                      textAlign: 'center',
+                    }}
+                  >
+                    {emptyValues?.title ?? 'There is no added items'}
+                  </Text>
+                  <Text
+                    color="text-neutral600"
+                    weight="regular"
+                    size="sm"
+                    style={{
+                      textAlign: 'center',
+                    }}
+                  >
+                    {emptyValues?.subTitle}
+                  </Text>
+                </div>
+              )}
             </div>
           )}
         </div>

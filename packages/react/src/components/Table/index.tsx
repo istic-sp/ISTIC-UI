@@ -103,7 +103,7 @@ export const Table = <T,>({
                     <td
                       className={tbodyTdClasses}
                       style={generateCellStyle(column, colIndex)}
-                      key={colIndex}
+                      key={String(rowIndex) + String(colIndex)}
                     >
                       {column.render ? column.render(row) : row[column.index]}
                     </td>

@@ -60,7 +60,7 @@ const Pagination: React.FC<IPagination> = ({ pagination }) => {
         return (
           <>
             <PaginationButton
-              key={index}
+              key={String(index) + String(page)}
               active={page === pageCurrent}
               label={page.toString()}
               onClick={() => handlePageChange(page)}

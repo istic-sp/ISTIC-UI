@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.22.2
+
+### Patch Changes
+
+- Adjust table height style
+
 ## 1.22.1
 
 ### Patch Changes

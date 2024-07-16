@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.22.1
+
+### Patch Changes
+
+- Adjust table loading and noData style
+
 ## 1.22.0
 
 ### Minor Changes

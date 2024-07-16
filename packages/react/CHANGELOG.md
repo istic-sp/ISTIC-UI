@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.22.3
+
+### Patch Changes
+
+- Adjust table maps index error
+
 ## 1.22.2
 
 ### Patch Changes

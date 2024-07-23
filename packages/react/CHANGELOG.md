@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.22.4
+
+### Patch Changes
+
+- Transform Chip in a controlled component
+
 ## 1.22.3
 
 ### Patch Changes

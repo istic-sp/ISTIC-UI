@@ -46,6 +46,9 @@ const meta: Meta<typeof Chip> = {
 export default meta;
 export const Default: StoryObj = {
   args: {
+    active: true,
+    checkIcon: true,
+    disabled: false,
     label: 'Chip',
     questionTooltip: { title: 'Title Example', children: <p>Text Example</p> },
   },

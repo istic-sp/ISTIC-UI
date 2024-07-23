@@ -6,11 +6,13 @@ import { ChipTooltip, ChipTooltipProps } from './ChipTooltip';
 
 export interface ChipProps {
   label: string;
+  active: boolean;
   value: string;
   variant?: 'filled' | 'outline';
   questionTooltip?: ChipTooltipProps;
   checkIcon?: boolean;
   badge?: number;
+  disabled?: boolean;
   onClick?: (value: string | null) => void;
 }
 
@@ -21,32 +23,33 @@ export const Chip: React.FC<ChipProps> = ({
   badge,
   questionTooltip,
   checkIcon = true,
+  active,
   onClick,
+  disabled,
 }) => {
-  const [isActive, setIsActive] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
 
   const iconColor =
     variant === 'filled'
-      ? isActive
+      ? active
         ? 'text-white'
         : 'text-neutral600'
-      : isActive
+      : active
         ? 'text-brand500'
         : 'text-neutral600';
 
   const filledChipClasses = clsx({
-    ['bg-brand500 text-white']: isActive,
-    ['bg-neutral0 text-neutral600']: !isActive,
+    ['bg-brand500 text-white']: active,
+    ['bg-neutral0 text-neutral600']: !active,
   });
 
   const outlineChipClasses = clsx({
-    ['border-solid border border-brand500 text-brand500']: isActive,
-    ['border-solid border border-neutral300 text-neutral600']: !isActive,
+    ['border-solid border border-brand500 text-brand500']: active,
+    ['border-solid border border-neutral300 text-neutral600']: !active,
   });
 
   const chipClasses = clsx({
-    ['px-2 py-1 rounded-full cursor-pointer text-sm']: true,
+    ['px-2 py-1 rounded-full text-sm']: true,
     ['flex items-center justify-between gap-2']: true,
     ['select-none']: true,
     ['z-0']: true,
@@ -54,8 +57,10 @@ export const Chip: React.FC<ChipProps> = ({
     ['whitespace-nowrap']: true,
     [filledChipClasses]: variant === 'filled',
     [outlineChipClasses]: variant === 'outline',
-    ['animate-chipScaleRight']: isActive && checkIcon,
+    ['animate-chipScaleRight']: active && checkIcon,
     ['transfrom-all ease-in-out duration-300']: true,
+    ['cursor-pointer']: !disabled,
+    ['cursor-default']: disabled,
   });
 
   return (
@@ -63,23 +68,28 @@ export const Chip: React.FC<ChipProps> = ({
       <div
         className={chipClasses}
         onClick={() => {
-          onClick && onClick(!isActive ? value : null);
-          setIsActive(!isActive);
+          disabled ? null : onClick && onClick(!active ? value : null);
         }}
       >
-        {isActive && checkIcon && (
+        {active && checkIcon && (
           <div className={'animate-chipFadeIn'}>
             <Icon name="check" color={iconColor} />
           </div>
         )}
         {label !== '' ? (
-          <label className="cursor-pointer">{label}</label>
+          <label className={disabled ? 'cursor-default' : 'cursor-pointer'}>
+            {label}
+          </label>
         ) : null}
         {questionTooltip && (
           <div
             onMouseEnter={() => setShowTooltip(true)}
             onMouseLeave={() => setShowTooltip(false)}
-            className="cursor-pointer h-full flex items-center justify-center"
+            className={
+              disabled
+                ? 'cursor-default'
+                : 'cursor-pointer h-full flex items-center justify-center'
+            }
           >
             <Icon name="question" color={iconColor} />
           </div>

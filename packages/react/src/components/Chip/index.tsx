@@ -1,8 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import clsx from 'clsx';
 import { Icon } from '../Icons';
 import { Text } from '../Typography/Text';
-import { ChipTooltip, ChipTooltipProps } from './ChipTooltip';
+import { Tooltip } from '../Tooltip';
+import { Heading } from '../Typography/Heading';
+export interface ChipTooltipProps {
+  children: React.ReactNode;
+  title: string;
+  position?: 'left' | 'right';
+  align?: 'top' | 'bottom' | 'center';
+}
 
 export interface ChipProps {
   label: string;
@@ -27,8 +34,6 @@ export const Chip: React.FC<ChipProps> = ({
   onClick,
   disabled,
 }) => {
-  const [showTooltip, setShowTooltip] = useState(false);
-
   const iconColor =
     variant === 'filled'
       ? active
@@ -62,7 +67,7 @@ export const Chip: React.FC<ChipProps> = ({
     ['cursor-pointer']: !disabled,
     ['cursor-default']: disabled,
   });
-
+  const showTooltip = !!questionTooltip?.title || !!questionTooltip?.children;
   return (
     <div className="relative">
       <div
@@ -81,19 +86,26 @@ export const Chip: React.FC<ChipProps> = ({
             {label}
           </label>
         ) : null}
-        {questionTooltip && (
-          <div
-            onMouseEnter={() => setShowTooltip(true)}
-            onMouseLeave={() => setShowTooltip(false)}
-            className={
-              disabled
-                ? 'cursor-default'
-                : 'cursor-pointer h-full flex items-center justify-center'
+
+        {showTooltip && (
+          <Tooltip
+            align={questionTooltip.align || 'top'}
+            position={questionTooltip.position || 'right'}
+            onHoverItem={
+              <div className="animate-chipFadeIn flex flex-col gap-2 w-96 whitespace-normal bg-white text-neutral700 text-sm shadow-sm rounded-lg p-6">
+                <Heading level="h5" weight="bold" color="text-neutral800">
+                  {questionTooltip?.title}
+                </Heading>
+                {questionTooltip?.children}
+              </div>
             }
           >
-            <Icon name="question" color={iconColor} />
-          </div>
+            <div>
+              <Icon name="question" color={iconColor} />
+            </div>
+          </Tooltip>
         )}
+
         {badge != undefined ? (
           badge > -1 ? (
             <div className="rounded-full bg-error flex items-center justify-center px-[5px]">
@@ -104,11 +116,6 @@ export const Chip: React.FC<ChipProps> = ({
           ) : null
         ) : null}
       </div>
-      {showTooltip && (
-        <ChipTooltip title={questionTooltip?.title ?? ''}>
-          {questionTooltip?.children}
-        </ChipTooltip>
-      )}
     </div>
   );
 };

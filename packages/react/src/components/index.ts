@@ -36,7 +36,6 @@ export { DropdownMenu, DropdownMenuProps } from './DropdownMenu';
 export { Checkbox, CheckboxProps } from './Checkbox';
 export { Radio, RadioProps } from './Radio/Radio';
 export { Tabs, Tab, TabsProps } from './Tabs';
-export { ChipTooltip, ChipTooltipProps } from './Chip/ChipTooltip';
 export { Accordion, AccordionProps } from './Accordion';
 export { Toast, ToastProps } from './Toast';
 export { Tooltip, TooltipProps } from './Tooltip';

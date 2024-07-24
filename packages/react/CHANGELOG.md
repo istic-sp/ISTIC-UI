@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.22.5
+
+### Patch Changes
+
+- Update Chip component Tooltip
+
 ## 1.22.4
 
 ### Patch Changes

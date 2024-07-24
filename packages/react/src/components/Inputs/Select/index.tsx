@@ -25,6 +25,7 @@ interface SelectProps {
   };
   rightSection?: React.ReactNode;
   searchable?: boolean;
+  filterBySearchable?: boolean;
   clearable?: boolean;
   defaultValue?: string;
   isLoading?: boolean;
@@ -43,6 +44,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
       withAsterisk = false,
       required = false,
       searchable = false,
+      filterBySearchable = true,
       clearable = false,
       onSelect,
       onType,
@@ -108,11 +110,12 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
       setShowOptions(false);
     };
 
-    const filteredOptions = searchable
-      ? options.filter((option) =>
-          option.label.toLowerCase().includes(searchQuery.toLowerCase()),
-        )
-      : options;
+    const filteredOptions =
+      searchable && filterBySearchable
+        ? options.filter((option) =>
+            option.label.toLowerCase().includes(searchQuery.toLowerCase()),
+          )
+        : options;
 
     const wrapperClasses = clsx('relative flex flex-col gap-1', {
       'w-full': grow,

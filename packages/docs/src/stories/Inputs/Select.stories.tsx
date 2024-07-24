@@ -57,8 +57,10 @@ const meta: Meta<typeof Select> = {
 export default meta;
 export const Default: StoryObj = {
   args: {
-    searchable: false,
+    searchable: true,
     clearable: false,
+    onType: (a) => console.log(a),
+    filterBySearchable: false,
     label: 'label',
     placeholder: 'Text here',
     grow: true,

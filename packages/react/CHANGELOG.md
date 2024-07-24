@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.22.6
+
+### Patch Changes
+
+- Add onType property to SelectInput
+
 ## 1.22.5
 
 ### Patch Changes

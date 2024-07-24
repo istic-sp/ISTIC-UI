@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.22.7
+
+### Patch Changes
+
+- Add filterBySearchable property in Select component
+
 ## 1.22.6
 
 ### Patch Changes

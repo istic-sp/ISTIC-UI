@@ -13,6 +13,7 @@ interface Option {
 interface SelectProps {
   options: Option[];
   onSelect: (option?: { label: string; value: string }) => void;
+  onType?: (value: string) => void;
   label?: string;
   grow?: boolean;
   withAsterisk?: boolean;
@@ -44,6 +45,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
       searchable = false,
       clearable = false,
       onSelect,
+      onType,
       error,
       defaultValue,
       isLoading,
@@ -84,6 +86,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
     };
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      onType?.(event.target.value);
       setSearchQuery(event.target.value);
     };
 

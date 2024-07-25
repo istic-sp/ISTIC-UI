@@ -13,7 +13,7 @@ interface DropdownMenuItem {
   iconName: keyof typeof icons;
   onClick: () => void;
   disabled?: boolean;
-  id: string; // Adicionando a propriedade id
+  id: string;
 }
 
 interface DropdownMenuProps {
@@ -72,7 +72,7 @@ const DropdownMenu = ({
               className={buttonClasses}
               disabled={item.disabled}
               onClick={item.onClick}
-              id={item.id} // Adicionando a propriedade id ao botão
+              id={item.id}
             >
               <Icon name={item.iconName} color="inherit" />
               <div className="whitespace-nowrap overflow-hidden">

@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.22.9
+
+### Patch Changes
+
+- Add ids for dropdown menu items
+
 ## 1.22.8
 
 ### Patch Changes

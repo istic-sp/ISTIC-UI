@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.22.8
+
+### Patch Changes
+
+- Adjust Select options to be changeable and Update Chip component Tooltip
+
 ## 1.22.7
 
 ### Patch Changes

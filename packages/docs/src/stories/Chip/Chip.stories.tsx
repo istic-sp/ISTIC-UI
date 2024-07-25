@@ -38,6 +38,9 @@ const meta: Meta<typeof Chip> = {
         }}
       >
         <Story />
+        <Story />
+        <Story />
+        <Story />
       </div>
     ),
   ],
@@ -50,6 +53,15 @@ export const Default: StoryObj = {
     checkIcon: true,
     disabled: false,
     label: 'Chip',
-    questionTooltip: { title: 'Title Example', children: <p>Text Example</p> },
+    questionTooltip: {
+      title: 'Title Example',
+      children: (
+        <div className="bg-white text-neutral700 text-sm shadow-sm rounded-lg p-2">
+          Text Example
+        </div>
+      ),
+      position: 'right',
+      align: 'center',
+    },
   },
 };

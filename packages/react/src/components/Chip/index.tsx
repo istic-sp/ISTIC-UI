@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import clsx from 'clsx';
 import { Icon } from '../Icons';
 import { Text } from '../Typography/Text';
-import { Tooltip } from '../Tooltip';
-import { Heading } from '../Typography/Heading';
+
 export interface ChipTooltipProps {
   children: React.ReactNode;
   title: string;
@@ -34,6 +33,8 @@ export const Chip: React.FC<ChipProps> = ({
   onClick,
   disabled,
 }) => {
+  const [showTooltip, setShowTooltip] = useState(false);
+
   const iconColor =
     variant === 'filled'
       ? active
@@ -57,65 +58,69 @@ export const Chip: React.FC<ChipProps> = ({
     ['px-2 py-1 rounded-full text-sm']: true,
     ['flex items-center justify-between gap-2']: true,
     ['select-none']: true,
-    ['z-0']: true,
-    ['relative']: true,
     ['whitespace-nowrap']: true,
     [filledChipClasses]: variant === 'filled',
     [outlineChipClasses]: variant === 'outline',
-    ['animate-chipScaleRight']: active && checkIcon,
-    ['transfrom-all ease-in-out duration-300']: true,
     ['cursor-pointer']: !disabled,
     ['cursor-default']: disabled,
   });
-  const showTooltip = !!questionTooltip?.title || !!questionTooltip?.children;
+
+  // Tooltip positioning
+  const tooltipPositionClasses = clsx({
+    // Common tooltip styles
+    ['absolute']: true,
+    // Position based on the 'position' prop
+    ['left-full ml-2']: questionTooltip?.position === 'left',
+    ['right-full mr-2']: questionTooltip?.position === 'right',
+    // Vertical alignment based on the 'align' prop
+    ['top-1/2 transform -translate-y-1/2']: questionTooltip?.align === 'center',
+    ['bottom-full mt-2']: questionTooltip?.align === 'top',
+    ['top-full mb-2']: questionTooltip?.align === 'bottom',
+  });
+
   return (
-    <div className="relative">
-      <div
-        className={chipClasses}
-        onClick={() => {
-          disabled ? null : onClick && onClick(!active ? value : null);
-        }}
-      >
-        {active && checkIcon && (
-          <div className={'animate-chipFadeIn'}>
-            <Icon name="check" color={iconColor} />
+    <div
+      className={chipClasses}
+      onClick={() => {
+        if (!disabled) onClick && onClick(!active ? value : null);
+      }}
+    >
+      {active && checkIcon && (
+        <div className={'animate-chipFadeIn'}>
+          <Icon name="check" color={iconColor} />
+        </div>
+      )}
+      {label !== '' ? (
+        <label className={disabled ? 'cursor-default' : 'cursor-pointer'}>
+          {label}
+        </label>
+      ) : null}
+
+      {questionTooltip && (
+        <div
+          className="relative flex items-center" // Apply relative positioning here
+          onMouseEnter={() => setShowTooltip(true)}
+          onMouseLeave={() => setShowTooltip(false)}
+        >
+          <Icon name="question" color={iconColor} />
+
+          {showTooltip && (
+            <div className={tooltipPositionClasses}>
+              {questionTooltip.children}
+            </div>
+          )}
+        </div>
+      )}
+
+      {badge != undefined ? (
+        badge > -1 ? (
+          <div className="rounded-full bg-error flex items-center justify-center px-[5px]">
+            <Text size="xs" color="text-white">
+              {badge}
+            </Text>
           </div>
-        )}
-        {label !== '' ? (
-          <label className={disabled ? 'cursor-default' : 'cursor-pointer'}>
-            {label}
-          </label>
-        ) : null}
-
-        {showTooltip && (
-          <Tooltip
-            align={questionTooltip.align || 'top'}
-            position={questionTooltip.position || 'right'}
-            onHoverItem={
-              <div className="animate-chipFadeIn flex flex-col gap-2 w-96 whitespace-normal bg-white text-neutral700 text-sm shadow-sm rounded-lg p-6">
-                <Heading level="h5" weight="bold" color="text-neutral800">
-                  {questionTooltip?.title}
-                </Heading>
-                {questionTooltip?.children}
-              </div>
-            }
-          >
-            <div>
-              <Icon name="question" color={iconColor} />
-            </div>
-          </Tooltip>
-        )}
-
-        {badge != undefined ? (
-          badge > -1 ? (
-            <div className="rounded-full bg-error flex items-center justify-center px-[5px]">
-              <Text size="xs" color="text-white">
-                {badge}
-              </Text>
-            </div>
-          ) : null
-        ) : null}
-      </div>
+        ) : null
+      ) : null}
     </div>
   );
 };

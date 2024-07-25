@@ -76,7 +76,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
 
     useEffect(() => {
       setSearchQuery(getDefaultLabel(defaultValue));
-    }, [defaultValue, options]);
+    }, [defaultValue]);
 
     const handleClickOutside = (event: MouseEvent) => {
       if (

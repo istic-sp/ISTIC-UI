@@ -7,7 +7,7 @@ import React, {
 } from 'react';
 import clsx from 'clsx';
 
-export interface NumberInputProps
+interface NumberInputProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'onChange'> {
   label?: string;
   size?: 'xs' | 'lg';
@@ -22,7 +22,7 @@ export interface NumberInputProps
   decimalSeparator?: '.' | ',';
 }
 
-export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
+const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
   (
     {
       label,
@@ -141,3 +141,5 @@ export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
 );
 
 NumberInput.displayName = 'NumberInput';
+
+export { NumberInput, NumberInputProps };

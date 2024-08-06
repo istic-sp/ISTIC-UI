@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { Icon, icons } from '../../Icons';
 import { Loader } from '../../Loader';
 
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   label?: string;
   variant?: 'filled' | 'outline' | 'subtle' | 'light';
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
@@ -12,7 +12,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   grow?: boolean;
 }
 
-export const Button = ({
+const Button = ({
   label,
   variant = 'filled',
   size = 'md',
@@ -134,3 +134,4 @@ export const Button = ({
   );
 };
 Button.displayName = 'Button';
+export { Button, ButtonProps };

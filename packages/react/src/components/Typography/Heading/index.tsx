@@ -1,14 +1,14 @@
 import React, { type ButtonHTMLAttributes, type ReactNode } from 'react';
 import clsx from 'clsx';
 
-export interface HeadingProps extends ButtonHTMLAttributes<HTMLHeadingElement> {
+interface HeadingProps extends ButtonHTMLAttributes<HTMLHeadingElement> {
   children: ReactNode;
   color?: string;
   level?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
   weight?: 'regular' | 'medium' | 'bold';
 }
 
-export const Heading = ({
+const Heading = ({
   level = 'h1',
   color = 'text-neutral700',
   weight = 'regular',
@@ -32,3 +32,4 @@ export const Heading = ({
   return <ElementType {...rest} className={headingClasses} />;
 };
 Heading.displayName = 'Heading';
+export { Heading, HeadingProps };

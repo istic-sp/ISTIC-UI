@@ -2,26 +2,21 @@ import clsx from 'clsx';
 import React from 'react';
 import { Icon, icons } from '../Icons';
 
-export interface Tab {
+interface Tab {
   id: string;
   title: string;
   iconProps: { iconName: keyof typeof icons };
   width?: string;
 }
 
-export interface TabsProps {
+interface TabsProps {
   tabs: Tab[];
   grow?: boolean;
   value: string;
   onChange: (newActiveTabId: string) => void;
 }
 
-export const Tabs: React.FC<TabsProps> = ({
-  tabs,
-  grow = true,
-  value,
-  onChange,
-}) => {
+const Tabs: React.FC<TabsProps> = ({ tabs, grow = true, value, onChange }) => {
   const tabsContainerClasses = clsx({
     [`w-full grid grid-flow-col auto-cols-fr`]: grow,
     ['flex']: !grow,
@@ -72,3 +67,6 @@ export const Tabs: React.FC<TabsProps> = ({
     </div>
   );
 };
+
+Tabs.displayName = 'Tabs';
+export { Tabs, Tab, TabsProps };

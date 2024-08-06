@@ -2,21 +2,21 @@ import React, { ReactElement, type ReactNode } from 'react';
 import clsx from 'clsx';
 import { Text } from '../Typography/Text';
 
-export interface NavSubItem {
+interface NavSubItem {
   label: string;
   path: string;
   icon: ReactElement;
   notification?: number;
 }
 
-export interface NavItem {
+interface NavItem {
   title: string;
   subItems: NavSubItem[];
 }
 interface SubNav extends NavItem {
   activeItem: string;
 }
-export interface SideBarProps {
+interface SideBarProps {
   logo: ReactNode;
   activeItem: string;
   items: NavItem[];
@@ -73,7 +73,7 @@ const NavLink = ({
   );
 };
 
-export const SideBar = ({
+const SideBar = ({
   logo,
   items,
   footer,
@@ -107,4 +107,4 @@ export const SideBar = ({
 };
 SideBar.displayName = 'SideBar';
 
-export default SideBar;
+export { SideBar, SideBarProps, NavItem, NavSubItem };

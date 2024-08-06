@@ -108,4 +108,4 @@ const DropdownMenu = ({
 };
 DropdownMenu.displayName = 'DropdownMenu';
 
-export { DropdownMenu, DropdownMenuProps };
+export { DropdownMenu, DropdownMenuItem, DropdownMenuProps };

@@ -3,14 +3,14 @@ import clsx from 'clsx';
 import { Icon } from '../Icons';
 import { Text } from '../Typography/Text';
 
-export interface ChipTooltipProps {
+interface ChipTooltipProps {
   children: React.ReactNode;
   title: string;
   position?: 'left' | 'right';
   align?: 'top' | 'bottom' | 'center';
 }
 
-export interface ChipProps {
+interface ChipProps {
   label: string;
   active: boolean;
   value: string;
@@ -22,7 +22,7 @@ export interface ChipProps {
   onClick?: (value: string | null) => void;
 }
 
-export const Chip: React.FC<ChipProps> = ({
+const Chip: React.FC<ChipProps> = ({
   label,
   value,
   variant = 'filled',
@@ -124,3 +124,6 @@ export const Chip: React.FC<ChipProps> = ({
     </div>
   );
 };
+
+Chip.displayName = 'Chip';
+export { Chip, ChipProps, ChipTooltipProps };

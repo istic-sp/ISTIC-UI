@@ -1,14 +1,13 @@
 import React, { type ButtonHTMLAttributes } from 'react';
 import clsx from 'clsx';
 import { Icon, icons } from '../../Icons';
-export interface ActionIconProps
-  extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface ActionIconProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'filled' | 'outline' | 'subtle' | 'light';
   size?: 'xs' | 'lg';
   iconName: keyof typeof icons;
 }
 
-export const ActionIcon = ({
+const ActionIcon = ({
   variant = 'filled',
   size = 'xs',
   disabled = false,
@@ -56,3 +55,5 @@ export const ActionIcon = ({
   );
 };
 ActionIcon.displayName = 'ActionIcon';
+
+export { ActionIcon, ActionIconProps };

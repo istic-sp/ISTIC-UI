@@ -5,7 +5,7 @@ import { Icon } from '../Icons';
 import { Pagination, PaginationProps } from './Pagination';
 import { Loader } from '../Loader';
 
-export interface TableColumn<T> {
+interface TableColumn<T> {
   index: string;
   label: string;
   width?: string;
@@ -23,7 +23,7 @@ interface TableProps<T> {
   minHeight?: string;
 }
 
-export const Table = <T,>({
+const Table = <T,>({
   columns,
   data,
   emptyValues,
@@ -160,3 +160,4 @@ export const Table = <T,>({
   );
 };
 Table.displayName = 'Table';
+export { Table, TableProps, TableColumn };

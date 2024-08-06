@@ -9,7 +9,7 @@ interface StyleProps {
   content?: React.CSSProperties;
 }
 
-export interface AccordionProps {
+interface AccordionProps {
   title: string;
   children: React.ReactNode;
   open?: boolean;
@@ -18,7 +18,7 @@ export interface AccordionProps {
   grow?: boolean;
 }
 
-export const Accordion: React.FC<AccordionProps> = ({
+const Accordion: React.FC<AccordionProps> = ({
   title,
   children,
   open: controlledOpen,
@@ -77,3 +77,5 @@ export const Accordion: React.FC<AccordionProps> = ({
   );
 };
 Accordion.displayName = 'Accordion';
+
+export { Accordion, AccordionProps };

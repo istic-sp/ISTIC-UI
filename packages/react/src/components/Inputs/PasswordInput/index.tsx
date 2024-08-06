@@ -3,7 +3,7 @@ import clsx from 'clsx';
 
 import { RiEyeLine, RiEyeCloseLine } from 'react-icons/ri';
 
-export interface PasswordInputProps
+interface PasswordInputProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
   label?: string;
   size?: 'xs' | 'lg';
@@ -17,7 +17,7 @@ export interface PasswordInputProps
   };
 }
 
-export const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
+const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
   (
     {
       label,
@@ -128,3 +128,5 @@ export const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
     );
   },
 );
+PasswordInput.displayName = 'PasswordInput';
+export { PasswordInput, PasswordInputProps };

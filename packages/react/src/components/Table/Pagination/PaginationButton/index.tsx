@@ -50,4 +50,5 @@ const PaginationButton: React.FC<PaginationButtonProps> = ({
   );
 };
 
-export { PaginationButton };
+PaginationButton.displayName = 'PaginationButton';
+export { PaginationButton, PaginationButtonProps };

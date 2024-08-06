@@ -2,12 +2,12 @@ import React from 'react';
 import clsx from 'clsx';
 import { Icon } from '../../Icons';
 
-export interface AvatarProps {
+interface AvatarProps {
   image?: string | File;
   size?: 'xs' | 'sm' | 'md' | 'lg';
 }
 
-export const Avatar: React.FC<AvatarProps> = ({ image, size = 'sm' }) => {
+const Avatar: React.FC<AvatarProps> = ({ image, size = 'sm' }) => {
   const avatarClasses = clsx('avatar', {
     'bg-neutral200 text-neutral800 rounded-full flex items-center justify-center':
       true,
@@ -37,3 +37,6 @@ export const Avatar: React.FC<AvatarProps> = ({ image, size = 'sm' }) => {
     </div>
   );
 };
+
+Avatar.displayName = 'Avatar';
+export { Avatar, AvatarProps };

@@ -88,4 +88,5 @@ const Pagination: React.FC<IPagination> = ({ pagination }) => {
   );
 };
 
+Pagination.displayName = 'Pagination';
 export { Pagination, PaginationProps };

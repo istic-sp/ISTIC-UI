@@ -1,5 +1,5 @@
 import React from 'react';
-import clsx from 'clsx'; // Import clsx
+import clsx from 'clsx';
 import { Icon } from '../../Icons';
 import { Text } from '../../Typography/Text';
 
@@ -53,4 +53,5 @@ const RadioItem: React.FC<RadioItemProps> = ({
   );
 };
 
+RadioItem.displayName = 'RadioItem';
 export { RadioItem, RadioItemProps };

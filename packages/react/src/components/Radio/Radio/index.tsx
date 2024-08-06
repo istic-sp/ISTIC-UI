@@ -41,4 +41,5 @@ const Radio: React.FC<RadioProps> = ({
   );
 };
 
+Radio.displayName = 'Radio';
 export { Radio, RadioProps };

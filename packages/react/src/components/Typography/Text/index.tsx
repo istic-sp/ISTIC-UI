@@ -1,14 +1,14 @@
 import React, { type HTMLAttributes, type ReactNode } from 'react';
 import clsx from 'clsx';
 
-export interface TextProps extends HTMLAttributes<HTMLParagraphElement> {
+interface TextProps extends HTMLAttributes<HTMLParagraphElement> {
   children: ReactNode;
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   color?: string;
   weight?: 'regular' | 'medium' | 'bold';
 }
 
-export const Text = ({
+const Text = ({
   size = 'md',
   color = 'text-neutral700',
   weight = 'regular',
@@ -30,3 +30,4 @@ export const Text = ({
   return <p {...rest} className={textClasses} style={rest.style} />;
 };
 Text.displayName = 'Text';
+export { Text, TextProps };

@@ -1,7 +1,7 @@
 import React from 'react';
 import * as RiIcons from 'react-icons/ri';
 
-export interface IconProps {
+interface IconProps {
   name: keyof typeof icons;
   size?: number;
   color?: string;
@@ -20,7 +20,7 @@ const Icon: React.FC<IconProps> = ({
   return <IconComponent size={size} className={color} />;
 };
 
-export const icons = {
+const icons = {
   // Arrows
   'arrow-down': RiIcons.RiArrowDownLine,
   'arrow-down-s': RiIcons.RiArrowDownSLine,
@@ -142,5 +142,5 @@ export const icons = {
   //Media
   'notification-3': RiIcons.RiNotification3Line,
 };
-
-export { Icon };
+Icon.displayName = 'Icon';
+export { Icon, icons, IconProps };

@@ -1,13 +1,13 @@
 import React from 'react';
 import clsx from 'clsx';
 
-export interface LoaderProps {
+interface LoaderProps {
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   color?: string;
   width?: 'slim' | 'bold';
 }
 
-export const Loader = ({
+const Loader = ({
   size = 'md',
   color = 'border-slate-100',
   width = 'bold',
@@ -32,3 +32,6 @@ export const Loader = ({
 
   return <span className={loaderClasses} />;
 };
+
+Loader.displayName = 'Loader';
+export { Loader, LoaderProps };

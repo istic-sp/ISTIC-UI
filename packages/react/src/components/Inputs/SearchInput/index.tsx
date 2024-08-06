@@ -2,7 +2,7 @@ import React, { InputHTMLAttributes, forwardRef, useState } from 'react';
 import clsx from 'clsx';
 import { Icon } from '../../Icons';
 
-export interface SearchInputProps
+interface SearchInputProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
   label?: string;
   size?: 'xs' | 'lg';
@@ -15,7 +15,7 @@ export interface SearchInputProps
     description?: string;
   };
 }
-export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
+const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
   (
     {
       label,
@@ -114,3 +114,5 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
     );
   },
 );
+SearchInput.displayName = 'SearchInput';
+export { SearchInput, SearchInputProps };

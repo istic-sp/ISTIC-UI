@@ -1,7 +1,7 @@
 import React, { forwardRef, type InputHTMLAttributes } from 'react';
 import clsx from 'clsx';
 
-export interface TextInputProps
+interface TextInputProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
   label?: string;
   size?: 'xs' | 'lg';
@@ -12,7 +12,7 @@ export interface TextInputProps
     description?: string;
   };
 }
-export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
+const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
   (
     {
       label,
@@ -87,3 +87,4 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
 );
 
 TextInput.displayName = 'TextInput';
+export { TextInput, TextInputProps };

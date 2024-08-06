@@ -46,5 +46,5 @@ const Checkbox: React.FC<CheckboxProps> = ({
     </label>
   );
 };
-
+Checkbox.displayName = 'Checkbox';
 export { Checkbox, CheckboxProps };

@@ -24,7 +24,7 @@ export { Product, ProductProps } from './Images/Product';
 
 export { Table, TableColumn } from './Table';
 
-export { Chip, ChipProps } from './Chip';
+export { Chip, ChipProps, ChipTooltipProps } from './Chip';
 export { Badge, BadgeProps } from './Badges/Badge';
 export { StatusBadge, StatusBadgeProps } from './Badges/StatusBadge';
 
@@ -32,7 +32,11 @@ export { Drawer, DrawerProps } from './Drawer';
 export { Loader, LoaderProps } from './Loader';
 export { Modal, ModalProps } from './Modals/Modal';
 
-export { DropdownMenu, DropdownMenuProps } from './DropdownMenu';
+export {
+  DropdownMenu,
+  DropdownMenuProps,
+  DropdownMenuItem,
+} from './DropdownMenu';
 export { Checkbox, CheckboxProps } from './Checkbox';
 export { Radio, RadioProps } from './Radio/Radio';
 export { Tabs, Tab, TabsProps } from './Tabs';

@@ -1,14 +1,14 @@
 import clsx from 'clsx';
 import React from 'react';
 
-export interface StatusBadgeProps {
+interface StatusBadgeProps {
   isActive: boolean;
   grow?: boolean;
   activeText?: string;
   inactiveText?: string;
 }
 
-export const StatusBadge = ({
+const StatusBadge = ({
   isActive,
   grow,
   activeText = 'Active',
@@ -35,3 +35,6 @@ export const StatusBadge = ({
     </div>
   );
 };
+StatusBadge.displayName = 'StatusBadge';
+
+export { StatusBadge, StatusBadgeProps };

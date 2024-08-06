@@ -3,7 +3,7 @@ import clsx from 'clsx'; // Import clsx
 import { Text } from '../../Typography/Text';
 import { Icon } from '../../Icons';
 
-export interface ModalProps {
+interface ModalProps {
   children: ReactNode;
   title: string;
   isOpen: boolean;
@@ -44,6 +44,8 @@ const Modal: React.FC<ModalProps> = ({
     contentClassName,
   );
 
+  if (!isOpen) return null;
+
   return (
     <div
       className={modalClasses}
@@ -69,4 +71,5 @@ const Modal: React.FC<ModalProps> = ({
   );
 };
 
-export { Modal };
+Modal.displayName = 'Modal';
+export { Modal, ModalProps };

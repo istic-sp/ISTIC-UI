@@ -1,7 +1,7 @@
 import React, { TextareaHTMLAttributes, forwardRef } from 'react';
 import clsx from 'clsx';
 
-export interface TextAreaProps
+interface TextAreaProps
   extends Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, 'size'> {
   label?: string;
   grow?: boolean;
@@ -12,7 +12,7 @@ export interface TextAreaProps
   };
 }
 
-export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
+const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
   (
     {
       label,
@@ -79,3 +79,5 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
     );
   },
 );
+TextArea.displayName = 'TextArea';
+export { TextArea, TextAreaProps };

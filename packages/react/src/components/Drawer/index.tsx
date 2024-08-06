@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { Text } from '../Typography/Text';
 import { Icon } from '../Icons';
 
-export interface DrawerProps {
+interface DrawerProps {
   children: ReactNode;
   title: string;
   isOpen: boolean;
@@ -81,4 +81,5 @@ const Drawer: React.FC<DrawerProps> = ({
   );
 };
 
-export { Drawer };
+Drawer.displayName = 'Drawer';
+export { Drawer, DrawerProps };

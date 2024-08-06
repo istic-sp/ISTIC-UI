@@ -249,5 +249,5 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
     );
   },
 );
-
+Select.displayName = 'Select';
 export { Select, SelectProps, Option };

@@ -129,5 +129,5 @@ const Toast: React.FC<ToastProps> = ({
     </div>
   );
 };
-
+Toast.displayName = 'Toast';
 export { Toast, ToastProps };

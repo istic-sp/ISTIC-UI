@@ -12,7 +12,7 @@ interface StyleProps {
   errorLabel?: React.CSSProperties;
 }
 
-export interface DateInputProps {
+interface DateInputProps {
   label?: string;
   size?: 'xs' | 'lg';
   grow?: boolean;
@@ -32,7 +32,7 @@ export interface DateInputProps {
   style?: StyleProps;
 }
 
-export const DateInput: React.FC<DateInputProps> = ({
+const DateInput: React.FC<DateInputProps> = ({
   label,
   size = 'lg',
   grow = true,
@@ -290,3 +290,4 @@ export const DateInput: React.FC<DateInputProps> = ({
 };
 
 DateInput.displayName = 'DateInput';
+export { DateInput, DateInputProps };

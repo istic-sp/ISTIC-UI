@@ -43,6 +43,7 @@ export const Default: StoryObj = {
     placeholder: 'Text here',
     grow: true,
     disabled: false,
+    maxValue: 100,
     required: true,
     error: { description: '' },
   },

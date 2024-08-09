@@ -20,6 +20,7 @@ interface NumberInputProps
   value?: number;
   onChange: (value?: number) => void;
   decimalSeparator?: '.' | ',';
+  maxValue?: number; // Renamed max prop to maxValue
 }
 
 const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
@@ -36,6 +37,7 @@ const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
       value,
       onChange,
       decimalSeparator = '.',
+      maxValue, // Destructure maxValue prop
       ...rest
     },
     ref,
@@ -65,12 +67,17 @@ const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
 
       const regex = new RegExp(`^\\d*(\\${decimalSeparator}\\d*)?$`);
       if (regex.test(rawValue)) {
-        setInputValue(rawValue);
-
-        const normalizedValue = rawValue.replace(decimalSeparator, '.');
-        const numberValue = parseFloat(normalizedValue);
+        let normalizedValue = rawValue.replace(decimalSeparator, '.');
+        let numberValue = parseFloat(normalizedValue);
 
         if (!isNaN(numberValue)) {
+          if (maxValue !== undefined && numberValue > maxValue) {
+            numberValue = maxValue;
+            normalizedValue = maxValue
+              .toString()
+              .replace('.', decimalSeparator);
+          }
+          setInputValue(normalizedValue);
           onChange(numberValue);
         } else {
           onChange(undefined);

@@ -32,6 +32,10 @@ const icons = {
   'arrow-right-double': RiIcons.RiArrowRightDoubleLine,
   'arrow-right-up': RiIcons.RiArrowRightUpLine,
   'arrow-up': RiIcons.RiArrowUpLine,
+  'arrow-turn-back-line': RiIcons.RiArrowTurnBackLine,
+  'arrow-turn-forward-line': RiIcons.RiArrowTurnForwardLine,
+  'arrow-go-back-line': RiIcons.RiArrowGoBackLine,
+  'arrow-go-forward-line': RiIcons.RiArrowGoForwardLine,
 
   // Buildings
   building: RiIcons.RiBuildingLine,

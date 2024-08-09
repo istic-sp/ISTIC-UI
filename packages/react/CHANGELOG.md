@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.22.10
+
+### Patch Changes
+
+- Add maxValue property to NumberInput
+
 ## 1.22.9
 
 ### Patch Changes

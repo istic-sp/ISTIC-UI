@@ -2,41 +2,40 @@ import React, { useState } from 'react';
 import { Button, Drawer, TextInput } from '@stick-ui/lib';
 import { Meta } from '@storybook/react';
 
-Drawer.displayName = 'Drawer';
 const meta: Meta<typeof Drawer> = {
   title: 'STICK UI/Components/Core/Drawer',
   component: Drawer,
 
   argTypes: {
     children: {
-      description: 'Content to be displayed inside the drawer body.',
+      description: 'Conteúdo a ser exibido dentro do corpo do drawer.',
     },
     title: {
-      description: 'Text to be displayed as the title of the drawer.',
+      description: 'Texto a ser exibido como título do drawer.',
     },
     isOpen: {
       description:
-        'Controls the visibility of the drawer (true to open, false to close).',
+        'Controla a visibilidade do drawer (true para abrir, false para fechar).',
     },
     onClose: {
       description:
-        'Function to be called when the drawer is closed (e.g., clicking outside or close button).',
+        'Função a ser chamada quando o drawer for fechado (ex.: clicando fora ou no botão de fechar).',
     },
     className: {
       description:
-        'Optional string to add custom classes to the drawer container.',
+        'String opcional para adicionar classes personalizadas ao container do drawer.',
     },
     overlayClassName: {
       description:
-        'Optional string to add custom classes to the drawer overlay.',
+        'String opcional para adicionar classes personalizadas à sobreposição do drawer.',
     },
     contentClassName: {
       description:
-        'Optional string to add custom classes to the drawer content area.',
+        'String opcional para adicionar classes personalizadas à área de conteúdo do drawer.',
     },
     ariaLabel: {
       description:
-        'Optional string to describe the drawer content for accessibility.',
+        'String opcional para descrever o conteúdo do drawer para acessibilidade.',
     },
   },
 };

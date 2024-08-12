@@ -9,46 +9,47 @@ const meta: Meta<typeof Modal> = {
 
   argTypes: {
     children: {
-      description: 'Content to be displayed inside the modal body.',
+      description: 'Conteúdo a ser exibido dentro do corpo do modal.',
     },
     contentWidth: {
       description:
-        'Sets the initial width of the modal content area. Can be a string value like "600px" or a unitless number representing pixels.',
+        'Define a largura inicial da área de conteúdo do modal. Pode ser um valor em string, como "600px", ou um número sem unidade representando pixels.',
     },
     title: {
-      description: 'Text to be displayed as the title of the modal.',
+      description: 'Texto a ser exibido como título do modal.',
     },
     isOpen: {
       description:
-        'Controls the visibility of the modal (true to open, false to close).',
+        'Controla a visibilidade do modal (true para abrir, false para fechar).',
     },
     onClose: {
       description:
-        'Function to be called when the modal is closed (e.g., clicking outside or close button).',
+        'Função a ser chamada quando o modal é fechado (por exemplo, ao clicar fora ou no botão de fechar).',
     },
     className: {
       description:
-        'Optional string to add custom classes to the modal container.',
+        'String opcional para adicionar classes personalizadas ao contêiner do modal.',
     },
     overlayClassName: {
       description:
-        'Optional string to add custom classes to the modal overlay.',
+        'String opcional para adicionar classes personalizadas à sobreposição do modal.',
     },
     contentClassName: {
       description:
-        'Optional string to add custom classes to the modal content area.',
+        'String opcional para adicionar classes personalizadas à área de conteúdo do modal.',
     },
     ariaLabel: {
       description:
-        'Optional string to describe the modal content for accessibility.',
+        'String opcional para descrever o conteúdo do modal para acessibilidade.',
     },
   },
 };
+
 export const Default = () => {
   const [openModal, setOpenModal] = useState(false);
   return (
     <>
-      <Button label="Open Modal" onClick={() => setOpenModal(true)} />
+      <Button label="Abrir Modal" onClick={() => setOpenModal(true)} />
 
       <Modal
         contentWidth={300}
@@ -56,7 +57,7 @@ export const Default = () => {
         onClose={() => {
           setOpenModal(false);
         }}
-        title={'Pretty Modal'}
+        title={'Modal Bonito'}
       >
         <div
           style={{
@@ -67,15 +68,11 @@ export const Default = () => {
             width: '100%',
           }}
         >
-          <TextInput label="Name" placeholder="Type the name" grow />
-          <TextInput
-            label="Description"
-            placeholder="Type the description"
-            grow
-          />
+          <TextInput label="Nome" placeholder="Digite o nome" grow />
+          <TextInput label="Descrição" placeholder="Digite a descrição" grow />
         </div>
 
-        <Button size="xs" label="Continue" grow />
+        <Button size="xs" label="Continuar" grow />
       </Modal>
     </>
   );

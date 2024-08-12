@@ -37,6 +37,6 @@ export const Default: StoryObj = {
   args: {
     size: 'md',
     image:
-      'https://media.discordapp.net/attachments/1184833101445206120/1232003683160428607/image.png?ex=663903d7&is=66268ed7&hm=e40809dad8cc6ea1d2b2698b3886465d559c08bbccbfd1cf5073f5bdd05d99ba&=&format=webp&quality=lossless&width=144&height=144',
+      'https://media.discordapp.net/attachments/1184833101445206120/1232003683160428607/image.png?ex=66b6eb17&is=66b59997&hm=48e8eeef83dc0a033f2d59e58616b725796699f5bf4336d412644ec3798d196a',
   },
 };

@@ -39,13 +39,24 @@ export const Default = () => (
       mainItem={<ActionIcon variant="filled" size="lg" iconName="more-2" />}
       items={[
         {
+          id: 'edit',
           iconName: 'edit-box',
           label: 'Edit',
           onClick: () => null,
           disabled: true,
         },
-        { iconName: 'lock', label: 'Inactivate', onClick: () => null },
-        { iconName: 'trash', label: 'Exclude', onClick: () => null },
+        {
+          id: 'inactivate',
+          iconName: 'lock',
+          label: 'Inactivate',
+          onClick: () => null,
+        },
+        {
+          id: 'exclude',
+          iconName: 'trash',
+          label: 'Exclude',
+          onClick: () => null,
+        },
       ]}
       position="left"
       align="bottom"

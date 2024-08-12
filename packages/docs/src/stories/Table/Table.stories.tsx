@@ -13,7 +13,7 @@ const meta: Meta<typeof Table> = {
       control: {
         type: 'number',
       },
-      description: 'Min-height of the tbody',
+      description: 'Altura mínima do tbody',
       table: {
         defaultValue: { summary: 'undefined' },
       },
@@ -22,7 +22,7 @@ const meta: Meta<typeof Table> = {
       control: {
         type: 'number',
       },
-      description: 'Height of the tbody',
+      description: 'Altura do tbody',
       table: {
         defaultValue: { summary: 'undefined' },
       },

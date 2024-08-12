@@ -8,7 +8,7 @@ const meta: Meta<typeof Tabs> = {
   component: Tabs,
   tags: ['autodocs'],
   argTypes: {
-    onChange: { description: 'Tabs value handler (onClick)' },
+    onChange: { description: 'Manipulador de valor das tabs (onClick)' },
   },
   decorators: [
     (Story) => (

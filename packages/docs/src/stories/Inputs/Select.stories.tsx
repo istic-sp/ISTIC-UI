@@ -10,7 +10,7 @@ const meta: Meta<typeof Select> = {
   tags: ['autodocs'],
   argTypes: {
     pickerHeight: {
-      description: 'Max height of the picker',
+      description: 'Altura máxima do seletor.',
       control: {
         type: 'text',
       },

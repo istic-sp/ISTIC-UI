@@ -10,43 +10,44 @@ const meta: Meta<typeof DateInput> = {
 
   argTypes: {
     label: {
-      description: 'Text to be displayed as the label of the input.',
+      description: 'Texto a ser exibido como rótulo do input.',
     },
     size: {
-      description: 'Size of the input field.',
+      description: 'Tamanho do campo de input.',
     },
     grow: {
-      description: 'Should the input take the full width of its container.',
+      description: 'O input deve ocupar toda a largura do seu contêiner.',
     },
     width: {
-      description: 'Sets the width of the input.',
+      description: 'Define a largura do input.',
     },
     error: {
-      description: 'Error object containing the description of the error.',
+      description: 'Objeto de erro contendo a descrição do erro.',
     },
     value: {
-      description: 'The current value of the input.',
+      description: 'O valor atual do input.',
     },
     defaultValue: {
-      description: 'The default value of the input.',
+      description: 'O valor padrão do input.',
     },
     onDateChange: {
-      description: 'Callback function called when the date changes.',
+      description: 'Função de callback chamada quando a data é alterada.',
     },
     required: {
-      description: 'Is the input required.',
+      description: 'Indica se o input é obrigatório.',
     },
     disabled: {
-      description: 'Is the input disabled.',
+      description: 'Indica se o input está desabilitado.',
     },
     clearable: {
-      description: 'Is the input value clearable.',
+      description: 'Indica se o valor do input pode ser limpo.',
     },
     style: {
-      description: 'Custom styles for the input.',
+      description: 'Estilos personalizados para o input.',
     },
   },
 };
+
 export const Default = (args: DateInputProps) => {
   const [selectedDate, setSelectedDate] = useState<string | undefined>(
     args.defaultValue || '',

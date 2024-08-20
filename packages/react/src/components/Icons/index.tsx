@@ -92,6 +92,7 @@ const icons = {
   'map-pin-2': RiIcons.RiMapPin2Line,
   'treasure-map-line': RiIcons.RiTreasureMapLine,
   truck: RiIcons.RiTruckLine,
+  flag: RiIcons.RiFlagLine,
 
   // Others
   'box-1': RiIcons.RiBox1Line,
@@ -129,6 +130,9 @@ const icons = {
   upload: RiIcons.RiUploadLine,
   'upload-cloud-2-line': RiIcons.RiUploadCloud2Line,
   time: RiIcons.RiTimeLine,
+  scan: RiIcons.RiQrScan2Line,
+  router: RiIcons.RiRouterLine,
+  radar: RiIcons.RiRfidLine,
 
   //User & Faces
   'account-circle': RiIcons.RiAccountCircleLine,

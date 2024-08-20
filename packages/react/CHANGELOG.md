@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.22.11
+
+### Patch Changes
+
+- Add new icons in Icon component
+
 ## 1.22.10
 
 ### Patch Changes

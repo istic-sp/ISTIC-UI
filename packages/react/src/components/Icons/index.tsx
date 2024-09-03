@@ -141,6 +141,8 @@ const icons = {
   user: RiIcons.RiUserLine,
   'user-add': RiIcons.RiUserAddLine,
   'camera-line': RiIcons.RiCameraLine,
+  like: RiIcons.RiThumbUpLine,
+  dislike: RiIcons.RiThumbDownLine,
 
   //Weather
   moon: RiIcons.RiMoonLine,

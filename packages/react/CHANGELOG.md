@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.22.12
+
+### Patch Changes
+
+- Add new Feedback icons
+
 ## 1.22.11
 
 ### Patch Changes

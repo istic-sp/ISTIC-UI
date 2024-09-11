@@ -133,6 +133,8 @@ const icons = {
   scan: RiIcons.RiQrScan2Line,
   router: RiIcons.RiRouterLine,
   radar: RiIcons.RiRfidLine,
+  alert: RiIcons.RiAlertLine,
+  calculator: RiIcons.RiCalculatorLine,
 
   //User & Faces
   'account-circle': RiIcons.RiAccountCircleLine,

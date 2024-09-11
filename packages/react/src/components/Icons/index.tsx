@@ -24,6 +24,7 @@ const icons = {
   // Arrows
   'arrow-down': RiIcons.RiArrowDownLine,
   'arrow-down-s': RiIcons.RiArrowDownSLine,
+  'arrow-up-s': RiIcons.RiArrowUpSLine,
   'arrow-left': RiIcons.RiArrowLeftLine,
   'arrow-left-double': RiIcons.RiArrowLeftDoubleLine,
   'arrow-left-down': RiIcons.RiArrowLeftDownLine,

@@ -55,6 +55,12 @@ const meta: Meta<typeof AccordionTable> = {
       },
       description: 'Dados a serem exibidos na tabela',
     },
+    renderExpandedContent: {
+      control: {
+        type: 'object',
+      },
+      description: 'Função que renderiza o conteúdo expandido',
+    },
   },
   decorators: [
     (Story) => (
@@ -147,5 +153,20 @@ export const Default: StoryObj<AccordionTableProps<any>> = {
       { name: 'Eduardo', age: 32, region: 'França' },
       { name: 'Alice', age: 27, region: 'Canadá' },
     ],
+    renderExpandedContent(row) {
+      return (
+        <div>
+          <p>
+            <strong>Nome:</strong> {row.name}
+          </p>
+          <p>
+            <strong>Idade:</strong> {row.age}
+          </p>
+          <p>
+            <strong>Região:</strong> {row.region}
+          </p>
+        </div>
+      );
+    },
   },
 };

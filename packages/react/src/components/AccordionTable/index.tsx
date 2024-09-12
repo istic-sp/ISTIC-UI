@@ -21,7 +21,7 @@ interface AccordionTableProps<T> {
   isLoading?: boolean;
   height?: string;
   minHeight?: string;
-  renderExpandedContent?: (row: T) => React.ReactNode;
+  renderExpandedContent: (row: T) => React.ReactNode;
 }
 
 const AccordionTable = <T,>({
@@ -147,15 +147,7 @@ const AccordionTable = <T,>({
                     <tr className={tbodyTrClasses}>
                       <td colSpan={columns.length + 1} className="p-4">
                         <div className="bg-neutral50 p-4 rounded">
-                          <Text
-                            color="text-neutral800"
-                            weight="regular"
-                            size="sm"
-                          >
-                            {renderExpandedContent
-                              ? renderExpandedContent(row)
-                              : JSON.stringify(row)}
-                          </Text>
+                          {renderExpandedContent(row)}
                         </div>
                       </td>
                     </tr>

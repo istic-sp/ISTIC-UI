@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.23.0
+
+### Minor Changes
+
+- Add AccordionTable component and add new icons to Icon component
+
 ## 1.22.12
 
 ### Patch Changes

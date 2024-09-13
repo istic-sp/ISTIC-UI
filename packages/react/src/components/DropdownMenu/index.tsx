@@ -17,7 +17,7 @@ interface DropdownMenuItem {
 }
 
 interface DropdownMenuProps {
-  mainItem: ReactElement<{ onClick: () => void }>;
+  mainItem: ReactElement<{ onClick: (event: React.MouseEvent) => void }>;
   items: DropdownMenuItem[];
   position?: 'left' | 'right';
   align?: 'top' | 'bottom' | 'center';
@@ -32,7 +32,8 @@ const DropdownMenu = ({
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleDropdown = useCallback(() => {
+  const toggleDropdown = useCallback((event: React.MouseEvent) => {
+    event.stopPropagation();
     setIsOpen((prevIsOpen) => !prevIsOpen);
   }, []);
 

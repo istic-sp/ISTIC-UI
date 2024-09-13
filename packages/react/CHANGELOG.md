@@ -1,5 +1,11 @@
 # @stick-ui/lib
 
+## 1.23.1
+
+### Patch Changes
+
+- Add stopPropagation do DropdownMenu clicks
+
 ## 1.23.0
 
 ### Minor Changes

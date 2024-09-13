@@ -11,13 +11,13 @@ import clsx from 'clsx';
 interface DropdownMenuItem {
   label: string;
   iconName: keyof typeof icons;
-  onClick: () => void;
+  onClick: (event: React.MouseEvent) => void;
   disabled?: boolean;
   id: string;
 }
 
 interface DropdownMenuProps {
-  mainItem: ReactElement<{ onClick: () => void }>;
+  mainItem: ReactElement<{ onClick: (event: React.MouseEvent) => void }>;
   items: DropdownMenuItem[];
   position?: 'left' | 'right';
   align?: 'top' | 'bottom' | 'center';
@@ -32,7 +32,8 @@ const DropdownMenu = ({
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleDropdown = useCallback(() => {
+  const toggleDropdown = useCallback((event: React.MouseEvent) => {
+    event.stopPropagation();
     setIsOpen((prevIsOpen) => !prevIsOpen);
   }, []);
 
@@ -71,7 +72,10 @@ const DropdownMenu = ({
               type="button"
               className={buttonClasses}
               disabled={item.disabled}
-              onClick={item.onClick}
+              onClick={(event) => {
+                event.stopPropagation();
+                item.onClick(event);
+              }}
               id={item.id}
             >
               <Icon name={item.iconName} color="inherit" />

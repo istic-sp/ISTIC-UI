@@ -11,7 +11,7 @@ import clsx from 'clsx';
 interface DropdownMenuItem {
   label: string;
   iconName: keyof typeof icons;
-  onClick: () => void;
+  onClick: (event: React.MouseEvent) => void;
   disabled?: boolean;
   id: string;
 }
@@ -72,7 +72,10 @@ const DropdownMenu = ({
               type="button"
               className={buttonClasses}
               disabled={item.disabled}
-              onClick={item.onClick}
+              onClick={(event) => {
+                event.stopPropagation();
+                item.onClick(event);
+              }}
               id={item.id}
             >
               <Icon name={item.iconName} color="inherit" />

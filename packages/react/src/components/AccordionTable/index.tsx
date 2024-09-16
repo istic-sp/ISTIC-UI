@@ -115,7 +115,7 @@ const AccordionTable = <T,>({
                 <React.Fragment key={rowIndex}>
                   <tr
                     className={clsx(tbodyTrClasses, {
-                      'bg-gray-100': expandedRows.includes(rowIndex),
+                      'bg-neutral50': expandedRows.includes(rowIndex),
                     })}
                     onClick={() => toggleRow(rowIndex)}
                   >

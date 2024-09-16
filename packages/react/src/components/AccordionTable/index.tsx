@@ -56,7 +56,7 @@ const AccordionTable = <T,>({
   const theadThClasses = clsx('py-3 font-default font-regular');
   const tbodyTrClasses = clsx('border-b border-neutral100 cursor-pointer');
   const tbodyTdClasses = clsx(
-    'text-sm font-default font-regular text-neutral700 py-5',
+    'text-sm font-default font-regular text-neutral700 py-2',
   );
   const noDataClasses = clsx(
     'w-full h-full flex flex-col items-center justify-center',
@@ -145,8 +145,8 @@ const AccordionTable = <T,>({
                   </tr>
                   {expandedRows.includes(rowIndex) && (
                     <tr className={tbodyTrClasses}>
-                      <td colSpan={columns.length + 1} className="p-4">
-                        <div className="bg-neutral50 p-4 rounded">
+                      <td colSpan={columns.length + 1} className="p-2">
+                        <div className="bg-neutral50 p-2 rounded">
                           {renderExpandedContent(row)}
                         </div>
                       </td>

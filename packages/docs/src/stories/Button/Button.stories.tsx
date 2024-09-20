@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from '@istic-ui/react';
 
 const meta: Meta<typeof Button> = {
-  title: 'ISTIC UI/Components/Core/Buttons/Button',
+  title: 'ISTIC UI/Componentes/Core/Buttons/Button',
   component: Button,
   tags: ['autodocs'],
   argTypes: {

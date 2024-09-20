@@ -3,7 +3,7 @@ import { Button, Drawer, TextInput } from '@istic-ui/react';
 import { Meta } from '@storybook/react';
 
 const meta: Meta<typeof Drawer> = {
-  title: 'ISTIC UI/Components/Core/Drawer',
+  title: 'ISTIC UI/Componentes/Core/Drawer',
   component: Drawer,
 
   argTypes: {

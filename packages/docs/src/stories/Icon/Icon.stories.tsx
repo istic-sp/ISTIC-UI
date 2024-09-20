@@ -5,7 +5,7 @@ import { Icon, icons } from '@istic-ui/react';
 Icon.displayName = 'Icon';
 
 const meta: Meta<typeof Icon> = {
-  title: 'ISTIC UI/Components/Core/Icon',
+  title: 'ISTIC UI/Componentes/Core/Icon',
   component: Icon,
   tags: ['autodocs'],
   argTypes: {

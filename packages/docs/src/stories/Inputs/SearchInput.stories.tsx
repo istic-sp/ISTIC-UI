@@ -5,7 +5,7 @@ import { SearchInput } from '@istic-ui/react';
 SearchInput.displayName = 'SearchInput';
 
 const meta: Meta<typeof SearchInput> = {
-  title: 'ISTIC UI/Components/Core/Inputs/SearchInput',
+  title: 'ISTIC UI/Componentes/Core/Inputs/SearchInput',
   component: SearchInput,
   tags: ['autodocs'],
   argTypes: {

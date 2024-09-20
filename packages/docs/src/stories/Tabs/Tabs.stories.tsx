@@ -4,7 +4,7 @@ import { Tabs } from '@istic-ui/react';
 Tabs.displayName = 'Tabs';
 
 const meta: Meta<typeof Tabs> = {
-  title: 'ISTIC UI/Components/Core/Tabs',
+  title: 'ISTIC UI/Componentes/Core/Tabs',
   component: Tabs,
   tags: ['autodocs'],
   argTypes: {

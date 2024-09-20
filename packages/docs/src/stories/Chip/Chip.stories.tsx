@@ -4,7 +4,7 @@ import { Chip } from '@istic-ui/react';
 Chip.displayName = 'Chip';
 
 const meta: Meta<typeof Chip> = {
-  title: 'ISTIC UI/Components/Core/Chip',
+  title: 'ISTIC UI/Componentes/Core/Chip',
   component: Chip,
   tags: ['autodocs'],
   argTypes: {

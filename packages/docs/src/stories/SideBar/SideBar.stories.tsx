@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Heading, Icon, SideBar } from '@istic-ui/react';
 
 const meta: Meta<typeof SideBar> = {
-  title: 'ISTIC UI/Components/Core/SideBar',
+  title: 'ISTIC UI/Componentes/Core/SideBar',
   component: SideBar,
   tags: ['autodocs'],
   argTypes: {

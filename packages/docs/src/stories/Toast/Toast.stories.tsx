@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Toast } from '@istic-ui/react';
 
 const meta: Meta<typeof Toast> = {
-  title: 'ISTIC UI/Components/Core/Toast',
+  title: 'ISTIC UI/Componentes/Core/Toast',
   component: Toast,
   tags: ['autodocs'],
   argTypes: {

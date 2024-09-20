@@ -5,7 +5,7 @@ import { DateInput, DateInputProps } from '@istic-ui/react';
 DateInput.displayName = 'DateInput';
 
 const meta: Meta<typeof DateInput> = {
-  title: 'ISTIC UI/Components/Core/Inputs/DateInput',
+  title: 'ISTIC UI/Componentes/Core/Inputs/DateInput',
   component: DateInput,
 
   argTypes: {

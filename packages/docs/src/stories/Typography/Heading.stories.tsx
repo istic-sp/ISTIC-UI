@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Heading } from '@istic-ui/react';
 
 const meta: Meta<typeof Heading> = {
-  title: 'ISTIC UI/Components/Core/Typography/Heading',
+  title: 'ISTIC UI/Componentes/Core/Typography/Heading',
   component: Heading,
   tags: ['autodocs'],
   argTypes: {

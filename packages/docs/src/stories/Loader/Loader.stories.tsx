@@ -3,7 +3,7 @@ import { StoryObj, Meta } from '@storybook/react';
 import { Loader } from '@istic-ui/react';
 
 const meta: Meta<typeof Loader> = {
-  title: 'ISTIC UI/Components/Core/Loader',
+  title: 'ISTIC UI/Componentes/Core/Loader',
   component: Loader,
   tags: ['autodocs'],
   argTypes: {

@@ -5,7 +5,7 @@ import { Select } from '@istic-ui/react';
 Select.displayName = 'Select';
 
 const meta: Meta<typeof Select> = {
-  title: 'ISTIC UI/Components/Core/Inputs/Select',
+  title: 'ISTIC UI/Componentes/Core/Inputs/Select',
   component: Select,
   tags: ['autodocs'],
   argTypes: {

@@ -6,7 +6,7 @@ import { Avatar, ActionIcon, DropdownMenu } from '@istic-ui/react';
 Avatar.displayName = 'Avatar';
 
 const meta: Meta<typeof AccordionTable> = {
-  title: 'ISTIC UI/Components/Core/AccordionTable',
+  title: 'ISTIC UI/Componentes/Core/AccordionTable',
   component: AccordionTable,
   tags: ['autodocs'],
   argTypes: {

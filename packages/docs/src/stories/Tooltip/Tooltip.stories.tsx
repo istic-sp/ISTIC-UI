@@ -3,7 +3,7 @@ import { Meta } from '@storybook/react';
 import { Icon, Text, Tooltip, TooltipProps } from '@istic-ui/react';
 
 const meta: Meta<TooltipProps> = {
-  title: 'ISTIC UI/Components/Core/Tooltip',
+  title: 'ISTIC UI/Componentes/Core/Tooltip',
   component: Tooltip,
   tags: ['autodocs'],
   argTypes: {

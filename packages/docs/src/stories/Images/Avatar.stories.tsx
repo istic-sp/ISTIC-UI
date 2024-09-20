@@ -5,7 +5,7 @@ import { Avatar } from '@istic-ui/react';
 Avatar.displayName = 'Avatar';
 
 const meta: Meta<typeof Avatar> = {
-  title: 'ISTIC UI/Components/Core/Images/Avatar',
+  title: 'ISTIC UI/Componentes/Core/Images/Avatar',
   component: Avatar,
   tags: ['autodocs'],
   argTypes: {

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { TextInput } from '@istic-ui/react';
 
 const meta: Meta<typeof TextInput> = {
-  title: 'ISTIC UI/Components/Core/Inputs/TextInput',
+  title: 'ISTIC UI/Componentes/Core/Inputs/TextInput',
   component: TextInput,
   tags: ['autodocs'],
   argTypes: {

@@ -3,7 +3,7 @@ import { SegmentedControl } from '@istic-ui/react';
 import { Meta } from '@storybook/react';
 
 const meta: Meta<typeof SegmentedControl> = {
-  title: 'ISTIC UI/Components/Core/Buttons/SegmentedControl',
+  title: 'ISTIC UI/Componentes/Core/Buttons/SegmentedControl',
   component: SegmentedControl,
 
   argTypes: {},

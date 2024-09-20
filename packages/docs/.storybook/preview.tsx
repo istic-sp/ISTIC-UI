@@ -15,7 +15,7 @@ const preview: Preview = {
         method: 'alphabetical',
         order: [
           'ISTIC UI',
-          ['Introduction', 'Getting Started', 'Components', 'Tokens'],
+          ['Introdução', 'Começando', 'Componentes', 'Tokens'],
         ],
       },
     },

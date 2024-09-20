@@ -5,7 +5,7 @@ import { StatusBadge } from '@istic-ui/react';
 StatusBadge.displayName = 'StatusBadge';
 
 const meta: Meta<typeof StatusBadge> = {
-  title: 'ISTIC UI/Components/Core/Badges/StatusBadge',
+  title: 'ISTIC UI/Componentes/Core/Badges/StatusBadge',
   component: StatusBadge,
   tags: ['autodocs'],
   argTypes: {

@@ -5,7 +5,7 @@ import { Product } from '@istic-ui/react';
 Product.displayName = 'Product';
 
 const meta: Meta<typeof Product> = {
-  title: 'ISTIC UI/Components/Core/Images/Product',
+  title: 'ISTIC UI/Componentes/Core/Images/Product',
   component: Product,
   tags: ['autodocs'],
   argTypes: {

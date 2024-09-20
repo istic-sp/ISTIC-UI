@@ -4,7 +4,7 @@ Bem-vindo ao nosso Design System ISTIC! Este repositório contém os componentes
 
 ### Índice
 
-1. [Introdução](https://frontdesignsystem.azurewebsites.net/?path=/docs/stick-ui-introduction--documentation)
+1. [Introdução](https://frontdesignsystem.azurewebsites.net/?path=/docs/stick-ui-Introdução--documentation)
 2. [Primeiros Passos](https://frontdesignsystem.azurewebsites.net/?path=/docs/stick-ui-getting-started--documentation)
 
 ### Introdução

@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ActionIcon, icons } from '@istic-ui/react';
 
 const meta: Meta<typeof ActionIcon> = {
-  title: 'ISTIC UI/Components/Core/Buttons/ActionIcon',
+  title: 'ISTIC UI/Componentes/Core/Buttons/ActionIcon',
   component: ActionIcon,
   tags: ['autodocs'],
   argTypes: {

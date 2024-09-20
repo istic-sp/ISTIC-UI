@@ -5,7 +5,7 @@ import { TextArea } from '@istic-ui/react';
 TextArea.displayName = 'TextArea';
 
 const meta: Meta<typeof TextArea> = {
-  title: 'ISTIC UI/Components/Core/Inputs/TextArea',
+  title: 'ISTIC UI/Componentes/Core/Inputs/TextArea',
   component: TextArea,
   tags: ['autodocs'],
   decorators: [

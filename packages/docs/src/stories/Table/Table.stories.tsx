@@ -5,7 +5,7 @@ import { ActionIcon, Avatar, DropdownMenu, Table } from '@istic-ui/react';
 Avatar.displayName = 'Avatar';
 
 const meta: Meta<typeof Table> = {
-  title: 'ISTIC UI/Components/Core/Table',
+  title: 'ISTIC UI/Componentes/Core/Table',
   component: Table,
   tags: ['autodocs'],
   argTypes: {

@@ -4,7 +4,7 @@ import { Meta } from '@storybook/react';
 
 Modal.displayName = 'Modal';
 const meta: Meta<typeof Modal> = {
-  title: 'ISTIC UI/Components/Core/Modals/Modal',
+  title: 'ISTIC UI/Componentes/Core/Modals/Modal',
   component: Modal,
 
   argTypes: {

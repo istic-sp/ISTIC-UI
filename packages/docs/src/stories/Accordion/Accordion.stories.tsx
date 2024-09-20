@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Accordion } from '@istic-ui/react';
 
 const meta: Meta<typeof Accordion> = {
-  title: 'ISTIC UI/Components/Core/Accordion',
+  title: 'ISTIC UI/Componentes/Core/Accordion',
   component: Accordion,
   tags: ['autodocs'],
   argTypes: {

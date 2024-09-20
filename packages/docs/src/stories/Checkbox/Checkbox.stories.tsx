@@ -5,7 +5,7 @@ import { Checkbox } from '@istic-ui/react';
 Checkbox.displayName = 'Checkbox';
 
 const meta: Meta<typeof Checkbox> = {
-  title: 'ISTIC UI/Components/Core/Checkbox',
+  title: 'ISTIC UI/Componentes/Core/Checkbox',
   component: Checkbox,
   tags: ['autodocs'],
   argTypes: {},

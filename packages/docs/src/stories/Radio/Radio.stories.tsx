@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Radio } from '@istic-ui/react';
 
 const meta: Meta<typeof Radio> = {
-  title: 'ISTIC UI/Components/Core/Radio',
+  title: 'ISTIC UI/Componentes/Core/Radio',
   component: Radio,
   argTypes: {},
   decorators: [

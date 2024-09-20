@@ -1,0 +1,1 @@
+import{j as t}from"./jsx-runtime-QvZ8i92b.js";import"./index-uubelm5h.js";const s={parameters:{controls:{matchers:{color:/(background|color)$/i,date:/Date$/i}},backgrounds:{},options:{storySort:{method:"alphabetical",order:["STICK UI",["Introduction","Getting Started","Components","Tokens"]]}}}},a=[o=>t.jsx(o,{})];export{a as decorators,s as default};

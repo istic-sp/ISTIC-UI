@@ -1,0 +1,8 @@
+import{j as e}from"./jsx-runtime-QvZ8i92b.js";import{useMDXComponents as i}from"./index-FeUjBnvO.js";import{M as o}from"./chunk-HLWAVYOI-BEZcR-RA.js";import"./index-uubelm5h.js";import"./iframe-CIP2OBV1.js";import"../sb-preview/runtime.js";import"./react-18-dxeXy74A.js";import"./index-DXimoRZY.js";import"./index-D0OBZnxu.js";import"./index-DrFu-skq.js";function s(n){const t={h1:"h1",h2:"h2",p:"p",...i(),...n.components};return e.jsxs(e.Fragment,{children:[e.jsx(o,{title:"STICK UI/Introduction"}),`
+`,e.jsx(t.h1,{id:"stick-ui---design-system",children:"STICK UI - Design System"}),`
+`,e.jsx(t.p,{children:"Welcome to our STICK UI Design System! This repository contains the components and guidelines to help you build consistent, beautiful user interfaces across your React projects."}),`
+`,e.jsx("a",{href:"https://github.com/Merces-dev/STICK-UI",target:"_blank",children:e.jsx("img",{src:"https://github.com/fluidicon.png",alt:"GitHub",width:"48",height:"48"})}),`
+`,e.jsx(t.h2,{id:"introduction",children:"Introduction"}),`
+`,e.jsx(t.p,{children:"Our Design System provides a set of reusable components, styles, and guidelines to maintain consistency and streamline development across projects. Whether you're building a new application or integrating components into an existing one, this design system helps you create delightful user experiences efficiently."}),`
+`,e.jsx(t.h2,{id:"usage",children:"Usage"}),`
+`,e.jsx(t.p,{children:"Our design system includes a variety of components catering to different UI needs. Each component comes with its set of props for customization and is documented for ease of use."})]})}function f(n={}){const{wrapper:t}={...i(),...n.components};return t?e.jsx(t,{...n,children:e.jsx(s,{...n})}):s(n)}export{f as default};

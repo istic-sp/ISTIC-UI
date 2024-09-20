@@ -1,12 +1,12 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { AccordionTable, AccordionTableProps } from '@stick-ui/lib';
-import { Avatar, ActionIcon, DropdownMenu } from '@stick-ui/lib';
+import { AccordionTable, AccordionTableProps } from '@istic-ui/react';
+import { Avatar, ActionIcon, DropdownMenu } from '@istic-ui/react';
 
 Avatar.displayName = 'Avatar';
 
 const meta: Meta<typeof AccordionTable> = {
-  title: 'STICK UI/Components/Core/AccordionTable',
+  title: 'ISTIC UI/Components/Core/AccordionTable',
   component: AccordionTable,
   tags: ['autodocs'],
   argTypes: {

@@ -1,5 +1,5 @@
 {
-  "name": "@stick-ui/docs",
+  "name": "@istic-ui/docs",
   "private": true,
   "type": "module",
   "scripts": {
@@ -10,7 +10,7 @@
     "deploy-storybook": "storybook-to-ghpages"
   },
   "dependencies": {
-    "@stick-ui/lib": "*",
+    "@istic-ui/react": "*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.51.4"

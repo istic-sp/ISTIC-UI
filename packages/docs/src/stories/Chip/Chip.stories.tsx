@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Chip } from '@stick-ui/lib';
+import { Chip } from '@istic-ui/react';
 
 Chip.displayName = 'Chip';
 
 const meta: Meta<typeof Chip> = {
-  title: 'STICK UI/Components/Core/Chip',
+  title: 'ISTIC UI/Components/Core/Chip',
   component: Chip,
   tags: ['autodocs'],
   argTypes: {

@@ -1,11 +1,11 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Select } from '@stick-ui/lib';
+import { Select } from '@istic-ui/react';
 
 Select.displayName = 'Select';
 
 const meta: Meta<typeof Select> = {
-  title: 'STICK UI/Components/Core/Inputs/Select',
+  title: 'ISTIC UI/Components/Core/Inputs/Select',
   component: Select,
   tags: ['autodocs'],
   argTypes: {

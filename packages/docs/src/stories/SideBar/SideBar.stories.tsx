@@ -1,9 +1,9 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Heading, Icon, SideBar } from '@stick-ui/lib';
+import { Heading, Icon, SideBar } from '@istic-ui/react';
 
 const meta: Meta<typeof SideBar> = {
-  title: 'STICK UI/Components/Core/SideBar',
+  title: 'ISTIC UI/Components/Core/SideBar',
   component: SideBar,
   tags: ['autodocs'],
   argTypes: {

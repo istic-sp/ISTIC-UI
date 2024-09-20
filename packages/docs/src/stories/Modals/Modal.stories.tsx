@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Button, Modal, TextInput } from '@stick-ui/lib';
+import { Button, Modal, TextInput } from '@istic-ui/react';
 import { Meta } from '@storybook/react';
 
 Modal.displayName = 'Modal';
 const meta: Meta<typeof Modal> = {
-  title: 'STICK UI/Components/Core/Modals/Modal',
+  title: 'ISTIC UI/Components/Core/Modals/Modal',
   component: Modal,
 
   argTypes: {

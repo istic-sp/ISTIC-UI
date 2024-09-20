@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Button, Drawer, TextInput } from '@stick-ui/lib';
+import { Button, Drawer, TextInput } from '@istic-ui/react';
 import { Meta } from '@storybook/react';
 
 const meta: Meta<typeof Drawer> = {
-  title: 'STICK UI/Components/Core/Drawer',
+  title: 'ISTIC UI/Components/Core/Drawer',
   component: Drawer,
 
   argTypes: {

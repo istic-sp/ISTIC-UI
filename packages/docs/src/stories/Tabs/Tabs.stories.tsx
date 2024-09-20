@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Tabs } from '@stick-ui/lib';
+import { Tabs } from '@istic-ui/react';
 
 Tabs.displayName = 'Tabs';
 
 const meta: Meta<typeof Tabs> = {
-  title: 'STICK UI/Components/Core/Tabs',
+  title: 'ISTIC UI/Components/Core/Tabs',
   component: Tabs,
   tags: ['autodocs'],
   argTypes: {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon, Text, icons } from '@stick-ui/lib';
+import { Icon, Text, icons } from '@istic-ui/react';
 
 export const IconItems: React.FC = () => {
   const iconItems = Object.keys(icons).map((key) => {

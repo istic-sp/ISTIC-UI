@@ -1,11 +1,11 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Product } from '@stick-ui/lib';
+import { Product } from '@istic-ui/react';
 
 Product.displayName = 'Product';
 
 const meta: Meta<typeof Product> = {
-  title: 'STICK UI/Components/Core/Images/Product',
+  title: 'ISTIC UI/Components/Core/Images/Product',
   component: Product,
   tags: ['autodocs'],
   argTypes: {

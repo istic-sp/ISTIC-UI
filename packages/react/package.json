@@ -1,7 +1,7 @@
 {
-  "name": "@stick-ui/lib",
+  "name": "@istic-ui/react",
   "description": "",
-  "version": "1.23.1",
+  "version": "1.23.2",
   "scripts": {
     "dev": "rollup -c --watch",
     "build": "rollup -c"

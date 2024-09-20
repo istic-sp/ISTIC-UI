@@ -7,5 +7,7 @@
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": ["@stick-ui/docs"]
+  "ignore": [
+    "@istic-ui/docs"
+  ]
 }

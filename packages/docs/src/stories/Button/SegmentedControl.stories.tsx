@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { SegmentedControl } from '@stick-ui/lib';
+import { SegmentedControl } from '@istic-ui/react';
 import { Meta } from '@storybook/react';
 
 const meta: Meta<typeof SegmentedControl> = {
-  title: 'STICK UI/Components/Core/Buttons/SegmentedControl',
+  title: 'ISTIC UI/Components/Core/Buttons/SegmentedControl',
   component: SegmentedControl,
 
   argTypes: {},

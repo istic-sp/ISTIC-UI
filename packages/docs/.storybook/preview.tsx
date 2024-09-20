@@ -14,7 +14,7 @@ const preview: Preview = {
       storySort: {
         method: 'alphabetical',
         order: [
-          'STICK UI',
+          'ISTIC UI',
           ['Introduction', 'Getting Started', 'Components', 'Tokens'],
         ],
       },

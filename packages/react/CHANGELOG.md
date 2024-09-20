@@ -1,4 +1,6 @@
-# @stick-ui/lib
+# @istic-ui/react
+
+# @stick-ui/lib = deprecated at 1.23.1
 
 ## 1.23.1
 

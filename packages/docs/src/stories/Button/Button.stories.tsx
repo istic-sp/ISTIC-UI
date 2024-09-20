@@ -1,9 +1,9 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from '@stick-ui/lib';
+import { Button } from '@istic-ui/react';
 
 const meta: Meta<typeof Button> = {
-  title: 'STICK UI/Components/Core/Buttons/Button',
+  title: 'ISTIC UI/Components/Core/Buttons/Button',
   component: Button,
   tags: ['autodocs'],
   argTypes: {

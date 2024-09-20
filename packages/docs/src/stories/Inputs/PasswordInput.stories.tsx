@@ -1,11 +1,11 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { PasswordInput } from '@stick-ui/lib';
+import { PasswordInput } from '@istic-ui/react';
 
 PasswordInput.displayName = 'PasswordInput';
 
 const meta: Meta<typeof PasswordInput> = {
-  title: 'STICK UI/Components/Core/Inputs/PasswordInput',
+  title: 'ISTIC UI/Components/Core/Inputs/PasswordInput',
   component: PasswordInput,
   tags: ['autodocs'],
   argTypes: {

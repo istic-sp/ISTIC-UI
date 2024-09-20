@@ -1,11 +1,11 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Checkbox } from '@stick-ui/lib';
+import { Checkbox } from '@istic-ui/react';
 
 Checkbox.displayName = 'Checkbox';
 
 const meta: Meta<typeof Checkbox> = {
-  title: 'STICK UI/Components/Core/Checkbox',
+  title: 'ISTIC UI/Components/Core/Checkbox',
   component: Checkbox,
   tags: ['autodocs'],
   argTypes: {},

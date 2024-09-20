@@ -1,11 +1,11 @@
-# STICK UI - Design System
+# ISTIC UI - Design System
 
 Bem-vindo ao nosso Design System STICK! Este repositório contém os componentes e diretrizes para ajudar você a construir interfaces de usuário consistentes e bonitas em seus projetos React.
 
 ### Índice
 
-1. [Introdução](https://merces-dev.github.io/STICK-UI/?path=/docs/stick-ui-introduction--documentation)
-2. [Primeiros Passos](https://merces-dev.github.io/STICK-UI/?path=/docs/stick-ui-getting-started--documentation)
+1. [Introdução](https://merces-dev.github.io/ISTIC-UI/?path=/docs/istic-ui-introduction--documentation)
+2. [Primeiros Passos](https://merces-dev.github.io/ISTIC-UI/?path=/docs/istic-ui-getting-started--documentation)
 
 ### Introdução
 
@@ -33,7 +33,7 @@ Nosso design system inclui uma variedade de componentes que atendem a diferentes
 - `build`: Executa o comando `turbo run build` para construir o projeto.
 - `changeset`: Executa o comando `changeset` para gerenciar mudanças no projeto.
 - `version-packages`: Executa o comando `changeset version` para versionar os pacotes.
-- `release`: Executa o comando `turbo run build --filter=@stick-ui/docs && changeset publish` para construir e publicar os pacotes.
+- `release`: Executa o comando `turbo run build --filter=@istic-ui/docs && changeset publish` para construir e publicar os pacotes.
 
 ### Como Rodar o Projeto
 

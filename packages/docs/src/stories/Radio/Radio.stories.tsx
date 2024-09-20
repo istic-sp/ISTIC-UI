@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Radio } from '@stick-ui/lib';
+import { Radio } from '@istic-ui/react';
 
 const meta: Meta<typeof Radio> = {
-  title: 'STICK UI/Components/Core/Radio',
+  title: 'ISTIC UI/Components/Core/Radio',
   component: Radio,
   argTypes: {},
   decorators: [

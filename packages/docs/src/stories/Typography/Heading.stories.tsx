@@ -1,9 +1,9 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Heading } from '@stick-ui/lib';
+import { Heading } from '@istic-ui/react';
 
 const meta: Meta<typeof Heading> = {
-  title: 'STICK UI/Components/Core/Typography/Heading',
+  title: 'ISTIC UI/Components/Core/Typography/Heading',
   component: Heading,
   tags: ['autodocs'],
   argTypes: {

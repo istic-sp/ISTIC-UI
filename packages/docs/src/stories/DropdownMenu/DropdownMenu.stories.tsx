@@ -1,9 +1,9 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
-import { ActionIcon, DropdownMenu, DropdownMenuProps } from '@stick-ui/lib';
+import { ActionIcon, DropdownMenu, DropdownMenuProps } from '@istic-ui/react';
 
 const meta: Meta<DropdownMenuProps> = {
-  title: 'STICK UI/Components/Core/DropdownMenu',
+  title: 'ISTIC UI/Components/Core/DropdownMenu',
   component: DropdownMenu,
   argTypes: {
     mainItem: {

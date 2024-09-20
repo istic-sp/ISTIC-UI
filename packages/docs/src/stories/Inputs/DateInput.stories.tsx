@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Meta } from '@storybook/react';
-import { DateInput, DateInputProps } from '@stick-ui/lib';
+import { DateInput, DateInputProps } from '@istic-ui/react';
 
 DateInput.displayName = 'DateInput';
 
 const meta: Meta<typeof DateInput> = {
-  title: 'STICK UI/Components/Core/Inputs/DateInput',
+  title: 'ISTIC UI/Components/Core/Inputs/DateInput',
   component: DateInput,
 
   argTypes: {

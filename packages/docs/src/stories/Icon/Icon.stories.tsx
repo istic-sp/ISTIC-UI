@@ -1,11 +1,11 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Icon, icons } from '@stick-ui/lib';
+import { Icon, icons } from '@istic-ui/react';
 
 Icon.displayName = 'Icon';
 
 const meta: Meta<typeof Icon> = {
-  title: 'STICK UI/Components/Core/Icon',
+  title: 'ISTIC UI/Components/Core/Icon',
   component: Icon,
   tags: ['autodocs'],
   argTypes: {

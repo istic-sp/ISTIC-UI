@@ -1,11 +1,11 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { ActionIcon, Avatar, DropdownMenu, Table } from '@stick-ui/lib';
+import { ActionIcon, Avatar, DropdownMenu, Table } from '@istic-ui/react';
 
 Avatar.displayName = 'Avatar';
 
 const meta: Meta<typeof Table> = {
-  title: 'STICK UI/Components/Core/Table',
+  title: 'ISTIC UI/Components/Core/Table',
   component: Table,
   tags: ['autodocs'],
   argTypes: {

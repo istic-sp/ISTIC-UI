@@ -1,11 +1,11 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { TextArea } from '@stick-ui/lib';
+import { TextArea } from '@istic-ui/react';
 
 TextArea.displayName = 'TextArea';
 
 const meta: Meta<typeof TextArea> = {
-  title: 'STICK UI/Components/Core/Inputs/TextArea',
+  title: 'ISTIC UI/Components/Core/Inputs/TextArea',
   component: TextArea,
   tags: ['autodocs'],
   decorators: [

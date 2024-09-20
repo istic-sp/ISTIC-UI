@@ -1,9 +1,9 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Accordion } from '@stick-ui/lib';
+import { Accordion } from '@istic-ui/react';
 
 const meta: Meta<typeof Accordion> = {
-  title: 'STICK UI/Components/Core/Accordion',
+  title: 'ISTIC UI/Components/Core/Accordion',
   component: Accordion,
   tags: ['autodocs'],
   argTypes: {

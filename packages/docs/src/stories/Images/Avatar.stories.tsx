@@ -1,11 +1,11 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Avatar } from '@stick-ui/lib';
+import { Avatar } from '@istic-ui/react';
 
 Avatar.displayName = 'Avatar';
 
 const meta: Meta<typeof Avatar> = {
-  title: 'STICK UI/Components/Core/Images/Avatar',
+  title: 'ISTIC UI/Components/Core/Images/Avatar',
   component: Avatar,
   tags: ['autodocs'],
   argTypes: {

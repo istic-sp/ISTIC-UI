@@ -1,9 +1,9 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Toast } from '@stick-ui/lib';
+import { Toast } from '@istic-ui/react';
 
 const meta: Meta<typeof Toast> = {
-  title: 'STICK UI/Components/Core/Toast',
+  title: 'ISTIC UI/Components/Core/Toast',
   component: Toast,
   tags: ['autodocs'],
   argTypes: {

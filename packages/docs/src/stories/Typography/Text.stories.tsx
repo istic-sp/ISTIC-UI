@@ -1,9 +1,9 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Text } from '@stick-ui/lib';
+import { Text } from '@istic-ui/react';
 
 const meta: Meta<typeof Text> = {
-  title: 'STICK UI/Components/Core/Typography/Text',
+  title: 'ISTIC UI/Components/Core/Typography/Text',
   component: Text,
   tags: ['autodocs'],
   argTypes: {

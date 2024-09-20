@@ -1,11 +1,11 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Badge } from '@stick-ui/lib';
+import { Badge } from '@istic-ui/react';
 
 Badge.displayName = 'Badge';
 
 const meta: Meta<typeof Badge> = {
-  title: 'STICK UI/Components/Core/Badges/Badge',
+  title: 'ISTIC UI/Components/Core/Badges/Badge',
   component: Badge,
   tags: ['autodocs'],
   argTypes: {},

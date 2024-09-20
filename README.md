@@ -1,11 +1,11 @@
 # ISTIC UI - Design System
 
-Bem-vindo ao nosso Design System STICK! Este repositório contém os componentes e diretrizes para ajudar você a construir interfaces de usuário consistentes e bonitas em seus projetos React.
+Bem-vindo ao nosso Design System ISTIC! Este repositório contém os componentes e diretrizes para ajudar você a construir interfaces de usuário consistentes e bonitas em seus projetos React.
 
 ### Índice
 
-1. [Introdução](https://merces-dev.github.io/ISTIC-UI/?path=/docs/istic-ui-introduction--documentation)
-2. [Primeiros Passos](https://merces-dev.github.io/ISTIC-UI/?path=/docs/istic-ui-getting-started--documentation)
+1. [Introdução](https://frontdesignsystem.azurewebsites.net/?path=/docs/stick-ui-introduction--documentation)
+2. [Primeiros Passos](https://frontdesignsystem.azurewebsites.net/?path=/docs/stick-ui-getting-started--documentation)
 
 ### Introdução
 
@@ -115,7 +115,3 @@ TURBO_TOKEN: Deve ser criado um token na [Vercel](https://vercel.com/account/tok
 TURBO_TEAM: Identificador do time na [Vercel](https://vercel.com/account/tokens).
 
 Para mais informações acesse [TurboRepo](https://turbo.build/repo/docs/guides/ci-vendors/github-actions)
-
-```
-
-```

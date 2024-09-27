@@ -1,5 +1,11 @@
 # @istic-ui/react
 
+## 1.23.3
+
+### Patch Changes
+
+- Add new icons
+
 # @stick-ui/lib = deprecated at 1.23.1
 
 ## 1.23.1

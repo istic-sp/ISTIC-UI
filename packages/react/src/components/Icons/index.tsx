@@ -37,6 +37,7 @@ const icons = {
   'arrow-turn-forward-line': RiIcons.RiArrowTurnForwardLine,
   'arrow-go-back-line': RiIcons.RiArrowGoBackLine,
   'arrow-go-forward-line': RiIcons.RiArrowGoForwardLine,
+  'refresh-line': RiIcons.RiRefreshLine,
 
   // Buildings
   building: RiIcons.RiBuildingLine,
@@ -63,6 +64,9 @@ const icons = {
   layout: RiIcons.RiLayoutLine,
   'layout-grid': RiIcons.RiLayoutGridLine,
   tools: RiIcons.RiToolsLine,
+  'layout-right': RiIcons.RiLayoutRightLine,
+  'layout-left': RiIcons.RiLayoutLeftLine,
+  'layout-column': RiIcons.RiLayoutColumnLine,
 
   // Device
   computer: RiIcons.RiComputerLine,
@@ -113,9 +117,10 @@ const icons = {
   'eye-close': RiIcons.RiEyeCloseLine,
   'file-list': RiIcons.RiFileList2Line,
   'filter-2': RiIcons.RiFilter2Line,
+  'filter-3': RiIcons.RiFilter3Line,
   function: RiIcons.RiFunctionLine,
   home: RiIcons.RiHomeLine,
-  list: RiIcons.RiLinksLine,
+  list: RiIcons.RiListUnordered,
   lock: RiIcons.RiLockLine,
   logout: RiIcons.RiLogoutBoxLine,
   'more-2': RiIcons.RiMore2Line,
@@ -136,6 +141,8 @@ const icons = {
   radar: RiIcons.RiRfidLine,
   alert: RiIcons.RiAlertLine,
   calculator: RiIcons.RiCalculatorLine,
+  star: RiIcons.RiStarSLine,
+  'star-fill': RiIcons.RiStarSFill,
 
   //User & Faces
   'account-circle': RiIcons.RiAccountCircleLine,

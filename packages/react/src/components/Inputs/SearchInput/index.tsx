@@ -1,7 +1,11 @@
 import React, { InputHTMLAttributes, forwardRef, useState } from 'react';
 import clsx from 'clsx';
-import { Icon } from '../../Icons';
+import { Icon, icons } from '../../Icons';
 
+interface IconProps {
+  name?: keyof typeof icons;
+  position?: 'left' | 'right';
+}
 interface SearchInputProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
   label?: string;
@@ -14,6 +18,7 @@ interface SearchInputProps
   error?: {
     description?: string;
   };
+  iconProps?: IconProps;
 }
 const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
   (
@@ -26,6 +31,7 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       required = false,
       width,
       error,
+      iconProps,
       ...rest
     },
     ref,
@@ -88,6 +94,15 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
           </label>
         )}
         <div className={inputAndIconWrapperClasses}>
+          {iconProps?.position === 'left' && (
+            <div className={iconClasses}>
+              <Icon
+                name={iconProps?.name || 'search'}
+                size={18}
+                color={!disabled ? 'inherit' : 'text-neutral600'}
+              />
+            </div>
+          )}
           <input
             {...rest}
             ref={ref}
@@ -99,13 +114,15 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
             disabled={disabled}
             style={width ? { width } : {}}
           />
-          <div className={iconClasses}>
-            <Icon
-              name="search"
-              size={18}
-              color={!disabled ? 'inherit' : 'text-neutral600'}
-            />
-          </div>
+          {(!iconProps || iconProps?.position === 'right') && (
+            <div className={iconClasses}>
+              <Icon
+                name={iconProps?.name || 'search'}
+                size={18}
+                color={!disabled ? 'inherit' : 'text-neutral600'}
+              />
+            </div>
+          )}
         </div>
         {error?.description && (
           <label className={errorLabelClasses}>{error.description}</label>

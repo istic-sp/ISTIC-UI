@@ -39,5 +39,6 @@ export const Default: StoryObj = {
     disabled: false,
     required: true,
     error: { description: '' },
+    iconProps: { name: 'search', position: 'left' },
   },
 };

@@ -40,12 +40,11 @@ export const Default: StoryObj = {
       {
         id: '2',
         title: 'Tab 2',
-        iconProps: { iconName: 'add' },
       },
       {
         id: '3',
         title: 'Tab 3',
-        iconProps: { iconName: 'add' },
+        iconProps: { iconName: 'add', position: 'left' },
       },
     ],
   },

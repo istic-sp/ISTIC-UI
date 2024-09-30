@@ -5,7 +5,7 @@ import { Icon, icons } from '../Icons';
 interface Tab {
   id: string;
   title: string;
-  iconProps: { iconName: keyof typeof icons };
+  iconProps?: { iconName: keyof typeof icons; position?: 'left' | 'right' };
   width?: string;
 }
 
@@ -56,12 +56,24 @@ const Tabs: React.FC<TabsProps> = ({ tabs, grow = true, value, onChange }) => {
           onClick={() => handleTabClick(tab.id)}
           style={{ width: tab.width }}
         >
-          <Icon
-            name={tab.iconProps.iconName}
-            size={20}
-            color={value === tab.id ? 'text-brand500' : 'text-neutral600'}
-          />
+          {tab.iconProps && tab.iconProps.position === 'left' && (
+            <Icon
+              name={tab.iconProps.iconName}
+              size={20}
+              color={value === tab.id ? 'text-brand500' : 'text-neutral600'}
+            />
+          )}
+
           {tab.title}
+
+          {tab.iconProps &&
+            (!tab.iconProps.position || tab.iconProps.position === 'right') && (
+              <Icon
+                name={tab.iconProps.iconName}
+                size={20}
+                color={value === tab.id ? 'text-brand500' : 'text-neutral600'}
+              />
+            )}
         </button>
       ))}
     </div>

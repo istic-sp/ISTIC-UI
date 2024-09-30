@@ -6,6 +6,7 @@ interface Tab {
   id: string;
   title: string;
   iconProps?: { iconName: keyof typeof icons; position?: 'left' | 'right' };
+  sideElementProps?: { element: React.ReactNode; position: 'left' | 'right' };
   width?: string;
 }
 
@@ -56,17 +57,28 @@ const Tabs: React.FC<TabsProps> = ({ tabs, grow = true, value, onChange }) => {
           onClick={() => handleTabClick(tab.id)}
           style={{ width: tab.width }}
         >
-          {tab.iconProps && tab.iconProps.position === 'left' && (
-            <Icon
-              name={tab.iconProps.iconName}
-              size={20}
-              color={value === tab.id ? 'text-brand500' : 'text-neutral600'}
-            />
-          )}
+          {tab.sideElementProps &&
+            tab.sideElementProps.position === 'right' &&
+            tab.sideElementProps.element}
+
+          {!tab.sideElementProps &&
+            tab.iconProps &&
+            tab.iconProps.position === 'left' && (
+              <Icon
+                name={tab.iconProps.iconName}
+                size={20}
+                color={value === tab.id ? 'text-brand500' : 'text-neutral600'}
+              />
+            )}
 
           {tab.title}
 
-          {tab.iconProps &&
+          {tab.sideElementProps &&
+            tab.sideElementProps.position === 'left' &&
+            tab.sideElementProps.element}
+
+          {!tab.sideElementProps &&
+            tab.iconProps &&
             (!tab.iconProps.position || tab.iconProps.position === 'right') && (
               <Icon
                 name={tab.iconProps.iconName}

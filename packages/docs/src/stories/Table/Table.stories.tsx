@@ -91,16 +91,19 @@ export const Default: StoryObj = {
               }
               items={[
                 {
+                  id: '1',
                   iconName: 'account-circle',
                   label: 'Profile',
                   onClick: () => null,
                 },
                 {
+                  id: '2',
                   iconName: 'account-circle',
                   label: 'Profile',
                   onClick: () => null,
                 },
                 {
+                  id: '3',
                   iconName: 'account-circle',
                   label: 'Profile',
                   onClick: () => null,

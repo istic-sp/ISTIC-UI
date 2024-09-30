@@ -90,10 +90,14 @@ const AccordionTable = <T,>({
   const shouldDisplayEmptyOrLoadingState = isEmptyAndNotLoading || isLoading;
 
   return (
-    <div className={wrapperClasses}>
-      <div className={tableWrapperClasses}>
+    <div className={wrapperClasses} style={{ height: '100%' }}>
+      <div className={tableWrapperClasses} style={{ height: '100%' }}>
         <div
-          style={{ maxHeight: height, minHeight: minHeight, height: minHeight }}
+          style={
+            height || minHeight
+              ? { maxHeight: height, minHeight: minHeight, height: minHeight }
+              : { height: '100%' }
+          }
         >
           <table className={tableClasses}>
             <thead>
@@ -145,8 +149,8 @@ const AccordionTable = <T,>({
                   </tr>
                   {expandedRows.includes(rowIndex) && (
                     <tr className={tbodyTrClasses}>
-                      <td colSpan={columns.length + 1} className="p-2">
-                        <div className="bg-neutral50 p-2 rounded">
+                      <td colSpan={columns.length + 1}>
+                        <div className="bg-neutral50 rounded">
                           {renderExpandedContent(row)}
                         </div>
                       </td>

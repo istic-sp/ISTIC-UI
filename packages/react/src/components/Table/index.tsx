@@ -77,10 +77,14 @@ const Table = <T,>({
   const isEmptyAndNotLoading = isEmpty && !isLoading;
   const shouldDisplayEmptyOrLoadingState = isEmptyAndNotLoading || isLoading;
   return (
-    <div className={wrapperClasses}>
-      <div className={tableWrapperClasses} style={{}}>
+    <div className={wrapperClasses} style={{ height: '100%' }}>
+      <div className={tableWrapperClasses} style={{ height: '100%' }}>
         <div
-          style={{ maxHeight: height, minHeight: minHeight, height: minHeight }}
+          style={
+            height || minHeight
+              ? { maxHeight: height, minHeight: minHeight, height: minHeight }
+              : { height: '100%' }
+          }
         >
           <table className={tableClasses}>
             <thead>

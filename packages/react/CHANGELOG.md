@@ -1,5 +1,11 @@
 # @istic-ui/react
 
+## 1.23.5
+
+### Patch Changes
+
+- Adjust AccordionTable and Table to fill available space in parent div
+
 ## 1.23.4
 
 ### Patch Changes

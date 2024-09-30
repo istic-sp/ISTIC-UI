@@ -1,5 +1,11 @@
 # @istic-ui/react
 
+## 1.23.4
+
+### Patch Changes
+
+- Add iconProps and/or sideElement to Tabs and SearchInput components
+
 ## 1.23.3
 
 ### Patch Changes

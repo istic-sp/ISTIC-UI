@@ -82,7 +82,14 @@ const Table = <T,>({
         <div
           style={
             height || minHeight
-              ? { maxHeight: height, minHeight: minHeight, height: minHeight }
+              ? {
+                  maxHeight: height,
+                  minHeight: minHeight,
+                  height: minHeight,
+                  overflowY: shouldDisplayEmptyOrLoadingState
+                    ? 'hidden'
+                    : 'auto',
+                }
               : { height: '100%' }
           }
         >

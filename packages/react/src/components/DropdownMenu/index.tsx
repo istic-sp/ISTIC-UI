@@ -16,16 +16,26 @@ interface DropdownMenuItem {
   id: string;
 }
 
-interface DropdownMenuProps {
-  mainItem: ReactElement<{ onClick: (event: React.MouseEvent) => void }>;
-  items: DropdownMenuItem[];
-  position?: 'left' | 'right';
-  align?: 'top' | 'bottom' | 'center';
-}
+type DropdownMenuProps =
+  | {
+      mainItem: ReactElement<{ onClick: (event: React.MouseEvent) => void }>;
+      items: DropdownMenuItem[];
+      children?: never;
+      position?: 'left' | 'right' | 'center';
+      align?: 'full-top' | 'top' | 'bottom' | 'center' | 'full-bottom';
+    }
+  | {
+      mainItem: ReactElement<{ onClick: (event: React.MouseEvent) => void }>;
+      children: React.ReactNode;
+      items?: never;
+      position?: 'left' | 'right' | 'center';
+      align?: 'full-top' | 'top' | 'bottom' | 'center' | 'full-bottom';
+    };
 
 const DropdownMenu = ({
   mainItem,
   items = [],
+  children = null,
   position = 'left',
   align = 'center',
 }: DropdownMenuProps) => {
@@ -64,8 +74,10 @@ const DropdownMenu = ({
   );
 
   const renderDropdownItems = () => {
+    if (children) return children;
+
     return (
-      <ul className="bg-white border border-neutral400 p-2 mr-1 rounded-[5px] w-auto list-none">
+      <ul className="bg-white border border-neutral400 p-2 rounded-[5px] w-auto list-none">
         {items.map((item, index) => (
           <li key={item.iconName + index}>
             <button
@@ -90,11 +102,15 @@ const DropdownMenu = ({
   };
 
   const positionClasses = clsx({
-    ['right-full']: position === 'left',
+    ['right-full mr-1']: position === 'left',
     ['left-full ml-1']: position === 'right',
+    ['left-1/2 -translate-x-1/2 ']: position === 'center',
+
     ['top-1/2 -translate-y-1/2']: align === 'center',
     ['bottom-0']: align === 'top',
     ['top-0']: align === 'bottom',
+    ['bottom-full mb-1']: align === 'full-top',
+    ['top-full mt-1']: align === 'full-bottom',
   });
 
   return (
@@ -102,7 +118,6 @@ const DropdownMenu = ({
       <div
         ref={dropdownRef}
         className={`absolute z-30 ${positionClasses} transform `}
-        style={{ width: 150 }}
       >
         {isOpen && renderDropdownItems()}
       </div>

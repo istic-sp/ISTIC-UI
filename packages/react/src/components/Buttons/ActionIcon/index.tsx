@@ -50,7 +50,11 @@ const ActionIcon = ({
 
   return (
     <button {...rest} className={buttonClasses} disabled={disabled}>
-      <Icon name={iconName} color="inherit" size={size === 'xs' ? 18 : 24} />
+      <Icon
+        name={iconName}
+        color={rest.color || 'inherit'}
+        size={size === 'xs' ? 18 : 24}
+      />
     </button>
   );
 };

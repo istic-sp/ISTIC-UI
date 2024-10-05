@@ -9,6 +9,10 @@ const meta: Meta<typeof Select> = {
   component: Select,
   tags: ['autodocs'],
   argTypes: {
+    size: {
+      options: ['xs', 'lg'],
+      control: { type: 'select' },
+    },
     pickerHeight: {
       description: 'Altura máxima do seletor.',
       control: {
@@ -57,6 +61,7 @@ const meta: Meta<typeof Select> = {
 export default meta;
 export const Default: StoryObj = {
   args: {
+    size: 'xs',
     searchable: true,
     clearable: false,
     onType: (a) => console.log(a),

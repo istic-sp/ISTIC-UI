@@ -36,7 +36,14 @@ export const Default = () => (
     }}
   >
     <DropdownMenu
-      mainItem={<ActionIcon variant="filled" size="lg" iconName="more-2" />}
+      mainItem={
+        <ActionIcon
+          variant="filled"
+          size="lg"
+          iconName="more-2"
+          color="text-brand100"
+        />
+      }
       items={[
         {
           id: 'edit',
@@ -59,7 +66,7 @@ export const Default = () => (
         },
       ]}
       position="left"
-      align="bottom"
+      align="full-bottom"
     />
   </div>
 );

@@ -22,7 +22,7 @@ export { Icon, icons, IconProps } from './Icons';
 export { Avatar, AvatarProps } from './Images/Avatar';
 export { Product, ProductProps } from './Images/Product';
 
-export { Table, TableColumn } from './Table';
+export { Table, TableProps, TableColumn } from './Table';
 export { AccordionTable, AccordionTableProps } from './AccordionTable';
 
 export { Chip, ChipProps, ChipTooltipProps } from './Chip';

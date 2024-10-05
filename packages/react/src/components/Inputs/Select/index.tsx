@@ -30,6 +30,7 @@ interface SelectProps {
   defaultValue?: string;
   isLoading?: boolean;
   pickerHeight?: string;
+  size?: 'xs' | 'lg';
 }
 
 const Select = forwardRef<HTMLInputElement, SelectProps>(
@@ -52,6 +53,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
       defaultValue,
       isLoading,
       pickerHeight = '30dvh',
+      size = 'xs',
       ...rest
     },
     ref,
@@ -148,7 +150,14 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
           : 'border-neutral400 focus:border-brand500']: true,
         'bg-neutral100': disabled,
         'bg-white': !disabled,
-        'text-sm h-[44px]': true,
+        [!disabled ? 'bg-white' : 'bg-neutral100']: true,
+        ['text-xs px-3 py-2 h-[36px]']: size === 'xs',
+        ['text-sm px-4 py-3 h-[44px]']: size === 'lg',
+        ['input:-webkit-autofill']: {
+          '-webkit-text-fill-color': 'currentColor',
+          '-webkit-box-shadow': '0 0 0px 1000px transparent inset',
+          transition: 'background-color 5000s ease-in-out 0s',
+        },
       },
     );
 
@@ -159,7 +168,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
           true,
         'bg-neutral100': disabled,
         'bg-white': !disabled,
-        'text-sm py-3 pl-3 h-full': true,
+        'text-sm h-full': true,
       },
     );
 

@@ -1,5 +1,11 @@
 # @istic-ui/react
 
+## 1.23.7
+
+### Patch Changes
+
+- Remove non-necessary tailwind config
+
 ## 1.23.6
 
 ### Patch Changes

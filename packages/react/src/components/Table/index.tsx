@@ -13,6 +13,18 @@ interface TableColumn<T> {
   render?: (data: T) => React.ReactNode;
 }
 
+interface TableClassNames {
+  wrapper?: string;
+  tableWrapper?: string;
+  table?: string;
+  head?: string;
+  headCell?: string;
+  bodyRow?: string;
+  bodyCell?: string;
+  emptyState?: string;
+  loadingState?: string;
+}
+
 interface TableProps<T> {
   columns: TableColumn<T>[];
   data: T[];
@@ -21,6 +33,7 @@ interface TableProps<T> {
   isLoading?: boolean;
   height?: string;
   minHeight?: string;
+  classNames?: TableClassNames;
 }
 
 const Table = <T,>({
@@ -31,26 +44,38 @@ const Table = <T,>({
   isLoading = false,
   height,
   minHeight,
+  classNames = {},
 }: TableProps<T>) => {
   const wrapperClasses = clsx(
     'flex items-start z-0 justify-center flex-col w-full',
+    classNames.wrapper,
   );
-  const tableWrapperClasses = clsx('w-full overflow-x-auto');
-  const tableClasses = clsx('min-w-full table-fixed');
+  const tableWrapperClasses = clsx(
+    'w-full overflow-x-auto',
+    classNames.tableWrapper,
+  );
+  const tableClasses = clsx('min-w-full table-fixed', classNames.table);
   const theadClasses = clsx(
     'text-xs font-default text-neutral700 border-t border-b border-neutral100 py-3 bg-white',
     'sticky top-[-1px] z-10 shadow-sm bg-white',
+    classNames.head,
   );
-  const theadThClasses = clsx('py-3 font-default font-regular');
-  const tbodyTrClasses = clsx('border-b border-neutral100');
+  const theadThClasses = clsx(
+    'py-3 font-default font-regular',
+    classNames.headCell,
+  );
+  const tbodyTrClasses = clsx('border-b border-neutral100', classNames.bodyRow);
   const tbodyTdClasses = clsx(
     'text-sm font-default font-regular text-neutral700 py-5',
+    classNames.bodyCell,
   );
   const noDataClasses = clsx(
     'w-full h-full flex flex-col items-center justify-center',
+    classNames.emptyState,
   );
   const loadingClasses = clsx(
     'w-full h-full flex flex-col items-center justify-center',
+    classNames.loadingState,
   );
 
   const generateCellStyle = (

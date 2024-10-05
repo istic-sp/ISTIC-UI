@@ -46,6 +46,11 @@ const meta: Meta<typeof Table> = {
 export default meta;
 export const Default: StoryObj = {
   args: {
+    classNames: {
+      headCell: ' text-neutral800 px-2 py-4  bg-brand500',
+      bodyCell: 'px-2 py-4 text-neutral800',
+      bodyRow: ' px-2 py-4 hover:bg-brand700',
+    },
     isLoading: false,
     minHeight: 300,
     height: 100,
@@ -119,11 +124,9 @@ export const Default: StoryObj = {
       {
         name: 'Pedro Rony',
         age: 25,
+
         region: 'Argentina',
       },
-      { name: 'Eduardo', age: 32, region: 'França' },
-      { name: 'Eduardo', age: 32, region: 'França' },
-      { name: 'Eduardo', age: 32, region: 'França' },
       { name: 'Eduardo', age: 32, region: 'França' },
     ],
   },

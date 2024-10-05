@@ -1,13 +1,18 @@
 import React from 'react';
 import clsx from 'clsx';
-import { Icon } from '../../Icons';
+import { Icon, icons } from '../../Icons';
 
 interface AvatarProps {
   image?: string | File;
   size?: 'xs' | 'sm' | 'md' | 'lg';
+  iconName?: keyof typeof icons;
 }
 
-const Avatar: React.FC<AvatarProps> = ({ image, size = 'sm' }) => {
+const Avatar: React.FC<AvatarProps> = ({
+  image,
+  size = 'sm',
+  iconName = 'user',
+}) => {
   const avatarClasses = clsx('avatar', {
     'bg-neutral200 text-neutral800 rounded-full flex items-center justify-center':
       true,
@@ -33,7 +38,7 @@ const Avatar: React.FC<AvatarProps> = ({ image, size = 'sm' }) => {
 
   return (
     <div className={avatarClasses} style={avatarStyle}>
-      {!image && <Icon name="user" {...iconProps} />}
+      {!image && <Icon name={iconName} {...iconProps} />}
     </div>
   );
 };

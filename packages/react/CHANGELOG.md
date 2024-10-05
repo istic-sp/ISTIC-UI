@@ -1,5 +1,11 @@
 # @istic-ui/react
 
+## 1.23.6
+
+### Patch Changes
+
+- Improve DropdownMenu positions, ActionIcon colors, Select sizes and new property Table classnames
+
 ## 1.23.5
 
 ### Patch Changes

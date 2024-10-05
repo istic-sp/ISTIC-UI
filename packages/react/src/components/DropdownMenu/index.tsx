@@ -121,7 +121,7 @@ const DropdownMenu = ({
       >
         {isOpen && renderDropdownItems()}
       </div>
-      <div>{React.cloneElement(mainItem, { onClick: toggleDropdown })}</div>
+      {React.cloneElement(mainItem, { onClick: toggleDropdown })}
     </div>
   );
 };

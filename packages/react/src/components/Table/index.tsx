@@ -34,6 +34,7 @@ interface TableProps<T> {
   height?: string;
   minHeight?: string;
   classNames?: TableClassNames;
+  paddingInline?: string | number;
 }
 
 const Table = <T,>({
@@ -45,6 +46,7 @@ const Table = <T,>({
   height,
   minHeight,
   classNames = {},
+  paddingInline,
 }: TableProps<T>) => {
   const wrapperClasses = clsx(
     'flex items-start z-0 justify-center flex-col w-full',
@@ -90,10 +92,10 @@ const Table = <T,>({
       style.width = column.width;
     }
     if (index === 0) {
-      style.paddingLeft = 0;
+      style.paddingLeft = paddingInline || 0;
     }
     if (index === columns.length - 1) {
-      style.paddingRight = 0;
+      style.paddingRight = paddingInline || 0;
     }
     return style;
   };

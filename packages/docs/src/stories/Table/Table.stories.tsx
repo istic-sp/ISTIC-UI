@@ -54,6 +54,7 @@ export const Default: StoryObj = {
     isLoading: false,
     minHeight: 300,
     height: 100,
+    paddingInline: 16,
     pagination: {
       total: 10,
       pageCurrent: 6,

@@ -1,5 +1,11 @@
 # @istic-ui/react
 
+## 1.23.8
+
+### Patch Changes
+
+- Add paddingInline prop to Table
+
 ## 1.23.7
 
 ### Patch Changes

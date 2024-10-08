@@ -1,5 +1,11 @@
 # @istic-ui/react
 
+## 1.23.9
+
+### Patch Changes
+
+- Add new icon Formula
+
 ## 1.23.8
 
 ### Patch Changes

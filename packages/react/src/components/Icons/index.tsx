@@ -58,6 +58,7 @@ const icons = {
   'safe-open': RiIcons.RiSafe2Line,
   'shake-hands': RiIcons.RiShakeHandsLine,
   transfer: RiIcons.RiArrowLeftLine,
+  formula: RiIcons.RiFormula,
 
   // Design
   'edit-box': RiIcons.RiEditBoxLine,

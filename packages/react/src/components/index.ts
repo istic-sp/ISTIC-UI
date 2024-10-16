@@ -30,6 +30,7 @@ export { Badge, BadgeProps } from './Badges/Badge';
 export { StatusBadge, StatusBadgeProps } from './Badges/StatusBadge';
 
 export { Drawer, DrawerProps } from './Drawer';
+export { Dropzone, DropzoneProps } from './Dropzone';
 export { Loader, LoaderProps } from './Loader';
 export { Modal, ModalProps } from './Modals/Modal';
 

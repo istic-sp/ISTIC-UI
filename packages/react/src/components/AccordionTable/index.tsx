@@ -50,13 +50,13 @@ const AccordionTable = <T,>({
   const tableWrapperClasses = clsx('w-full overflow-x-auto');
   const tableClasses = clsx('min-w-full table-fixed');
   const theadClasses = clsx(
-    'text-xs font-default text-neutral700 border-t border-b border-neutral100 py-3 bg-white',
+    'text-xs font-default text-neutral-700 border-t border-b border-neutral-100 py-3 bg-white',
     'sticky top-[-1px] z-10 shadow-sm bg-white',
   );
   const theadThClasses = clsx('py-3 font-default font-regular');
-  const tbodyTrClasses = clsx('border-b border-neutral100 cursor-pointer');
+  const tbodyTrClasses = clsx('border-b border-neutral-100 cursor-pointer');
   const tbodyTdClasses = clsx(
-    'text-sm font-default font-regular text-neutral700 py-2',
+    'text-sm font-default font-regular text-neutral-700 py-2',
   );
   const noDataClasses = clsx(
     'w-full h-full flex flex-col items-center justify-center',
@@ -131,7 +131,7 @@ const AccordionTable = <T,>({
                             ? 'arrow-up-s'
                             : 'arrow-down-s'
                         }
-                        color="text-neutral700"
+                        color="text-neutral-700"
                       />
                     </td>
                     {columns.map((column, colIndex) => (
@@ -164,16 +164,16 @@ const AccordionTable = <T,>({
             <div className="h-full flex flex-col items-center justify-center">
               {isLoading && (
                 <div className={loadingClasses}>
-                  <Loader size="xl" width="slim" color="border-brand500" />
+                  <Loader size="xl" width="slim" color="border-brand-500" />
                 </div>
               )}
               {isEmpty && !isLoading && (
                 <div className={noDataClasses}>
                   {emptyValues?.icon ?? (
-                    <Icon size={48} color="text-brand500" name="inbox-2" />
+                    <Icon size={48} color="text-brand-500" name="inbox-2" />
                   )}
                   <Text
-                    color="text-neutral800"
+                    color="text-neutral-800"
                     weight="regular"
                     size="lg"
                     style={{ textAlign: 'center' }}
@@ -181,7 +181,7 @@ const AccordionTable = <T,>({
                     {emptyValues?.title ?? 'There is no added items'}
                   </Text>
                   <Text
-                    color="text-neutral600"
+                    color="text-neutral-600"
                     weight="regular"
                     size="sm"
                     style={{ textAlign: 'center' }}

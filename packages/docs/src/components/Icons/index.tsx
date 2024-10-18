@@ -32,10 +32,10 @@ export const IconItems: React.FC = () => {
           width: '100%',
         }}
       >
-        <Text weight="bold" color="text-neutral200">
+        <Text weight="bold" color="text-neutral-200">
           Name
         </Text>
-        <Text weight="bold" color="text-neutral200">
+        <Text weight="bold" color="text-neutral-200">
           Icon
         </Text>
       </div>

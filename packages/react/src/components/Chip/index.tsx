@@ -39,19 +39,19 @@ const Chip: React.FC<ChipProps> = ({
     variant === 'filled'
       ? active
         ? 'text-white'
-        : 'text-neutral600'
+        : 'text-neutral-600'
       : active
-        ? 'text-brand500'
-        : 'text-neutral600';
+        ? 'text-brand-500'
+        : 'text-neutral-600';
 
   const filledChipClasses = clsx({
-    ['bg-brand500 text-white']: active,
-    ['bg-neutral0 text-neutral600']: !active,
+    ['bg-brand-500 text-white']: active,
+    ['bg-neutral-50 text-neutral-600']: !active,
   });
 
   const outlineChipClasses = clsx({
-    ['border-solid border border-brand500 text-brand500']: active,
-    ['border-solid border border-neutral300 text-neutral600']: !active,
+    ['border-solid border border-brand-500 text-brand-500']: active,
+    ['border-solid border border-neutral-300 text-neutral-600']: !active,
   });
 
   const chipClasses = clsx({

@@ -50,7 +50,7 @@ const Dropzone: React.FC<DropzoneProps> = ({
   return (
     <div
       className={clsx(
-        'border-2 border-dashed border-neutral400 rounded-lg p-4 w-full h-32 flex items-center justify-center',
+        'border-2 border-dashed border-neutral-400 rounded-lg p-4 w-full h-32 flex items-center justify-center',
         className,
       )}
       onDrop={handleDrop}
@@ -66,7 +66,7 @@ const Dropzone: React.FC<DropzoneProps> = ({
       />
       <label
         htmlFor="dropzone-input"
-        className="text-center text-neutral700 cursor-pointer"
+        className="text-center text-neutral-700 cursor-pointer"
       >
         <div className="mb-2 flex justify-center">{icon}</div>
 
@@ -74,7 +74,7 @@ const Dropzone: React.FC<DropzoneProps> = ({
           {description} <span className="text-blue-500">{highlightText}</span>
         </p>
 
-        <p className="text-sm text-neutral500">
+        <p className="text-sm text-neutral-500">
           Formatos aceitos: {acceptedFormats}
         </p>
       </label>

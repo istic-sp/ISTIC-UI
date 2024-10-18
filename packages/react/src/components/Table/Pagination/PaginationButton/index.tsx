@@ -19,10 +19,10 @@ const PaginationButton: React.FC<PaginationButtonProps> = ({
 }) => {
   const textClasses = clsx({
     ['font-default font-regular text-center leading-text text-xs']: true,
-    ['!text-neutral700']: disabled,
+    ['!text-neutral-700']: disabled,
     [`text-white`]: active === true,
 
-    [`text-neutral700 active:enabled:text-brand600 disabled:!text-neutral600`]:
+    [`text-neutral-700 active:enabled:text-brand-600 disabled:!text-neutral-600`]:
       active === false,
   });
 
@@ -33,9 +33,9 @@ const PaginationButton: React.FC<PaginationButtonProps> = ({
     ['box-border rounded-[5px]']: true,
     ['disabled:cursor-not-allowed outline-none']: true,
 
-    [`border border-transparent bg-brand500 hover:enabled:bg-brand400 active:enabled:!bg-brand600 disabled:bg-neutral100`]:
+    [`border border-transparent bg-brand-500 hover:enabled:bg-brand-400 active:enabled:!bg-brand-600 disabled:bg-neutral-100`]:
       active === true,
-    ['border border-neutral600 hover:enabled:border-brand400  disabled:border-neutral400']:
+    ['border border-neutral-600 hover:enabled:border-brand-400  disabled:border-neutral-400']:
       active === false,
 
     ['px-2 py-1']: label,

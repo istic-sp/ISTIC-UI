@@ -19,9 +19,9 @@ const Checkbox: React.FC<CheckboxProps> = ({
   const checkboxClasses = clsx(
     'h-[16px] w-[16px] flex items-center justify-center rounded-[3px] border',
     {
-      'bg-neutral200 border-neutral400': disabled,
-      'bg-brand600 border-brand500': checked && !disabled,
-      'border-neutral400': !checked && !disabled,
+      'bg-neutral-200 border-neutral-400': disabled,
+      'bg-brand-600 border-brand-500': checked && !disabled,
+      'border-neutral-400': !checked && !disabled,
     },
   );
   return (
@@ -35,12 +35,12 @@ const Checkbox: React.FC<CheckboxProps> = ({
       />
       <span className={checkboxClasses}>
         {disabled ? (
-          <Icon size={10} name={'substract'} color="text-neutral400" />
+          <Icon size={10} name={'substract'} color="text-neutral-400" />
         ) : (
           checked && <Icon size={10} name={'check'} color="text-white" />
         )}
       </span>
-      <Text weight="medium" color="text-neutral700" size="xs">
+      <Text weight="medium" color="text-neutral-700" size="xs">
         {label}
       </Text>
     </label>

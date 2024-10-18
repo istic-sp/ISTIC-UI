@@ -130,12 +130,12 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
       'font-default text-sm leading-text font-regular text-error inline-flex justify-start items-center align-middle';
 
     const buttonClasses = clsx(
-      'flex w-full p-2 gap-2 rounded-[5px] border border-neutral100 justify-start items-center text-center h-auto box-border disabled:cursor-not-allowed outline-none',
+      'flex w-full p-2 gap-2 rounded-[5px] border border-neutral-100 justify-start items-center text-center h-auto box-border disabled:cursor-not-allowed outline-none',
       {
         ['font-default font-medium leading-text text-sm']: true,
-        [`text-neutral800 hover:enabled:text-brand400 active:enabled:text-white disabled:text-neutral400`]:
+        [`text-neutral-800 hover:enabled:text-brand-400 active:enabled:text-white disabled:text-neutral-400`]:
           true,
-        [`border border-transparent bg-white hover:enabled:bg-brand0 active:enabled:!bg-brand600 disabled:bg-neutral100`]:
+        [`border border-transparent bg-white hover:enabled:bg-brand-50 active:enabled:!bg-brand-600 disabled:bg-neutral-100`]:
           true,
       },
     );
@@ -143,14 +143,14 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
     const inputWrapperClasses = clsx(
       'border outline-none shadow-none rounded-[5px] inline-flex',
       {
-        'font-default font-regular text-neutral800 leading-text placeholder:text-neutral600':
+        'font-default font-regular text-neutral-800 leading-text placeholder:text-neutral-600':
           true,
         [error?.description
           ? 'border-error'
-          : 'border-neutral400 focus:border-brand500']: true,
-        'bg-neutral100': disabled,
+          : 'border-neutral-400 focus:border-brand-500']: true,
+        'bg-neutral-100': disabled,
         'bg-white': !disabled,
-        [!disabled ? 'bg-white' : 'bg-neutral100']: true,
+        [!disabled ? 'bg-white' : 'bg-neutral-100']: true,
         ['text-xs px-3 py-2 h-[36px]']: size === 'xs',
         ['text-sm px-4 py-3 h-[44px]']: size === 'lg',
         ['input:-webkit-autofill']: {
@@ -164,9 +164,9 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
     const inputClasses = clsx(
       'w-full outline-none border-transparent shadow-none rounded-[5px] gap-2.5 inline-flex',
       {
-        'font-default font-regular text-neutral800 leading-text placeholder:text-neutral600':
+        'font-default font-regular text-neutral-800 leading-text placeholder:text-neutral-600':
           true,
-        'bg-neutral100': disabled,
+        'bg-neutral-100': disabled,
         'bg-white': !disabled,
         'text-sm h-full': true,
       },
@@ -186,7 +186,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
       'absolute mt-1 flex flex-col w-full top-full z-50',
     );
 
-    const iconProps = { size: 18, color: 'text-brand500' };
+    const iconProps = { size: 18, color: 'text-brand-500' };
 
     return (
       <div ref={selectRef} className={wrapperClasses}>
@@ -216,7 +216,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
             {rightSection ? (
               rightSection
             ) : isLoading ? (
-              <Loader size="xs" color="border-brand500" width="slim" />
+              <Loader size="xs" color="border-brand-500" width="slim" />
             ) : clearable && searchQuery.length ? (
               <button onClick={(e) => clearSelect(e)}>
                 <Icon name={'close'} {...iconProps} />
@@ -229,7 +229,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
         {showOptions && !isLoading && filteredOptions.length > 0 && (
           <div className={pickerClasses}>
             <ul
-              className="bg-white border border-neutral400 p-2 rounded-[5px] w-auto list-none"
+              className="bg-white border border-neutral-400 p-2 rounded-[5px] w-auto list-none"
               style={pickerStyles}
             >
               {filteredOptions.map((option, index) => (

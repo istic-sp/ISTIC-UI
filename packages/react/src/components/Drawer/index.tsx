@@ -35,7 +35,7 @@ const Drawer: React.FC<DrawerProps> = ({
     xl: 'w-2/3 h-full',
   };
 
-  const colorCloseTitle = 'text-neutral800';
+  const colorCloseTitle = 'text-neutral-800';
 
   const drawerClasses = clsx(
     'fixed z-50 inset-0 overflow-hidden',

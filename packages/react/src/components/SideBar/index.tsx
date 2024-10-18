@@ -26,7 +26,7 @@ interface SideBarProps {
 
 const SubNav = ({ title, subItems, activeItem }: SubNav) => (
   <div className="flex flex-col gap-y-2">
-    <Text size="xs" color="text-neutral600" weight="regular">
+    <Text size="xs" color="text-neutral-600" weight="regular">
       {title}
     </Text>
     {subItems.map((subItem, index) => (
@@ -47,10 +47,10 @@ const NavLink = ({
   const linkClasses = clsx(
     'flex w-full flex-row items-center gap-x-2 p-2 rounded-[5px]',
     'transition-colors duration-150 ease-in-out',
-    'hover:text-white hover:bg-brand500',
+    'hover:text-white hover:bg-brand-500',
     {
-      'bg-transparent text-neutral800': !isActive,
-      'bg-brand500 text-white': isActive,
+      'bg-transparent text-neutral-800': !isActive,
+      'bg-brand-500 text-white': isActive,
     },
   );
 

@@ -58,7 +58,7 @@ const Table = <T,>({
   );
   const tableClasses = clsx('min-w-full table-fixed', classNames.table);
   const theadClasses = clsx(
-    'text-xs font-default text-neutral700 border-t border-b border-neutral100 py-3 bg-white',
+    'text-xs font-default text-neutral-700 border-t border-b border-neutral-100 py-3 bg-white',
     'sticky top-[-1px] z-10 shadow-sm bg-white',
     classNames.head,
   );
@@ -66,9 +66,12 @@ const Table = <T,>({
     'py-3 font-default font-regular',
     classNames.headCell,
   );
-  const tbodyTrClasses = clsx('border-b border-neutral100', classNames.bodyRow);
+  const tbodyTrClasses = clsx(
+    'border-b border-neutral-100',
+    classNames.bodyRow,
+  );
   const tbodyTdClasses = clsx(
-    'text-sm font-default font-regular text-neutral700 py-5',
+    'text-sm font-default font-regular text-neutral-700 py-5',
     classNames.bodyCell,
   );
   const noDataClasses = clsx(
@@ -154,16 +157,16 @@ const Table = <T,>({
             <div className="h-full flex flex-col items-center justify-center">
               {isLoading && (
                 <div className={loadingClasses}>
-                  <Loader size="xl" width="slim" color="border-brand500" />
+                  <Loader size="xl" width="slim" color="border-brand-500" />
                 </div>
               )}
               {isEmpty && !isLoading && (
                 <div className={noDataClasses}>
                   {emptyValues?.icon ?? (
-                    <Icon size={48} color="text-brand500" name="inbox-2" />
+                    <Icon size={48} color="text-brand-500" name="inbox-2" />
                   )}
                   <Text
-                    color="text-neutral800"
+                    color="text-neutral-800"
                     weight="regular"
                     size="lg"
                     style={{
@@ -173,7 +176,7 @@ const Table = <T,>({
                     {emptyValues?.title ?? 'There is no added items'}
                   </Text>
                   <Text
-                    color="text-neutral600"
+                    color="text-neutral-600"
                     weight="regular"
                     size="sm"
                     style={{

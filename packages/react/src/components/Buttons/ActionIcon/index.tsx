@@ -18,12 +18,12 @@ const ActionIcon = ({
     ['font-default font-medium leading-text']: true,
 
     [`text-white`]: variant === 'filled',
-    [`text-neutral700 active:enabled:text-brand600 disabled:!text-neutral500`]:
+    [`text-neutral-700 active:enabled:text-brand-600 disabled:!text-neutral-500`]:
       variant === 'outline',
-    [`text-brand500 hover:enabled:text-brand400 active:enabled:text-brand600`]:
+    [`text-brand-500 hover:enabled:text-brand-400 active:enabled:text-brand-600`]:
       variant === 'subtle',
-    [`text-brand500 active:enabled:text-white`]: variant === 'light',
-    ['!text-neutral700']: disabled,
+    [`text-brand-500 active:enabled:text-white`]: variant === 'light',
+    ['!text-neutral-700']: disabled,
 
     ['text-[18px]']: size === 'xs',
     ['text-[24px]']: size === 'lg',
@@ -36,12 +36,12 @@ const ActionIcon = ({
     ['box-border rounded-[5px]']: true,
     ['disabled:cursor-not-allowed outline-none']: true,
 
-    [`border border-transparent  bg-brand500 hover:enabled:bg-brand400 active:enabled:!bg-brand600 disabled:bg-neutral100`]:
+    [`border border-transparent  bg-brand-500 hover:enabled:bg-brand-400 active:enabled:!bg-brand-600 disabled:bg-neutral-100`]:
       variant === 'filled',
-    ['border border-neutral600 hover:enabled:border-brand400 disabled:border-neutral400 disabled:bg-neutral100']:
+    ['border border-neutral-600 hover:enabled:border-brand-400 disabled:border-neutral-400 disabled:bg-neutral-100']:
       variant === 'outline',
     ['border border-transparent ']: variant === 'subtle',
-    [`border border-transparent bg-brand0 hover:enabled:bg-brand200 active:enabled:!bg-brand600  disabled:!bg-neutral100`]:
+    [`border border-transparent bg-brand-50 hover:enabled:bg-brand-200 active:enabled:!bg-brand-600  disabled:!bg-neutral-100`]:
       variant === 'light',
 
     ['p-3 gap-1']: size === 'xs',

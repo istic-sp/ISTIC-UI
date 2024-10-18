@@ -35,12 +35,12 @@ const Tabs: React.FC<TabsProps> = ({ tabs, grow = true, value, onChange }) => {
 
   const activeTabClasses = clsx({
     ['font-semibold']: true,
-    ['text-brand500']: true,
-    ['border-b-2 border-brand500']: true,
+    ['text-brand-500']: true,
+    ['border-b-2 border-brand-500']: true,
   });
 
   const inactiveTabClasses = clsx({
-    ['text-neutral600']: true,
+    ['text-neutral-600']: true,
   });
 
   const handleTabClick = (tabId: string) => {
@@ -67,7 +67,7 @@ const Tabs: React.FC<TabsProps> = ({ tabs, grow = true, value, onChange }) => {
               <Icon
                 name={tab.iconProps.iconName}
                 size={20}
-                color={value === tab.id ? 'text-brand500' : 'text-neutral600'}
+                color={value === tab.id ? 'text-brand-500' : 'text-neutral-600'}
               />
             )}
 
@@ -83,7 +83,7 @@ const Tabs: React.FC<TabsProps> = ({ tabs, grow = true, value, onChange }) => {
               <Icon
                 name={tab.iconProps.iconName}
                 size={20}
-                color={value === tab.id ? 'text-brand500' : 'text-neutral600'}
+                color={value === tab.id ? 'text-brand-500' : 'text-neutral-600'}
               />
             )}
         </button>

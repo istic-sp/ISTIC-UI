@@ -25,13 +25,25 @@ const Button = ({
   const textClasses = clsx({
     ['font-default font-medium leading-text']: true,
 
-    [`text-white`]: variant === 'filled',
-    [`text-neutral-700 active:enabled:text-brand-600 disabled:!text-neutral-500`]:
-      variant === 'outline',
-    [`text-brand-500 hover:enabled:text-brand-400 active:enabled:text-brand-600`]:
-      variant === 'subtle',
-    [`text-brand-500 active:enabled:text-white`]: variant === 'light',
-    ['!text-neutral-700']: disabled,
+    ['text-button-filled-text-default']: variant === 'filled',
+    ['text-button-outline-text-default']: variant === 'outline',
+    ['text-button-subtle-text-default']: variant === 'subtle',
+    ['text-button-light-text-default']: variant === 'light',
+
+    ['hover:enabled:text-button-filled-text-hover']: variant === 'filled',
+    ['hover:enabled:text-button-outline-text-hover']: variant === 'outline',
+    ['hover:enabled:text-button-subtle-text-hover']: variant === 'subtle',
+    ['hover:enabled:text-button-light-text-hover']: variant === 'light',
+
+    ['active:enabled:text-button-filled-text-active']: variant === 'filled',
+    ['active:enabled:text-button-outline-text-active']: variant === 'outline',
+    ['active:enabled:text-button-subtle-text-active']: variant === 'subtle',
+    ['active:enabled:text-button-light-text-active']: variant === 'light',
+
+    ['disabled:text-button-filled-text-disabled']: variant === 'filled',
+    ['disabled:text-button-outline-text-disabled']: variant === 'outline',
+    ['disabled:text-button-subtle-text-disabled']: variant === 'subtle',
+    ['disabled:text-button-light-text-disabled']: variant === 'light',
 
     ['text-button-xs']: size === 'xs',
     ['text-button-sm']: size === 'sm',
@@ -54,13 +66,28 @@ const Button = ({
     ['relative']: true,
     ['overflow-hidden']: true,
 
-    [`border border-transparent bg-brand-500 hover:enabled:bg-brand-400 active:enabled:!bg-brand-600 ${!isLoading ? 'disabled:bg-neutral-100' : ''}`]:
-      variant === 'filled',
-    [`border border-neutral-600 hover:enabled:border-brand-400 ${!isLoading ? 'disabled:border-neutral-400' : ''}`]:
-      variant === 'outline',
-    ['border border-transparent ']: variant === 'subtle',
-    [`border border-transparent bg-brand-50 hover:enabled:bg-brand-200 active:enabled:!bg-brand-600 ${!isLoading ? 'disabled:!bg-neutral-100' : ''}`]:
-      variant === 'light',
+    ['bg-button-filled-default']: variant === 'filled',
+    ['bg-button-subtle-default']: variant === 'subtle',
+    ['bg-button-light-default']: variant === 'light',
+
+    ['hover:enabled:bg-button-filled-hover']: variant === 'filled',
+    ['hover:enabled:bg-button-subtle-hover']: variant === 'subtle',
+    ['hover:enabled:bg-button-light-hover']: variant === 'light',
+
+    ['active:enabled:bg-button-filled-active']: variant === 'filled',
+    ['active:enabled:bg-button-subtle-active']: variant === 'subtle',
+    ['active:enabled:bg-button-light-active']: variant === 'light',
+
+    ['disabled:bg-button-filled-disabled']: variant === 'filled',
+    ['disabled:bg-button-outline-disabled']: variant === 'outline',
+    ['disabled:bg-button-subtle-disabled']: variant === 'subtle',
+    ['disabled:bg-button-light-disabled']: variant === 'light',
+
+    ['border border-transparent']: variant === 'filled' || variant === 'subtle',
+    ['border border-button-outline-default']: variant === 'outline',
+    ['hover:enabled:border-button-outline-hover']: variant === 'outline',
+    ['active:enabled:border-button-outline-active']: variant === 'outline',
+    ['disabled:border-button-outline-disabled']: variant === 'outline',
 
     ['px-3 py-2']: size === 'xs' || size === 'sm',
     ['px-6 py-4']: size === 'md' || size === 'lg' || size === 'xl',
@@ -133,5 +160,6 @@ const Button = ({
     </button>
   );
 };
+
 Button.displayName = 'Button';
 export { Button, ButtonProps };

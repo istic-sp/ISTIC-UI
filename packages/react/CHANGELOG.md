@@ -1,5 +1,11 @@
 # @istic-ui/react
 
+## 1.24.0
+
+### Minor Changes
+
+- Add Dropzone component
+
 ## 1.23.9
 
 ### Patch Changes

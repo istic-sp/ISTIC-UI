@@ -147,7 +147,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
           true,
         [error?.description
           ? 'border-error'
-          : 'border-neutral-400 focus:border-brand-500']: true,
+          : 'border-neutral-400 focus:primary-border']: true,
         'bg-neutral-100': disabled,
         'bg-white': !disabled,
         [!disabled ? 'bg-white' : 'bg-neutral-100']: true,
@@ -186,7 +186,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
       'absolute mt-1 flex flex-col w-full top-full z-50',
     );
 
-    const iconProps = { size: 18, color: 'text-brand-500' };
+    const iconProps = { size: 18, color: 'primary-text' };
 
     return (
       <div ref={selectRef} className={wrapperClasses}>
@@ -216,7 +216,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
             {rightSection ? (
               rightSection
             ) : isLoading ? (
-              <Loader size="xs" color="border-brand-500" width="slim" />
+              <Loader size="xs" color="primary-border" width="slim" />
             ) : clearable && searchQuery.length ? (
               <button onClick={(e) => clearSelect(e)}>
                 <Icon name={'close'} {...iconProps} />

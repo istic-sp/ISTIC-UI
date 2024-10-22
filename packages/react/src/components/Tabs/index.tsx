@@ -35,8 +35,8 @@ const Tabs: React.FC<TabsProps> = ({ tabs, grow = true, value, onChange }) => {
 
   const activeTabClasses = clsx({
     ['font-semibold']: true,
-    ['text-brand-500']: true,
-    ['border-b-2 border-brand-500']: true,
+    ['primary-text']: true,
+    ['border-b-2 primary-border']: true,
   });
 
   const inactiveTabClasses = clsx({
@@ -67,7 +67,7 @@ const Tabs: React.FC<TabsProps> = ({ tabs, grow = true, value, onChange }) => {
               <Icon
                 name={tab.iconProps.iconName}
                 size={20}
-                color={value === tab.id ? 'text-brand-500' : 'text-neutral-600'}
+                color={value === tab.id ? 'primary-text' : 'text-neutral-600'}
               />
             )}
 
@@ -83,7 +83,7 @@ const Tabs: React.FC<TabsProps> = ({ tabs, grow = true, value, onChange }) => {
               <Icon
                 name={tab.iconProps.iconName}
                 size={20}
-                color={value === tab.id ? 'text-brand-500' : 'text-neutral-600'}
+                color={value === tab.id ? 'primary-text' : 'text-neutral-600'}
               />
             )}
         </button>

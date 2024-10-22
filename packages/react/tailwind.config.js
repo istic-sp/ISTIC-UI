@@ -1,7 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  safelist: [
+    {
+      pattern:
+        /^(bg|text|border)-brand-(0|100|200|300|400|500|600|700|800|900|950)$/,
+    },
+    {
+      pattern: /btn-(filled|outline|subtle|light)$/,
+    },
+  ],
   theme: {
+    primaryShade: 300,
+    primaryColor: 'pink',
     extend: {
       colors: {
         white: '#ffffff',
@@ -35,55 +46,6 @@ module.exports = {
           200: '#e9ecef',
           100: '#f1f3f5',
           50: '#f8f9fa',
-        },
-        button: {
-          filled: {
-            default: 'theme("colors.brand.500")',
-            hover: 'theme("colors.brand.400")',
-            active: 'theme("colors.brand.600")',
-            disabled: 'theme("colors.neutral.100")',
-            text: {
-              default: 'theme("colors.white")',
-              hover: 'theme("colors.white")',
-              active: 'theme("colors.white")',
-              disabled: 'theme("colors.neutral.700")',
-            },
-          },
-          outline: {
-            default: 'theme("colors.neutral.600")',
-            hover: 'theme("colors.brand.400")',
-            active: 'theme("colors.brand.600")',
-            disabled: 'theme("colors.neutral.100")',
-            text: {
-              default: 'theme("colors.neutral.700")',
-              hover: 'theme("colors.neutral.700")',
-              active: 'theme("colors.brand.600")',
-              disabled: 'theme("colors.neutral.500")',
-            },
-          },
-          subtle: {
-            default: 'theme("colors.transparent")',
-            hover: 'theme("colors.transparent")',
-            active: 'theme("colors.transparent")',
-            text: {
-              default: 'theme("colors.brand.500")',
-              hover: 'theme("colors.brand.400")',
-              active: 'theme("colors.brand.600")',
-              disabled: 'theme("colors.neutral.700")',
-            },
-          },
-          light: {
-            default: 'theme("colors.brand.50")',
-            hover: 'theme("colors.brand.200")',
-            active: 'theme("colors.brand.600")',
-            disabled: 'theme("colors.neutral.100")',
-            text: {
-              default: 'theme("colors.brand.500")',
-              hover: 'theme("colors.brand.500")',
-              active: 'theme("colors.white")',
-              disabled: 'theme("colors.neutral.700")',
-            },
-          },
         },
       },
 
@@ -191,5 +153,112 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [applyPrimaryColorAndShade, applyButtonClasses],
 };
+
+function applyPrimaryColorAndShade({ addUtilities, theme }) {
+  const primaryColor = theme('primaryColor') || 'brand';
+  const primaryShade = theme('primaryShade') || 500;
+
+  addUtilities({
+    '.primary-bg': {
+      backgroundColor: theme(`colors.${primaryColor}.${primaryShade}`),
+    },
+    '.primary-text': {
+      color: theme(`colors.${primaryColor}.${primaryShade}`),
+    },
+    '.primary-border': {
+      borderColor: theme(`colors.${primaryColor}.${primaryShade}`),
+    },
+  });
+}
+
+function applyButtonClasses({ addComponents, theme }) {
+  const primaryColor = theme('primaryColor') || 'brand';
+  const primaryShade = theme('primaryShade') || 500;
+
+  const validShades = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950];
+
+  const adjustShade = (currentShade, adjustment) => {
+    const currentIndex = validShades.indexOf(currentShade);
+    const newIndex = Math.max(
+      0,
+      Math.min(validShades.length - 1, currentIndex + adjustment),
+    );
+    return validShades[newIndex];
+  };
+
+  addComponents({
+    '.btn-filled': {
+      backgroundColor: theme(`colors.${primaryColor}.${primaryShade}`),
+      color: theme('colors.white'),
+      '&:hover': {
+        backgroundColor: theme(
+          `colors.${primaryColor}.${adjustShade(primaryShade, -1)}`,
+        ),
+      },
+      '&:active': {
+        backgroundColor: theme(
+          `colors.${primaryColor}.${adjustShade(primaryShade, 1)}`,
+        ),
+      },
+      '&:disabled': {
+        backgroundColor: theme('colors.neutral.100'),
+        color: theme('colors.neutral.700'),
+      },
+    },
+
+    '.btn-outline': {
+      borderColor: theme(`colors.${primaryColor}.${primaryShade}`),
+      color: theme(`colors.${primaryColor}.${primaryShade}`),
+      '&:hover': {
+        borderColor: theme(
+          `colors.${primaryColor}.${adjustShade(primaryShade, -1)}`,
+        ),
+        color: theme(`colors.${primaryColor}.${adjustShade(primaryShade, -1)}`),
+      },
+      '&:active': {
+        borderColor: theme(
+          `colors.${primaryColor}.${adjustShade(primaryShade, 1)}`,
+        ),
+        color: theme(`colors.${primaryColor}.${adjustShade(primaryShade, 1)}`),
+      },
+      '&:disabled': {
+        borderColor: theme('colors.neutral.100'),
+        color: theme('colors.neutral.500'),
+      },
+    },
+
+    '.btn-subtle': {
+      backgroundColor: 'transparent',
+      color: theme(`colors.${primaryColor}.${primaryShade}`),
+      '&:hover': {
+        color: theme(`colors.${primaryColor}.${adjustShade(primaryShade, -1)}`),
+      },
+      '&:active': {
+        color: theme(`colors.${primaryColor}.${adjustShade(primaryShade, 1)}`),
+      },
+      '&:disabled': {
+        color: theme('colors.neutral.700'),
+      },
+    },
+
+    '.btn-light': {
+      backgroundColor: theme(`colors.${primaryColor}.50`),
+      color: theme(`colors.${primaryColor}.${primaryShade}`),
+      '&:hover': {
+        backgroundColor: theme(`colors.${primaryColor}.200`),
+      },
+      '&:active': {
+        backgroundColor: theme(
+          `colors.${primaryColor}.${adjustShade(primaryShade, 1)}`,
+        ),
+        color: theme('colors.white'),
+      },
+      '&:disabled': {
+        backgroundColor: theme('colors.neutral.100'),
+        color: theme('colors.neutral.700'),
+      },
+    },
+  });
+}

@@ -46,7 +46,7 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       [error?.description
         ? 'border-error'
         : onFocus
-          ? 'border-brand-500'
+          ? 'primary-border'
           : 'border-neutral-400 active:!border-neutral-400']: true,
     });
 

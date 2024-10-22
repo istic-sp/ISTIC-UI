@@ -33,7 +33,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
         true,
       [error?.description
         ? 'border-error'
-        : 'border-neutral-400 focus:border-brand-500']: true,
+        : 'border-neutral-400 focus:primary-border']: true,
       [!disabled ? 'bg-white' : 'bg-neutral-100']: true,
       ['input:-webkit-autofill']: {
         '-webkit-text-fill-color': 'currentColor',

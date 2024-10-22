@@ -62,7 +62,7 @@ const Accordion: React.FC<AccordionProps> = ({
         <Icon
           name={isOpen ? 'arrow-down-s' : 'arrow-right-s'}
           size={20}
-          color="text-brand-500"
+          color="primary-text"
         />
       </div>
       {isOpen && (

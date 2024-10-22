@@ -25,7 +25,7 @@ const RadioItem: React.FC<RadioItemProps> = ({
     'h-[16px] w-[16px] flex items-center justify-center rounded-full border',
     {
       'bg-neutral-200 border-neutral-400': disabled,
-      'bg-brand-600 border-brand-500': checked && !disabled,
+      'bg-brand-600 primary-border': checked && !disabled,
       'border-neutral-400': !checked && !disabled,
     },
   );

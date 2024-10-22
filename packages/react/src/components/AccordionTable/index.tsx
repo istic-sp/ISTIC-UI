@@ -164,13 +164,13 @@ const AccordionTable = <T,>({
             <div className="h-full flex flex-col items-center justify-center">
               {isLoading && (
                 <div className={loadingClasses}>
-                  <Loader size="xl" width="slim" color="border-brand-500" />
+                  <Loader size="xl" width="slim" color="primary-border" />
                 </div>
               )}
               {isEmpty && !isLoading && (
                 <div className={noDataClasses}>
                   {emptyValues?.icon ?? (
-                    <Icon size={48} color="text-brand-500" name="inbox-2" />
+                    <Icon size={48} color="primary-text" name="inbox-2" />
                   )}
                   <Text
                     color="text-neutral-800"

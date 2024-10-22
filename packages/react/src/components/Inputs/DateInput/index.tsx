@@ -101,7 +101,7 @@ const DateInput: React.FC<DateInputProps> = ({
       'font-default font-normal text-neutral-800 leading-5 placeholder-neutral-600':
         true,
       'border-error': !!error?.description,
-      'border-neutral-400 focus:border-brand-500': !error?.description,
+      'border-neutral-400 focus:primary-border': !error?.description,
       'bg-white': !disabled,
       'bg-neutral-100': disabled,
       'text-xs p-2 h-[36px]': size === 'xs',
@@ -222,10 +222,10 @@ const DateInput: React.FC<DateInputProps> = ({
           </Text>
           {clearable && (value || defaultValue) ? (
             <div onClick={() => handleChange(undefined)}>
-              <Icon name="close" color="text-brand-500" />
+              <Icon name="close" color="primary-text" />
             </div>
           ) : (
-            <Icon name="calendar" color="text-brand-500" />
+            <Icon name="calendar" color="primary-text" />
           )}
         </div>
         {showDatePicker && (
@@ -271,7 +271,7 @@ const DateInput: React.FC<DateInputProps> = ({
                     isCurrentMonth
                       ? 'text-neutral-800 hover:bg-blue-500 h-8 w-8 hover:text-white rounded-sm'
                       : 'text-neutral-400'
-                  } ${isCurrentMonth && isSelectedDate(date) ? 'bg-brand-500 text-white' : ''}`}
+                  } ${isCurrentMonth && isSelectedDate(date) ? 'primary-bg text-white' : ''}`}
                 >
                   {date}
                 </div>

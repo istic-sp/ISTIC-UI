@@ -22,73 +22,24 @@ const Button = ({
   iconProps,
   ...rest
 }: ButtonProps): JSX.Element => {
-  const textClasses = clsx({
-    ['font-default font-medium leading-text']: true,
-
-    ['text-button-filled-text-default']: variant === 'filled',
-    ['text-button-outline-text-default']: variant === 'outline',
-    ['text-button-subtle-text-default']: variant === 'subtle',
-    ['text-button-light-text-default']: variant === 'light',
-
-    ['hover:enabled:text-button-filled-text-hover']: variant === 'filled',
-    ['hover:enabled:text-button-outline-text-hover']: variant === 'outline',
-    ['hover:enabled:text-button-subtle-text-hover']: variant === 'subtle',
-    ['hover:enabled:text-button-light-text-hover']: variant === 'light',
-
-    ['active:enabled:text-button-filled-text-active']: variant === 'filled',
-    ['active:enabled:text-button-outline-text-active']: variant === 'outline',
-    ['active:enabled:text-button-subtle-text-active']: variant === 'subtle',
-    ['active:enabled:text-button-light-text-active']: variant === 'light',
-
-    ['disabled:text-button-filled-text-disabled']: variant === 'filled',
-    ['disabled:text-button-outline-text-disabled']: variant === 'outline',
-    ['disabled:text-button-subtle-text-disabled']: variant === 'subtle',
-    ['disabled:text-button-light-text-disabled']: variant === 'light',
-
-    ['text-button-xs']: size === 'xs',
-    ['text-button-sm']: size === 'sm',
-    ['text-button-md']: size === 'md',
-    ['text-button-lg']: size === 'lg',
-    ['text-button-xl']: size === 'xl',
-  });
-
   const gapClasses = clsx({
     ['gap-1']: size === 'xs',
     ['gap-2']: size === 'sm' || size === 'md' || size === 'lg' || size === 'xl',
   });
 
   const buttonClasses = clsx({
-    [textClasses]: true,
-
     ['flex justify-center items-center text-center h-auto']: true,
     ['box-border rounded-[5px]']: true,
     ['disabled:cursor-not-allowed outline-none']: true,
     ['relative']: true,
     ['overflow-hidden']: true,
-
-    ['bg-button-filled-default']: variant === 'filled',
-    ['bg-button-subtle-default']: variant === 'subtle',
-    ['bg-button-light-default']: variant === 'light',
-
-    ['hover:enabled:bg-button-filled-hover']: variant === 'filled',
-    ['hover:enabled:bg-button-subtle-hover']: variant === 'subtle',
-    ['hover:enabled:bg-button-light-hover']: variant === 'light',
-
-    ['active:enabled:bg-button-filled-active']: variant === 'filled',
-    ['active:enabled:bg-button-subtle-active']: variant === 'subtle',
-    ['active:enabled:bg-button-light-active']: variant === 'light',
-
-    ['disabled:bg-button-filled-disabled']: variant === 'filled',
-    ['disabled:bg-button-outline-disabled']: variant === 'outline',
-    ['disabled:bg-button-subtle-disabled']: variant === 'subtle',
-    ['disabled:bg-button-light-disabled']: variant === 'light',
-
     ['border border-transparent']: variant === 'filled' || variant === 'subtle',
-    ['border border-button-outline-default']: variant === 'outline',
-    ['hover:enabled:border-button-outline-hover']: variant === 'outline',
-    ['active:enabled:border-button-outline-active']: variant === 'outline',
-    ['disabled:border-button-outline-disabled']: variant === 'outline',
+    ['border']: variant === 'outline',
 
+    [`btn-${variant}`]: true,
+    [`btn-${size}`]: true,
+    'btn-grow': grow,
+    'disabled:cursor-not-allowed': true,
     ['px-3 py-2']: size === 'xs' || size === 'sm',
     ['px-6 py-4']: size === 'md' || size === 'lg' || size === 'xl',
     [gapClasses]: true,
@@ -122,10 +73,10 @@ const Button = ({
                 variant === 'filled'
                   ? 'white'
                   : variant === 'light'
-                    ? 'brand-500'
+                    ? 'primary-border'
                     : variant === 'outline'
-                      ? 'none'
-                      : 'brand-500'
+                      ? 'primary-border'
+                      : 'primary-border'
               }
               size={size}
             />

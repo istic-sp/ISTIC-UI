@@ -30,13 +30,11 @@ const PaginationButton: React.FC<PaginationButtonProps> = ({
     [textClasses]: true,
 
     ['flex justify-center items-center text-center']: true,
-    ['box-border rounded-[5px]']: true,
+    ['border box-border rounded-[5px]']: true,
     ['disabled:cursor-not-allowed outline-none']: true,
 
-    [`border border-transparent bg-brand-500 hover:enabled:bg-brand-400 active:enabled:!bg-brand-600 disabled:bg-neutral-100`]:
-      active === true,
-    ['border border-neutral-600 hover:enabled:border-brand-400  disabled:border-neutral-400']:
-      active === false,
+    [`btn-filled border-transparent`]: active === true,
+    [`btn-outline border-neutral-600 `]: active === false,
 
     ['px-2 py-1']: label,
     ['p-1']: iconName,

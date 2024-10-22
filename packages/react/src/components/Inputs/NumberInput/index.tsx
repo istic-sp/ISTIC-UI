@@ -92,7 +92,7 @@ const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
         true,
       [error?.description
         ? 'border-error'
-        : 'border-neutral-400 focus:border-brand-500']: true,
+        : 'border-neutral-400 focus:primary-border']: true,
       [!disabled ? 'bg-white' : 'bg-neutral-100']: true,
       ['text-xs px-3 py-2 h-[36px]']: size === 'xs',
       ['text-sm px-4 py-3 h-[44px]']: size === 'lg',

@@ -71,7 +71,7 @@ const Dropzone: React.FC<DropzoneProps> = ({
         <div className="mb-2 flex justify-center">{icon}</div>
 
         <p>
-          {description} <span className="text-blue-500">{highlightText}</span>
+          {description} <span className="primary-text">{highlightText}</span>
         </p>
 
         <p className="text-sm text-neutral-500">

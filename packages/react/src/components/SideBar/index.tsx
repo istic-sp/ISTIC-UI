@@ -47,10 +47,10 @@ const NavLink = ({
   const linkClasses = clsx(
     'flex w-full flex-row items-center gap-x-2 p-2 rounded-[5px]',
     'transition-colors duration-150 ease-in-out',
-    'hover:text-white hover:bg-brand-500',
+    'hover:text-white hover:primary-bg',
     {
       'bg-transparent text-neutral-800': !isActive,
-      'bg-brand-500 text-white': isActive,
+      'primary-bg text-white': isActive,
     },
   );
 

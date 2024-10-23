@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react';
 import clsx from 'clsx';
+import { Icon } from '../Icons';
 
 interface DropzoneProps {
   onFileUpload: (file: File) => void;
@@ -9,7 +10,7 @@ interface DropzoneProps {
   description?: string;
   acceptedFormats?: string;
   highlightText?: string;
-  icon?: React.ReactNode;
+  icon?: string;
 }
 
 const Dropzone: React.FC<DropzoneProps> = ({
@@ -20,14 +21,19 @@ const Dropzone: React.FC<DropzoneProps> = ({
   description = 'Arraste e solte o arquivo aqui ou clique para carregar',
   acceptedFormats = 'STEP, STP, STL',
   highlightText = 'clique para carregar',
-  icon = <DefaultIcon />,
+  icon = 'upload-cloud-2-line',
 }) => {
+  const fileInputRef = React.useRef<HTMLInputElement | null>(null);
+
   const handleDrop = useCallback(
     (event: React.DragEvent<HTMLDivElement>) => {
       event.preventDefault();
       const files = event.dataTransfer.files;
       if (files.length > 0) {
         onFileUpload(files[0]);
+        if (fileInputRef.current) {
+          fileInputRef.current.files = files;
+        }
       }
     },
     [onFileUpload],
@@ -62,42 +68,28 @@ const Dropzone: React.FC<DropzoneProps> = ({
         multiple={multiple}
         className="hidden"
         onChange={handleFileSelect}
+        ref={fileInputRef}
         id="dropzone-input"
       />
       <label
         htmlFor="dropzone-input"
         className="text-center text-neutral700 cursor-pointer"
       >
-        <div className="mb-2 flex justify-center">{icon}</div>
+        <div className="mb-2 flex justify-center">
+          <Icon name={'upload-cloud-2-line'} />
+        </div>
 
-        <p>
+        <p className="text-neutral600">
           {description} <span className="text-blue-500">{highlightText}</span>
         </p>
 
-        <p className="text-sm text-neutral500">
+        <p className="text-sm text-neutral600">
           Formatos aceitos: {acceptedFormats}
         </p>
       </label>
     </div>
   );
 };
-
-const DefaultIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    className="h-6 w-6 text-gray-500"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M3 16s-1 0-1-1 1-4 5-4 5 4 5 4 1 0 1-1-1-4-5-4S3 16 3 16z"
-    />
-  </svg>
-);
 
 Dropzone.displayName = 'Dropzone';
 

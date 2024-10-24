@@ -98,12 +98,12 @@ const DateInput: React.FC<DateInputProps> = ({
   const inputClasses = clsx(
     'border outline-none shadow-none rounded-[5px] flex justify-between items-center gap-2.5 cursor-pointer',
     {
-      'font-default font-normal text-neutral800 leading-5 placeholder-neutral600':
+      'font-default font-normal text-neutral-800 leading-5 placeholder-neutral-600':
         true,
       'border-error': !!error?.description,
-      'border-neutral400 focus:border-brand500': !error?.description,
+      'border-neutral-400 focus:primary-border': !error?.description,
       'bg-white': !disabled,
-      'bg-neutral100': disabled,
+      'bg-neutral-100': disabled,
       'text-xs p-2 h-[36px]': size === 'xs',
       'text-sm p-3 h-[44px]': size === 'lg',
       'w-full': grow,
@@ -215,23 +215,23 @@ const DateInput: React.FC<DateInputProps> = ({
           <Text
             size={size === 'xs' ? 'xs' : size === 'lg' ? 'sm' : 'sm'}
             color={
-              value || defaultValue ? 'text-neutral700' : 'text-neutral600'
+              value || defaultValue ? 'text-neutral-700' : 'text-neutral-600'
             }
           >
             {(value || defaultValue) ?? (placeholder || 'Selecione uma data')}
           </Text>
           {clearable && (value || defaultValue) ? (
             <div onClick={() => handleChange(undefined)}>
-              <Icon name="close" color="text-brand500" />
+              <Icon name="close" color="primary-text" />
             </div>
           ) : (
-            <Icon name="calendar" color="text-brand500" />
+            <Icon name="calendar" color="primary-text" />
           )}
         </div>
         {showDatePicker && (
           <div
             ref={dateInputRef}
-            className="absolute z-30 bg-white border max-w-64 border-neutral400 rounded-[5px] mt-1 p-4"
+            className="absolute z-30 bg-white border max-w-64 border-neutral-400 rounded-[5px] mt-1 p-4"
             style={style?.datePicker}
           >
             <div className="flex justify-between items-center mb-2">
@@ -256,7 +256,7 @@ const DateInput: React.FC<DateInputProps> = ({
                 <Text
                   key={index}
                   size={size === 'xs' ? 'xs' : size === 'lg' ? 'sm' : 'sm'}
-                  color="text-neutral500"
+                  color="text-neutral-500"
                 >
                   {day}
                 </Text>
@@ -269,9 +269,9 @@ const DateInput: React.FC<DateInputProps> = ({
                   onClick={() => handleDateClick(date, isCurrentMonth)}
                   className={`justify-center flex items-center font-default text-sm p-2 cursor-pointer ${
                     isCurrentMonth
-                      ? 'text-neutral800 hover:bg-blue-500 h-8 w-8 hover:text-white rounded-sm'
-                      : 'text-neutral400'
-                  } ${isCurrentMonth && isSelectedDate(date) ? 'bg-brand500 text-white' : ''}`}
+                      ? 'text-neutral-800 hover:bg-blue-500 h-8 w-8 hover:text-white rounded-sm'
+                      : 'text-neutral-400'
+                  } ${isCurrentMonth && isSelectedDate(date) ? 'primary-bg text-white' : ''}`}
                 >
                   {date}
                 </div>

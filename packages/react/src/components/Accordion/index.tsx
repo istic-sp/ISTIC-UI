@@ -41,7 +41,7 @@ const Accordion: React.FC<AccordionProps> = ({
 
   return (
     <div
-      className={clsx('bg-neutral0 rounded-lg ', { 'w-full': grow })}
+      className={clsx('bg-neutral-50 rounded-lg ', { 'w-full': grow })}
       style={style?.main}
     >
       <div
@@ -52,7 +52,7 @@ const Accordion: React.FC<AccordionProps> = ({
         onClick={() => toggleOpen()}
       >
         <Text
-          className={clsx('text-neutral700 font-medium')}
+          className={clsx('text-neutral-700 font-medium')}
           style={style?.title}
           weight="medium"
           size="sm"
@@ -62,7 +62,7 @@ const Accordion: React.FC<AccordionProps> = ({
         <Icon
           name={isOpen ? 'arrow-down-s' : 'arrow-right-s'}
           size={20}
-          color="text-brand500"
+          color="primary-text"
         />
       </div>
       {isOpen && (

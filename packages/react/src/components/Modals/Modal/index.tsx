@@ -26,7 +26,7 @@ const Modal: React.FC<ModalProps> = ({
   ariaLabel,
   contentWidth,
 }) => {
-  const colorCloseTitle = 'text-neutral800';
+  const colorCloseTitle = 'text-neutral-800';
 
   const modalClasses = clsx(
     'fixed z-50 inset-0 overflow-hidden',

@@ -47,9 +47,9 @@ export default meta;
 export const Default: StoryObj = {
   args: {
     classNames: {
-      headCell: ' text-neutral800 px-2 py-4  bg-brand500',
-      bodyCell: 'px-2 py-4 text-neutral800',
-      bodyRow: ' px-2 py-4 hover:bg-brand700',
+      headCell: ' text-neutral-800 px-2 py-4  primary-bg',
+      bodyCell: 'px-2 py-4 text-neutral-800',
+      bodyRow: ' px-2 py-4 hover:bg-brand-700',
     },
     isLoading: false,
     minHeight: 300,

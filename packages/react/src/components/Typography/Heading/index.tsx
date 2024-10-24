@@ -10,7 +10,7 @@ interface HeadingProps extends ButtonHTMLAttributes<HTMLHeadingElement> {
 
 const Heading = ({
   level = 'h1',
-  color = 'text-neutral700',
+  color = 'text-neutral-700',
   weight = 'regular',
   ...rest
 }: HeadingProps): JSX.Element => {

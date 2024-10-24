@@ -15,7 +15,7 @@ const SegmentedControl = ({
 }: SegmentedControlsProps) => {
   return (
     <div
-      className={`flex flex-row gap-1 p-1 bg-neutral100 ${grow && 'w-full'}`}
+      className={`flex flex-row gap-1 p-1 bg-neutral-100 ${grow && 'w-full'}`}
     >
       {data.map((i, key) => (
         <Button

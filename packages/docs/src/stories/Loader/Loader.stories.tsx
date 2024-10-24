@@ -22,7 +22,7 @@ const meta: Meta<typeof Loader> = {
       },
     },
     color: {
-      options: ['border-slate-100', 'border-brand500'],
+      options: ['border-slate-100', 'primary-border'],
       control: { type: 'select' },
       table: {
         defaultValue: { summary: 'white' },

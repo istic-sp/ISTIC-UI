@@ -36,19 +36,19 @@ const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
     const [showPassword, setShowPassword] = useState(false);
 
     const inputAndIconWrapperClasses = clsx({
-      [!disabled ? 'bg-white' : 'bg-neutral100']: true,
+      [!disabled ? 'bg-white' : 'bg-neutral-100']: true,
       ['inline-flex border rounded-[5px]']: true,
       [error?.description
         ? 'border-error'
         : onFocus
-          ? 'border-brand500'
-          : 'border-neutral400 active:!border-neutral400']: true,
+          ? 'primary-border'
+          : 'border-neutral-400 active:!border-neutral-400']: true,
     });
 
     const inputClasses = clsx({
       ['outline-none shadow-none justify-center rounded-[5px] items-center gap-2.5 inline-flex']:
         true,
-      ['font-default font-regular text-neutral800 leading-text placeholder:text-neutral600']:
+      ['font-default font-regular text-neutral-800 leading-text placeholder:text-neutral-600']:
         true,
       ['text-xs pl-3 py-2 h-[36px]']: size === 'xs',
       ['text-sm pl-4 py-3 h-[44px]']: size === 'lg',
@@ -85,7 +85,7 @@ const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
       ['text-xs']: size === 'xs',
       ['text-lg']: size === 'lg',
       ['text-error']: error?.description,
-      ['text-neutral600']: disabled,
+      ['text-neutral-600']: disabled,
     });
 
     return (

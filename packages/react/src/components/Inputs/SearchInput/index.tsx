@@ -39,19 +39,19 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
     const [onFocus, setOnFocus] = useState(false);
 
     const inputAndIconWrapperClasses = clsx({
-      [!disabled ? 'bg-white' : 'bg-neutral100']: true,
-      ['font-default font-regular leading-text placeholder:text-neutral600']:
+      [!disabled ? 'bg-white' : 'bg-neutral-100']: true,
+      ['font-default font-regular leading-text placeholder:text-neutral-600']:
         true,
       ['inline-flex border rounded-[5px]']: true,
       [error?.description
         ? 'border-error'
         : onFocus
-          ? 'border-brand500'
-          : 'border-neutral400 active:!border-neutral400']: true,
+          ? 'primary-border'
+          : 'border-neutral-400 active:!border-neutral-400']: true,
     });
 
     const inputClasses = clsx({
-      ['outline-none shadow-none justify-center rounded-[5px] text-sm disabled:text-neutral600 items-center gap-2.5 inline-flex']:
+      ['outline-none shadow-none justify-center rounded-[5px] text-sm disabled:text-neutral-600 items-center gap-2.5 inline-flex']:
         true,
 
       ['pl-3 py-2 h-[36px]']: size === 'xs',
@@ -99,7 +99,7 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
               <Icon
                 name={iconProps?.name || 'search'}
                 size={18}
-                color={!disabled ? 'inherit' : 'text-neutral600'}
+                color={!disabled ? 'inherit' : 'text-neutral-600'}
               />
             </div>
           )}
@@ -119,7 +119,7 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
               <Icon
                 name={iconProps?.name || 'search'}
                 size={18}
-                color={!disabled ? 'inherit' : 'text-neutral600'}
+                color={!disabled ? 'inherit' : 'text-neutral-600'}
               />
             </div>
           )}

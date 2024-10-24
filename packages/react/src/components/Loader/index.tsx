@@ -19,15 +19,12 @@ const Loader = ({
     ['w-7 h-7']: size === 'lg',
     ['w-8 h-8']: size === 'xl',
 
-    ['overflow-hidden']: true,
+    ['overflow-hidden border-solid rounded-full border-b-transparent inline-block box-border animate-spin']:
+      true,
 
-    [`border-solid border-4 rounded-full`]: true,
-    [width === 'slim' ? 'border-2' : 'border-4']: true,
+    ['border-2']: width === 'slim',
+    ['border-4']: width === 'bold',
     [color]: true,
-    ['border-b-transparent']: true,
-    ['inline-block']: true,
-    ['box-border']: true,
-    ['animate-spin']: true,
   });
 
   return <span className={loaderClasses} />;

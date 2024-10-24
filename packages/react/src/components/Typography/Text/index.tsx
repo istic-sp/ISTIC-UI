@@ -10,7 +10,7 @@ interface TextProps extends HTMLAttributes<HTMLParagraphElement> {
 
 const Text = ({
   size = 'md',
-  color = 'text-neutral700',
+  color = 'text-neutral-700',
   weight = 'regular',
   ...rest
 }: TextProps): JSX.Element => {

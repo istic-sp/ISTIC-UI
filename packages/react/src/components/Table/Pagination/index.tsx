@@ -71,7 +71,7 @@ const Pagination: React.FC<IPagination> = ({ pagination }) => {
                   {[0, 1, 2].map((key) => (
                     <div
                       key={key}
-                      className="w-0.5 h-0.5 bg-neutral600 rounded-full"
+                      className="w-0.5 h-0.5 bg-neutral-600 rounded-full"
                     />
                   ))}
                 </div>

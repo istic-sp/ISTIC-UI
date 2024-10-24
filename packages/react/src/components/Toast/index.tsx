@@ -100,10 +100,10 @@ const Toast: React.FC<ToastProps> = ({
             color="currentColor"
           />
           <div>
-            <Text size="sm" color="text-neutral700">
+            <Text size="sm" color="text-neutral-700">
               {title}
             </Text>
-            <Text size="xs" color="text-neutral600">
+            <Text size="xs" color="text-neutral-600">
               {message}
             </Text>
           </div>
@@ -116,7 +116,7 @@ const Toast: React.FC<ToastProps> = ({
             }}
             className="ml-auto"
           >
-            <Icon size={20} name="close" color="text-neutral700" />
+            <Icon size={20} name="close" color="text-neutral-700" />
           </button>
         )}
       </div>

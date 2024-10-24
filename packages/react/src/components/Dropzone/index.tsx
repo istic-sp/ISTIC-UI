@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import clsx from 'clsx';
-import { Icon } from '../Icons';
+import { Icon, icons } from '../Icons';
 
 interface DropzoneProps {
   onFileUpload: (file: File) => void;
@@ -10,7 +10,7 @@ interface DropzoneProps {
   description?: string;
   acceptedFormats?: string;
   highlightText?: string;
-  icon?: string;
+  icon?: keyof typeof icons;
 }
 
 const Dropzone: React.FC<DropzoneProps> = ({
@@ -56,7 +56,7 @@ const Dropzone: React.FC<DropzoneProps> = ({
   return (
     <div
       className={clsx(
-        'border-2 border-dashed border-neutral400 rounded-lg p-4 w-full h-32 flex items-center justify-center',
+        'border-2 border-dashed border-neutral-400 rounded-lg p-4 w-full h-32 flex items-center justify-center',
         className,
       )}
       onDrop={handleDrop}
@@ -73,17 +73,17 @@ const Dropzone: React.FC<DropzoneProps> = ({
       />
       <label
         htmlFor="dropzone-input"
-        className="text-center text-neutral700 cursor-pointer"
+        className="text-center text-neutral-700 cursor-pointer"
       >
         <div className="mb-2 flex justify-center">
-          <Icon name={'upload-cloud-2-line'} />
+          <Icon name={icon} />
         </div>
 
-        <p className="text-neutral600">
-          {description} <span className="text-blue-500">{highlightText}</span>
+        <p className="text-neutral-600">
+          {description} <span className="primary-text">{highlightText}</span>
         </p>
 
-        <p className="text-sm text-neutral600">
+        <p className="text-sm text-neutral-600">
           Formatos aceitos: {acceptedFormats}
         </p>
       </label>

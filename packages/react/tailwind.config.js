@@ -1,7 +1,21 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  safelist: [
+    {
+      pattern:
+        /^(bg|text|border)-brand-(0|100|200|300|400|500|600|700|800|900|950)$/,
+    },
+    {
+      pattern: /btn-(filled|outline|subtle|light)$/,
+    },
+    {
+      pattern: /rounded-button-(xs|sm|md|lg|xl)$/,
+    },
+  ],
   theme: {
+    primaryShade: 300,
+    primaryColor: 'pink',
     extend: {
       colors: {
         white: '#ffffff',
@@ -10,28 +24,34 @@ module.exports = {
         info: '#00adf2',
         error: '#fc3932',
 
-        brand900: '#0B1B7A',
-        brand800: '#132893',
-        brand700: '#1F3CB7',
-        brand600: '#2D52DB',
-        brand500: '#3E6CFF',
-        brand400: '#6E94FF',
-        brand300: '#8BACFF',
-        brand200: '#B1C9FF',
-        brand100: '#D8E5FF',
-        brand0: '#F4F7FF',
-
-        neutral900: '#212529',
-        neutral800: '#343a40',
-        neutral700: '#495057',
-        neutral600: '#868e96',
-        neutral500: '#adb5bd',
-        neutral400: '#ced4da',
-        neutral300: '#dee2e6',
-        neutral200: '#e9ecef',
-        neutral100: '#f1f3f5',
-        neutral0: '#f8f9fa',
+        brand: {
+          950: '#0B1B7A',
+          900: '#0B1B7A',
+          800: '#132893',
+          700: '#1F3CB7',
+          600: '#2D52DB',
+          500: '#3E6CFF',
+          400: '#6E94FF',
+          300: '#8BACFF',
+          200: '#B1C9FF',
+          100: '#D8E5FF',
+          50: '#F4F7FF',
+        },
+        neutral: {
+          950: '#212529',
+          900: '#212529',
+          800: '#343a40',
+          700: '#495057',
+          600: '#868e96',
+          500: '#adb5bd',
+          400: '#ced4da',
+          300: '#dee2e6',
+          200: '#e9ecef',
+          100: '#f1f3f5',
+          50: '#f8f9fa',
+        },
       },
+
       fontSize: {
         xs: '0.75rem',
         sm: '0.875rem',
@@ -59,6 +79,13 @@ module.exports = {
       lineHeight: {
         text: '150%',
         title: '150%',
+      },
+      borderRadius: {
+        'button-xs': '5px',
+        'button-sm': '5px',
+        'button-md': '5px',
+        'button-lg': '5px',
+        'button-xl': '5px',
       },
       keyframes: {
         'fade-in': {
@@ -136,5 +163,112 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [applyPrimaryColorAndShade, applyButtonClasses],
 };
+
+function applyPrimaryColorAndShade({ addUtilities, theme }) {
+  const primaryColor = theme('primaryColor') || 'brand';
+  const primaryShade = theme('primaryShade') || 500;
+
+  addUtilities({
+    '.primary-bg': {
+      backgroundColor: theme(`colors.${primaryColor}.${primaryShade}`),
+    },
+    '.primary-text': {
+      color: theme(`colors.${primaryColor}.${primaryShade}`),
+    },
+    '.primary-border': {
+      borderColor: theme(`colors.${primaryColor}.${primaryShade}`),
+    },
+  });
+}
+
+function applyButtonClasses({ addComponents, theme }) {
+  const primaryColor = theme('primaryColor') || 'brand';
+  const primaryShade = theme('primaryShade') || 500;
+
+  const validShades = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950];
+
+  const adjustShade = (currentShade, adjustment) => {
+    const currentIndex = validShades.indexOf(currentShade);
+    const newIndex = Math.max(
+      0,
+      Math.min(validShades.length - 1, currentIndex + adjustment),
+    );
+    return validShades[newIndex];
+  };
+
+  addComponents({
+    '.btn-filled': {
+      backgroundColor: theme(`colors.${primaryColor}.${primaryShade}`),
+      color: theme('colors.white'),
+      '&:hover': {
+        backgroundColor: theme(
+          `colors.${primaryColor}.${adjustShade(primaryShade, -1)}`,
+        ),
+      },
+      '&:active': {
+        backgroundColor: theme(
+          `colors.${primaryColor}.${adjustShade(primaryShade, 1)}`,
+        ),
+      },
+      '&:disabled': {
+        backgroundColor: theme('colors.neutral.100'),
+        color: theme('colors.neutral.700'),
+      },
+    },
+
+    '.btn-outline': {
+      borderColor: theme(`colors.${primaryColor}.${primaryShade}`),
+      color: theme(`colors.${primaryColor}.${primaryShade}`),
+      '&:hover': {
+        borderColor: theme(
+          `colors.${primaryColor}.${adjustShade(primaryShade, -1)}`,
+        ),
+        color: theme(`colors.${primaryColor}.${adjustShade(primaryShade, -1)}`),
+      },
+      '&:active': {
+        borderColor: theme(
+          `colors.${primaryColor}.${adjustShade(primaryShade, 1)}`,
+        ),
+        color: theme(`colors.${primaryColor}.${adjustShade(primaryShade, 1)}`),
+      },
+      '&:disabled': {
+        borderColor: theme('colors.neutral.100'),
+        color: theme('colors.neutral.500'),
+      },
+    },
+
+    '.btn-subtle': {
+      backgroundColor: 'transparent',
+      color: theme(`colors.${primaryColor}.${primaryShade}`),
+      '&:hover': {
+        color: theme(`colors.${primaryColor}.${adjustShade(primaryShade, -1)}`),
+      },
+      '&:active': {
+        color: theme(`colors.${primaryColor}.${adjustShade(primaryShade, 1)}`),
+      },
+      '&:disabled': {
+        color: theme('colors.neutral.700'),
+      },
+    },
+
+    '.btn-light': {
+      backgroundColor: theme(`colors.${primaryColor}.50`),
+      color: theme(`colors.${primaryColor}.${primaryShade}`),
+      '&:hover': {
+        backgroundColor: theme(`colors.${primaryColor}.200`),
+      },
+      '&:active': {
+        backgroundColor: theme(
+          `colors.${primaryColor}.${adjustShade(primaryShade, 1)}`,
+        ),
+        color: theme('colors.white'),
+      },
+      '&:disabled': {
+        backgroundColor: theme('colors.neutral.100'),
+        color: theme('colors.neutral.700'),
+      },
+    },
+  });
+}

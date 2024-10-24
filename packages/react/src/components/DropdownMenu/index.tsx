@@ -64,11 +64,11 @@ const DropdownMenu = ({
   }, [handleOutsideClick]);
 
   const buttonClasses = clsx(
-    'flex w-full p-2 gap-2 rounded-[5px] border border-neutral100 justify-start items-center text-center h-auto box-border disabled:cursor-not-allowed outline-none font-default font-medium leading-text text-sm',
+    'flex w-full p-2 gap-2 rounded-[5px] border border-neutral-100 justify-start items-center text-center h-auto box-border disabled:cursor-not-allowed outline-none font-default font-medium leading-text text-sm',
     {
-      'text-neutral800 hover:enabled:text-brand400 active:enabled:text-white disabled:text-neutral400':
+      'text-neutral-800 hover:enabled:text-brand-400 active:enabled:text-white disabled:text-neutral-400':
         true,
-      'border border-transparent bg-white hover:enabled:bg-brand0 active:enabled:!bg-brand600 disabled:bg-neutral100':
+      'border border-transparent bg-white hover:enabled:bg-brand-50 active:enabled:!bg-brand-600 disabled:bg-neutral-100':
         true,
     },
   );
@@ -77,7 +77,7 @@ const DropdownMenu = ({
     if (children) return children;
 
     return (
-      <ul className="bg-white border border-neutral400 p-2 rounded-[5px] w-auto list-none">
+      <ul className="bg-white border border-neutral-400 p-2 rounded-[5px] w-auto list-none">
         {items.map((item, index) => (
           <li key={item.iconName + index}>
             <button

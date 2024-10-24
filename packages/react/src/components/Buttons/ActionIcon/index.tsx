@@ -19,11 +19,12 @@ const ActionIcon = ({
     ['font-default font-medium leading-text']: true,
 
     ['flex justify-center items-center text-center']: true,
-    ['box-border rounded-[5px]']: true,
+    ['box-border']: true,
     ['disabled:cursor-not-allowed outline-none']: true,
 
     [`btn-${variant}`]: true,
     [`btn-${size}`]: true,
+    [`rounded-button-${size}`]: true,
 
     ['!text-neutral-700']: disabled,
 

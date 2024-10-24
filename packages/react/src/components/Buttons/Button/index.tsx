@@ -29,7 +29,7 @@ const Button = ({
 
   const buttonClasses = clsx({
     ['flex justify-center items-center text-center h-auto']: true,
-    ['box-border rounded-[5px]']: true,
+    ['box-border']: true,
     ['disabled:cursor-not-allowed outline-none']: true,
     ['relative']: true,
     ['overflow-hidden']: true,
@@ -38,6 +38,7 @@ const Button = ({
 
     [`btn-${variant}`]: true,
     [`btn-${size}`]: true,
+    [`rounded-button-${size}`]: true,
     'btn-grow': grow,
     'disabled:cursor-not-allowed': true,
     ['px-3 py-2']: size === 'xs' || size === 'sm',

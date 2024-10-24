@@ -9,6 +9,9 @@ module.exports = {
     {
       pattern: /btn-(filled|outline|subtle|light)$/,
     },
+    {
+      pattern: /rounded-button-(xs|sm|md|lg|xl)$/,
+    },
   ],
   theme: {
     primaryShade: 300,
@@ -76,6 +79,13 @@ module.exports = {
       lineHeight: {
         text: '150%',
         title: '150%',
+      },
+      borderRadius: {
+        'button-xs': '5px',
+        'button-sm': '5px',
+        'button-md': '5px',
+        'button-lg': '5px',
+        'button-xl': '5px',
       },
       keyframes: {
         'fade-in': {

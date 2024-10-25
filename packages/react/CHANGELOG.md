@@ -1,5 +1,11 @@
 # @istic-ui/react
 
+## 2.0.3
+
+### Patch Changes
+
+- Add rounded classes for rounded SearchInput
+
 ## 2.0.2
 
 ### Patch Changes

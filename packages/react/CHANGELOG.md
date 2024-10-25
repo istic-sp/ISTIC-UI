@@ -1,5 +1,11 @@
 # @istic-ui/react
 
+## 2.0.2
+
+### Patch Changes
+
+- Create maxValue and isInteger properties for NumberInput
+
 ## 2.0.1
 
 ### Patch Changes

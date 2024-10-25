@@ -42,7 +42,7 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       [!disabled ? 'bg-white' : 'bg-neutral-100']: true,
       ['font-default font-regular leading-text placeholder:text-neutral-600']:
         true,
-      [`rounded-input-${size}`]: true,
+      [`rounded-search-input-${size}`]: true,
       ['inline-flex border ']: true,
       [error?.description
         ? 'border-error'
@@ -52,9 +52,9 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
     });
 
     const inputClasses = clsx({
-      ['outline-none shadow-none justify-center rounded-[5px] text-sm disabled:text-neutral-600 items-center gap-2.5 inline-flex']:
+      ['outline-none shadow-none justify-center text-sm disabled:text-neutral-600 items-center gap-2.5 inline-flex']:
         true,
-
+      [`rounded-search-input-${size}`]: true,
       ['pl-3 py-2 h-[36px]']: size === 'xs',
       ['pl-4 py-3 h-[44px]']: size === 'lg',
       ['w-full']: grow,

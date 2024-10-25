@@ -15,7 +15,7 @@ module.exports = {
       pattern: /btn-(filled|outline|subtle|light)$/,
     },
     {
-      pattern: /rounded-(button|input)-(xs|sm|md|lg|xl)$/,
+      pattern: /rounded-(button|input|search-input)-(xs|sm|md|lg|xl)$/,
     },
   ],
   theme: {
@@ -86,8 +86,11 @@ module.exports = {
         title: '150%',
       },
       borderRadius: {
-        'input-xs': '5px',
-        'input-lg': '5px',
+        'input-xs': '25px',
+        'input-lg': '25px',
+
+        'search-input-xs': '5px',
+        'search-input-lg': '5px',
 
         'button-xs': '5px',
         'button-sm': '5px',

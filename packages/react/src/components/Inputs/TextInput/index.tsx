@@ -28,10 +28,12 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
     ref,
   ) => {
     const inputClasses = clsx({
-      ['border outline-none shadow-none rounded-[5px] justify-center items-center gap-2.5 inline-flex']:
+      ['border outline-none shadow-none justify-center items-center gap-2.5 inline-flex']:
         true,
       ['font-default font-regular text-neutral-800 leading-text placeholder:text-neutral-600']:
         true,
+      [`rounded-input-${size}`]: true,
+
       [error?.description
         ? 'border-error'
         : 'border-neutral-400 focus:primary-border']: true,

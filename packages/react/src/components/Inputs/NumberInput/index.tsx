@@ -20,7 +20,8 @@ interface NumberInputProps
   value?: number;
   onChange: (value?: number) => void;
   decimalSeparator?: '.' | ',';
-  maxValue?: number; // Renamed max prop to maxValue
+  maxValue?: number;
+  isInteger?: boolean;
 }
 
 const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
@@ -37,7 +38,8 @@ const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
       value,
       onChange,
       decimalSeparator = '.',
-      maxValue, // Destructure maxValue prop
+      maxValue,
+      isInteger = false,
       ...rest
     },
     ref,
@@ -50,11 +52,13 @@ const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
 
     useEffect(() => {
       if (value !== undefined) {
-        setInputValue(value.toString().replace('.', decimalSeparator));
+        const limitedValue =
+          maxValue !== undefined ? Math.min(value, maxValue) : value;
+        setInputValue(limitedValue.toString().replace('.', decimalSeparator));
       } else {
         setInputValue('');
       }
-    }, [value, decimalSeparator]);
+    }, [value, decimalSeparator, maxValue]);
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
       const rawValue = event.target.value;
@@ -65,20 +69,28 @@ const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
         return;
       }
 
-      const regex = new RegExp(`^\\d*(\\${decimalSeparator}\\d*)?$`);
-      if (regex.test(rawValue)) {
-        let normalizedValue = rawValue.replace(decimalSeparator, '.');
-        let numberValue = parseFloat(normalizedValue);
+      const regex = isInteger
+        ? /^\d*$/
+        : new RegExp(`^\\d*(\\${decimalSeparator}\\d*)?$`);
 
-        if (!isNaN(numberValue)) {
-          if (maxValue !== undefined && numberValue > maxValue) {
-            numberValue = maxValue;
-            normalizedValue = maxValue
-              .toString()
-              .replace('.', decimalSeparator);
+      if (regex.test(rawValue)) {
+        setInputValue(rawValue);
+
+        const normalizedValue = isInteger
+          ? parseInt(rawValue)
+          : parseFloat(rawValue.replace(decimalSeparator, '.'));
+
+        if (!isNaN(normalizedValue)) {
+          const boundedValue =
+            maxValue !== undefined
+              ? Math.min(normalizedValue, maxValue)
+              : normalizedValue;
+          if (boundedValue !== normalizedValue) {
+            setInputValue(
+              boundedValue.toString().replace('.', decimalSeparator),
+            );
           }
-          setInputValue(normalizedValue);
-          onChange(numberValue);
+          onChange(boundedValue);
         } else {
           onChange(undefined);
         }
@@ -86,10 +98,11 @@ const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
     };
 
     const inputClasses = clsx({
-      ['border outline-none shadow-none rounded-[5px] justify-center items-center gap-2.5 inline-flex']:
+      ['border outline-none shadow-none justify-center items-center gap-2.5 inline-flex']:
         true,
       ['font-default font-regular text-neutral-800 leading-text placeholder:text-neutral-600']:
         true,
+      [`rounded-input-${size}`]: true,
       [error?.description
         ? 'border-error'
         : 'border-neutral-400 focus:primary-border']: true,

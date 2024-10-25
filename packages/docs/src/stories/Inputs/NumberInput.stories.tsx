@@ -37,13 +37,14 @@ const meta: Meta<typeof NumberInput> = {
 export default meta;
 export const Default: StoryObj = {
   args: {
-    decimalSeparator: '.',
+    decimalSeparator: ',',
+    isInteger: false,
+    maxValue: 100,
     size: 'xs',
     label: 'label',
     placeholder: 'Text here',
     grow: true,
     disabled: false,
-    maxValue: 100,
     required: true,
     error: { description: '' },
   },

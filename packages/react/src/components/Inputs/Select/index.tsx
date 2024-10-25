@@ -130,8 +130,9 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
       'font-default text-sm leading-text font-regular text-error inline-flex justify-start items-center align-middle';
 
     const buttonClasses = clsx(
-      'flex w-full p-2 gap-2 rounded-[5px] border border-neutral-100 justify-start items-center text-center h-auto box-border disabled:cursor-not-allowed outline-none',
+      'flex w-full p-2 gap-2 border border-neutral-100 justify-start items-center text-center h-auto box-border disabled:cursor-not-allowed outline-none',
       {
+        [`rounded-input-${size}`]: true,
         ['font-default font-medium leading-text text-sm']: true,
         [`text-neutral-800 hover:enabled:text-brand-400 active:enabled:text-white disabled:text-neutral-400`]:
           true,
@@ -141,8 +142,10 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
     );
 
     const inputWrapperClasses = clsx(
-      'border outline-none shadow-none rounded-[5px] inline-flex',
+      'border outline-none shadow-none inline-flex',
       {
+        [`rounded-input-${size}`]: true,
+
         'font-default font-regular text-neutral-800 leading-text placeholder:text-neutral-600':
           true,
         [error?.description
@@ -162,8 +165,10 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
     );
 
     const inputClasses = clsx(
-      'w-full outline-none border-transparent shadow-none rounded-[5px] gap-2.5 inline-flex',
+      'w-full outline-none border-transparent shadow-none gap-2.5 inline-flex',
       {
+        [`rounded-input-${size}`]: true,
+
         'font-default font-regular text-neutral-800 leading-text placeholder:text-neutral-600':
           true,
         'bg-neutral-100': disabled,
@@ -229,7 +234,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
         {showOptions && !isLoading && filteredOptions.length > 0 && (
           <div className={pickerClasses}>
             <ul
-              className="bg-white border border-neutral-400 p-2 rounded-[5px] w-auto list-none"
+              className={`bg-white border border-neutral-400 p-2 w-auto list-none rounded-input-${size}`}
               style={pickerStyles}
             >
               {filteredOptions.map((option, index) => (

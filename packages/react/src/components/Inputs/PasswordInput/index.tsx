@@ -37,7 +37,8 @@ const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
 
     const inputAndIconWrapperClasses = clsx({
       [!disabled ? 'bg-white' : 'bg-neutral-100']: true,
-      ['inline-flex border rounded-[5px]']: true,
+      ['inline-flex border']: true,
+      [`rounded-input-${size}`]: true,
       [error?.description
         ? 'border-error'
         : onFocus
@@ -46,10 +47,11 @@ const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
     });
 
     const inputClasses = clsx({
-      ['outline-none shadow-none justify-center rounded-[5px] items-center gap-2.5 inline-flex']:
+      ['outline-none shadow-none justify-center  items-center gap-2.5 inline-flex']:
         true,
       ['font-default font-regular text-neutral-800 leading-text placeholder:text-neutral-600']:
         true,
+      [`rounded-input-${size}`]: true,
       ['text-xs pl-3 py-2 h-[36px]']: size === 'xs',
       ['text-sm pl-4 py-3 h-[44px]']: size === 'lg',
       ['w-full']: grow,

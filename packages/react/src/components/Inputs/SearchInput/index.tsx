@@ -42,7 +42,8 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       [!disabled ? 'bg-white' : 'bg-neutral-100']: true,
       ['font-default font-regular leading-text placeholder:text-neutral-600']:
         true,
-      ['inline-flex border rounded-[5px]']: true,
+      [`rounded-input-${size}`]: true,
+      ['inline-flex border ']: true,
       [error?.description
         ? 'border-error'
         : onFocus

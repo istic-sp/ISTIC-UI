@@ -1,7 +1,26 @@
+const {
+  applyButtonClasses,
+  applyPrimaryColorAndShade,
+} = require('./src/tailwind-plugins/colors-plugins.ts');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  safelist: [
+    {
+      pattern:
+        /^(bg|text|border)-brand-(0|100|200|300|400|500|600|700|800|900|950)$/,
+    },
+    {
+      pattern: /btn-(filled|outline|subtle|light)$/,
+    },
+    {
+      pattern: /rounded-(button|input|search-input)-(xs|sm|md|lg|xl)$/,
+    },
+  ],
   theme: {
+    primaryShade: 300,
+    primaryColor: 'brand',
     extend: {
       colors: {
         white: '#ffffff',
@@ -10,28 +29,34 @@ module.exports = {
         info: '#00adf2',
         error: '#fc3932',
 
-        brand900: '#0B1B7A',
-        brand800: '#132893',
-        brand700: '#1F3CB7',
-        brand600: '#2D52DB',
-        brand500: '#3E6CFF',
-        brand400: '#6E94FF',
-        brand300: '#8BACFF',
-        brand200: '#B1C9FF',
-        brand100: '#D8E5FF',
-        brand0: '#F4F7FF',
-
-        neutral900: '#212529',
-        neutral800: '#343a40',
-        neutral700: '#495057',
-        neutral600: '#868e96',
-        neutral500: '#adb5bd',
-        neutral400: '#ced4da',
-        neutral300: '#dee2e6',
-        neutral200: '#e9ecef',
-        neutral100: '#f1f3f5',
-        neutral0: '#f8f9fa',
+        brand: {
+          950: '#0B1B7A',
+          900: '#0B1B7A',
+          800: '#132893',
+          700: '#1F3CB7',
+          600: '#2D52DB',
+          500: '#3E6CFF',
+          400: '#6E94FF',
+          300: '#8BACFF',
+          200: '#B1C9FF',
+          100: '#D8E5FF',
+          50: '#F4F7FF',
+        },
+        neutral: {
+          950: '#212529',
+          900: '#212529',
+          800: '#343a40',
+          700: '#495057',
+          600: '#868e96',
+          500: '#adb5bd',
+          400: '#ced4da',
+          300: '#dee2e6',
+          200: '#e9ecef',
+          100: '#f1f3f5',
+          50: '#f8f9fa',
+        },
       },
+
       fontSize: {
         xs: '0.75rem',
         sm: '0.875rem',
@@ -59,6 +84,19 @@ module.exports = {
       lineHeight: {
         text: '150%',
         title: '150%',
+      },
+      borderRadius: {
+        'input-xs': '25px',
+        'input-lg': '25px',
+
+        'search-input-xs': '5px',
+        'search-input-lg': '5px',
+
+        'button-xs': '5px',
+        'button-sm': '5px',
+        'button-md': '5px',
+        'button-lg': '5px',
+        'button-xl': '5px',
       },
       keyframes: {
         'fade-in': {
@@ -136,5 +174,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [applyPrimaryColorAndShade, applyButtonClasses],
 };

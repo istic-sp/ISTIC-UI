@@ -1,5 +1,29 @@
 # @istic-ui/react
 
+## 2.0.3
+
+### Patch Changes
+
+- Add rounded classes for rounded SearchInput
+
+## 2.0.2
+
+### Patch Changes
+
+- Create maxValue and isInteger properties for NumberInput
+
+## 2.0.1
+
+### Patch Changes
+
+- Export tailwind colors plugins
+
+## 2.0.0
+
+### Major Changes
+
+- Create new toke colors configuration
+
 ## 1.24.0
 
 ### Minor Changes

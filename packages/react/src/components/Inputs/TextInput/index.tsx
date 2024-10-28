@@ -28,14 +28,16 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
     ref,
   ) => {
     const inputClasses = clsx({
-      ['border outline-none shadow-none rounded-[5px] justify-center items-center gap-2.5 inline-flex']:
+      ['border outline-none shadow-none justify-center items-center gap-2.5 inline-flex']:
         true,
-      ['font-default font-regular text-neutral800 leading-text placeholder:text-neutral600']:
+      ['font-default font-regular text-neutral-800 leading-text placeholder:text-neutral-600']:
         true,
+      [`rounded-input-${size}`]: true,
+
       [error?.description
         ? 'border-error'
-        : 'border-neutral400 focus:border-brand500']: true,
-      [!disabled ? 'bg-white' : 'bg-neutral100']: true,
+        : 'border-neutral-400 focus:primary-border']: true,
+      [!disabled ? 'bg-white' : 'bg-neutral-100']: true,
       ['text-xs px-3 py-2 h-[36px]']: size === 'xs',
       ['text-sm px-4 py-3 h-[44px]']: size === 'lg',
       ['input:-webkit-autofill']: {

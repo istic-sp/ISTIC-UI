@@ -10,7 +10,7 @@ interface IconProps {
 const Icon: React.FC<IconProps> = ({
   name,
   size = 20,
-  color = 'text-neutral900',
+  color = 'text-neutral-900',
 }) => {
   const IconComponent = icons[name];
 

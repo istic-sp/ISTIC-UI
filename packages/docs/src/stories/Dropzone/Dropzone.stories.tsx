@@ -34,7 +34,7 @@ const meta: Meta<typeof Dropzone> = {
       description: 'Texto descritivo para a área de upload',
       table: {
         defaultValue: {
-          summary: 'Arraste e solte o arquivo aqui ou clique para carregar',
+          summary: 'Arraste e solte o arquivo aqui ou ',
         },
       },
     },
@@ -67,6 +67,32 @@ const meta: Meta<typeof Dropzone> = {
         defaultValue: { summary: 'undefined' },
       },
     },
+    isLoading: {
+      control: 'boolean',
+      description: 'Exibe um spinner de carregamento',
+      table: {
+        defaultValue: { summary: 'false' },
+      },
+    },
+    loadingMessage: {
+      control: 'text',
+      description: 'Mensagem exibida durante o carregamento',
+      table: {
+        defaultValue: { summary: 'Processando...' },
+      },
+    },
+    hasError: {
+      control: 'boolean',
+      description: 'Exibe uma mensagem de erro',
+      table: {
+        defaultValue: { summary: 'false' },
+      },
+    },
+    errorTitle: { control: 'text', description: 'Título da mensagem de erro' },
+    errorMessage: {
+      control: 'text',
+      description: 'Mensagem de erro',
+    },
   },
   decorators: [
     (Story) => (
@@ -92,7 +118,7 @@ export const Default: StoryObj<DropzoneProps> = {
     onFileUpload: (file) => console.log(file.name),
     accept: '.step,.stp,.stl',
     multiple: false,
-    description: 'Arraste e solte o arquivo aqui ou clique para carregar',
+    description: 'Arraste e solte o arquivo aqui ou ',
     acceptedFormats: 'STEP, STP, STL',
     highlightText: 'clique para carregar',
     icon: <Icon name="upload-cloud-2-line" />,

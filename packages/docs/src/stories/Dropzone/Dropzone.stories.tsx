@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Dropzone, DropzoneProps, Icon } from '@istic-ui/react';
+import { Dropzone, DropzoneProps } from '@istic-ui/react';
 
 const meta: Meta<typeof Dropzone> = {
   title: 'ISTIC UI/Componentes/Core/Dropzone',
@@ -54,9 +54,9 @@ const meta: Meta<typeof Dropzone> = {
     },
     icon: {
       control: 'text',
-      description: 'Ícone personalizado exibido acima da descrição',
+      description: 'Nome do ícone personalizado exibido acima da descrição',
       table: {
-        type: { summary: 'ReactNode' },
+        type: { summary: 'string' },
       },
     },
     className: {
@@ -121,7 +121,6 @@ export const Default: StoryObj<DropzoneProps> = {
     description: 'Arraste e solte o arquivo aqui ou ',
     acceptedFormats: 'STEP, STP, STL',
     highlightText: 'clique para carregar',
-    icon: <Icon name="upload-cloud-2-line" />,
   },
 };
 
@@ -144,6 +143,5 @@ export const WithCustomIcon: StoryObj<DropzoneProps> = {
     description: 'Envie seus relatórios aqui',
     acceptedFormats: 'DOCX, PDF',
     highlightText: 'envie agora',
-    icon: <Icon name="upload-cloud-2-line" />,
   },
 };

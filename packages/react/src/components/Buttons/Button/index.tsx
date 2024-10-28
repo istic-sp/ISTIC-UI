@@ -22,46 +22,25 @@ const Button = ({
   iconProps,
   ...rest
 }: ButtonProps): JSX.Element => {
-  const textClasses = clsx({
-    ['font-default font-medium leading-text']: true,
-
-    [`text-white`]: variant === 'filled',
-    [`text-neutral700 active:enabled:text-brand600 disabled:!text-neutral500`]:
-      variant === 'outline',
-    [`text-brand500 hover:enabled:text-brand400 active:enabled:text-brand600`]:
-      variant === 'subtle',
-    [`text-brand500 active:enabled:text-white`]: variant === 'light',
-    ['!text-neutral700']: disabled,
-
-    ['text-button-xs']: size === 'xs',
-    ['text-button-sm']: size === 'sm',
-    ['text-button-md']: size === 'md',
-    ['text-button-lg']: size === 'lg',
-    ['text-button-xl']: size === 'xl',
-  });
-
   const gapClasses = clsx({
     ['gap-1']: size === 'xs',
     ['gap-2']: size === 'sm' || size === 'md' || size === 'lg' || size === 'xl',
   });
 
   const buttonClasses = clsx({
-    [textClasses]: true,
-
     ['flex justify-center items-center text-center h-auto']: true,
-    ['box-border rounded-[5px]']: true,
+    ['box-border']: true,
     ['disabled:cursor-not-allowed outline-none']: true,
     ['relative']: true,
     ['overflow-hidden']: true,
+    ['border border-transparent']: variant === 'filled' || variant === 'subtle',
+    ['border']: variant === 'outline',
 
-    [`border border-transparent bg-brand500 hover:enabled:bg-brand400 active:enabled:!bg-brand600 ${!isLoading ? 'disabled:bg-neutral100' : ''}`]:
-      variant === 'filled',
-    [`border border-neutral600 hover:enabled:border-brand400 ${!isLoading ? 'disabled:border-neutral400' : ''}`]:
-      variant === 'outline',
-    ['border border-transparent ']: variant === 'subtle',
-    [`border border-transparent bg-brand0 hover:enabled:bg-brand200 active:enabled:!bg-brand600 ${!isLoading ? 'disabled:!bg-neutral100' : ''}`]:
-      variant === 'light',
-
+    [`btn-${variant}`]: true,
+    [`btn-${size}`]: true,
+    [`rounded-button-${size}`]: true,
+    'btn-grow': grow,
+    'disabled:cursor-not-allowed': true,
     ['px-3 py-2']: size === 'xs' || size === 'sm',
     ['px-6 py-4']: size === 'md' || size === 'lg' || size === 'xl',
     [gapClasses]: true,
@@ -95,10 +74,10 @@ const Button = ({
                 variant === 'filled'
                   ? 'white'
                   : variant === 'light'
-                    ? 'brand500'
+                    ? 'primary-border'
                     : variant === 'outline'
-                      ? 'none'
-                      : 'brand500'
+                      ? 'primary-border'
+                      : 'primary-border'
               }
               size={size}
             />
@@ -133,5 +112,6 @@ const Button = ({
     </button>
   );
 };
+
 Button.displayName = 'Button';
 export { Button, ButtonProps };

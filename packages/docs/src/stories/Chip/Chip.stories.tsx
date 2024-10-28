@@ -56,7 +56,7 @@ export const Default: StoryObj = {
     questionTooltip: {
       title: 'Title Example',
       children: (
-        <div className="bg-white text-neutral700 text-sm shadow-sm rounded-lg p-2">
+        <div className="bg-white text-neutral-700 text-sm shadow-sm rounded-lg p-2">
           Text Example
         </div>
       ),

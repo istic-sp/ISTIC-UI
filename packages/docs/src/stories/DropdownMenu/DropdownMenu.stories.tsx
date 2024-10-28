@@ -41,7 +41,7 @@ export const Default = () => (
           variant="filled"
           size="lg"
           iconName="more-2"
-          color="text-brand100"
+          color="text-brand-100"
         />
       }
       items={[

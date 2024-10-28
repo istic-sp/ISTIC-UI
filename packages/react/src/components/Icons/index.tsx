@@ -144,6 +144,7 @@ const icons = {
   calculator: RiIcons.RiCalculatorLine,
   star: RiIcons.RiStarSLine,
   'star-fill': RiIcons.RiStarSFill,
+  quick_reference_all: RiIcons.RiFileSearchLine,
 
   //User & Faces
   'account-circle': RiIcons.RiAccountCircleLine,

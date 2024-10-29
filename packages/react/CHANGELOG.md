@@ -1,5 +1,11 @@
 # @istic-ui/react
 
+## 2.0.4
+
+### Patch Changes
+
+- Add new icons and fix Dropzone component
+
 ## 2.0.3
 
 ### Patch Changes

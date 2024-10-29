@@ -1,5 +1,6 @@
 import React from 'react';
 import * as RiIcons from 'react-icons/ri';
+import * as MdIcons from 'react-icons/md';
 
 interface IconProps {
   name: keyof typeof icons;
@@ -130,6 +131,7 @@ const icons = {
   search: RiIcons.RiSearchLine,
   'send-plane': RiIcons.RiSendPlane2Line,
   settings: RiIcons.RiSettings2Line,
+  'settings-remote': MdIcons.MdOutlineSettingsRemote,
   'share-circle': RiIcons.RiShareCircleLine,
   slash: RiIcons.RiForbidLine,
   substract: RiIcons.RiSubtractLine,
@@ -141,9 +143,11 @@ const icons = {
   router: RiIcons.RiRouterLine,
   radar: RiIcons.RiRfidLine,
   alert: RiIcons.RiAlertLine,
+  dns: MdIcons.MdOutlineDns,
   calculator: RiIcons.RiCalculatorLine,
   star: RiIcons.RiStarSLine,
   'star-fill': RiIcons.RiStarSFill,
+  'quick-reference-all': RiIcons.RiFileSearchLine,
 
   //User & Faces
   'account-circle': RiIcons.RiAccountCircleLine,

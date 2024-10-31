@@ -1,5 +1,11 @@
 # @istic-ui/react
 
+## 2.0.5
+
+### Patch Changes
+
+- Add new portal for Select Dropdown
+
 ## 2.0.4
 
 ### Patch Changes

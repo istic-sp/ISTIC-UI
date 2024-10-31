@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, forwardRef } from 'react';
+import { createPortal } from 'react-dom';
 import clsx from 'clsx';
 import { Icon, icons } from '../../Icons';
 import { Loader } from '../../Loader';
@@ -67,6 +68,11 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
       getDefaultLabel(defaultValue),
     );
     const [showOptions, setShowOptions] = useState(false);
+    const [dropdownPosition, setDropdownPosition] = useState({
+      top: 0,
+      left: 0,
+      width: 0,
+    });
     const selectRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -95,6 +101,14 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
     };
 
     const toggleOptions = () => {
+      if (selectRef.current) {
+        const rect = selectRef.current.getBoundingClientRect();
+        setDropdownPosition({
+          top: rect.bottom,
+          left: rect.left,
+          width: rect.width,
+        });
+      }
       setShowOptions(!showOptions);
     };
 
@@ -122,13 +136,10 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
     const wrapperClasses = clsx('relative flex flex-col gap-1', {
       'w-full': grow,
     });
-
     const labelClasses =
       'font-default text-xs leading-text font-medium inline-flex gap-1 justify-start items-center align-middle';
-
     const errorLabelClasses =
       'font-default text-sm leading-text font-regular text-error inline-flex justify-start items-center align-middle';
-
     const buttonClasses = clsx(
       'flex w-full p-2 gap-2 border border-neutral-100 justify-start items-center text-center h-auto box-border disabled:cursor-not-allowed outline-none',
       {
@@ -140,12 +151,10 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
           true,
       },
     );
-
     const inputWrapperClasses = clsx(
       'border outline-none shadow-none inline-flex',
       {
         [`rounded-input-${size}`]: true,
-
         'font-default font-regular text-neutral-800 leading-text placeholder:text-neutral-600':
           true,
         [error?.description
@@ -153,22 +162,14 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
           : 'border-neutral-400 focus:primary-border']: true,
         'bg-neutral-100': disabled,
         'bg-white': !disabled,
-        [!disabled ? 'bg-white' : 'bg-neutral-100']: true,
         ['text-xs px-3 py-2 h-[36px]']: size === 'xs',
         ['text-sm px-4 py-3 h-[44px]']: size === 'lg',
-        ['input:-webkit-autofill']: {
-          '-webkit-text-fill-color': 'currentColor',
-          '-webkit-box-shadow': '0 0 0px 1000px transparent inset',
-          transition: 'background-color 5000s ease-in-out 0s',
-        },
       },
     );
-
     const inputClasses = clsx(
       'w-full outline-none border-transparent shadow-none gap-2.5 inline-flex',
       {
         [`rounded-input-${size}`]: true,
-
         'font-default font-regular text-neutral-800 leading-text placeholder:text-neutral-600':
           true,
         'bg-neutral-100': disabled,
@@ -176,21 +177,12 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
         'text-sm h-full': true,
       },
     );
-
     const rightSectionClasses = clsx(
       'flex items-center justify-center h-full pr-3',
     );
-
-    const pickerStyles: React.CSSProperties = {
-      maxHeight: pickerHeight,
-      overflowY: 'auto' as 'scroll' | 'auto' | 'visible' | 'hidden' | undefined,
-      scrollbarWidth: 'none',
-    };
-
     const pickerClasses = clsx(
       'absolute mt-1 flex flex-col w-full top-full z-50',
     );
-
     const iconProps = { size: 18, color: 'primary-text' };
 
     return (
@@ -231,31 +223,44 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
             )}
           </div>
         </div>
-        {showOptions && !isLoading && filteredOptions.length > 0 && (
-          <div className={pickerClasses}>
-            <ul
-              className={`bg-white border border-neutral-400 p-2 w-auto list-none rounded-input-${size}`}
-              style={pickerStyles}
+        {showOptions &&
+          !isLoading &&
+          filteredOptions.length > 0 &&
+          createPortal(
+            <div
+              className={pickerClasses}
+              style={{
+                position: 'absolute',
+                top: dropdownPosition.top,
+                left: dropdownPosition.left,
+                width: dropdownPosition.width,
+                maxHeight: pickerHeight,
+                overflowY: 'auto',
+              }}
             >
-              {filteredOptions.map((option, index) => (
-                <li key={option.value + index}>
-                  <button
-                    className={buttonClasses}
-                    disabled={option.disabled}
-                    onClick={() => handleOptionClick(option)}
-                  >
-                    {option.iconName && (
-                      <Icon name={option.iconName} color="inherit" />
-                    )}
-                    <div className="whitespace-nowrap overflow-hidden">
-                      {option.label}
-                    </div>
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+              <ul
+                className={`bg-white border p-2 list-none rounded-input-${size}`}
+              >
+                {filteredOptions.map((option, index) => (
+                  <li key={option.value + index}>
+                    <button
+                      className={buttonClasses}
+                      disabled={option.disabled}
+                      onClick={() => handleOptionClick(option)}
+                    >
+                      {option.iconName && (
+                        <Icon name={option.iconName} color="inherit" />
+                      )}
+                      <div className="whitespace-nowrap overflow-hidden">
+                        {option.label}
+                      </div>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>,
+            document.body,
+          )}
         {error?.description && (
           <div className={errorLabelClasses}>{error.description}</div>
         )}
@@ -263,5 +268,6 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
     );
   },
 );
+
 Select.displayName = 'Select';
 export { Select, SelectProps, Option };

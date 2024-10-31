@@ -59,6 +59,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
     },
     ref,
   ) => {
+    const optionsRef = useRef<HTMLDivElement>(null);
     const getDefaultLabel = (value: string | undefined) => {
       const selectedOption = options.find((option) => option.value === value);
       return selectedOption ? selectedOption.label : '';
@@ -76,24 +77,25 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
     const selectRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
+      const handleClickOutside = (event: MouseEvent) => {
+        if (
+          selectRef.current &&
+          !selectRef.current.contains(event.target as Node) &&
+          optionsRef.current &&
+          !optionsRef.current.contains(event.target as Node)
+        ) {
+          setShowOptions(false);
+        }
+      };
+
       document.addEventListener('mousedown', handleClickOutside);
       return () => {
         document.removeEventListener('mousedown', handleClickOutside);
       };
     }, []);
-
     useEffect(() => {
       setSearchQuery(getDefaultLabel(defaultValue));
     }, [defaultValue]);
-
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        selectRef.current &&
-        !selectRef.current.contains(event.target as Node)
-      ) {
-        setShowOptions(false);
-      }
-    };
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
       onType?.(event.target.value);
@@ -228,6 +230,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
           filteredOptions.length > 0 &&
           createPortal(
             <div
+              ref={optionsRef}
               className={pickerClasses}
               style={{
                 position: 'absolute',

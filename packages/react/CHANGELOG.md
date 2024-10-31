@@ -1,5 +1,11 @@
 # @istic-ui/react
 
+## 2.0.6
+
+### Patch Changes
+
+- Adjust Select component
+
 ## 2.0.5
 
 ### Patch Changes

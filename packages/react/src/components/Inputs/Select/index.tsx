@@ -28,7 +28,7 @@ interface SelectProps {
   searchable?: boolean;
   filterBySearchable?: boolean;
   clearable?: boolean;
-  defaultValue?: string;
+  defaultValue?: number | string;
   isLoading?: boolean;
   pickerHeight?: string;
   size?: 'xs' | 'lg';

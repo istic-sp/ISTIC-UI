@@ -6,14 +6,14 @@ import { Loader } from '../../Loader';
 
 interface Option {
   label: string;
-  value: string;
+  value: string | number;
   disabled?: boolean;
   iconName?: keyof typeof icons;
 }
 
 interface SelectProps {
   options: Option[];
-  onSelect: (option?: { label: string; value: string }) => void;
+  onSelect: (option?: { label: string; value: string | number }) => void;
   onType?: (value: string) => void;
   label?: string;
   grow?: boolean;
@@ -60,7 +60,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
     ref,
   ) => {
     const optionsRef = useRef<HTMLDivElement>(null);
-    const getDefaultLabel = (value: string | undefined) => {
+    const getDefaultLabel = (value: string | number | undefined) => {
       const selectedOption = options.find((option) => option.value === value);
       return selectedOption ? selectedOption.label : '';
     };
@@ -93,9 +93,14 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
         document.removeEventListener('mousedown', handleClickOutside);
       };
     }, []);
+
     useEffect(() => {
       setSearchQuery(getDefaultLabel(defaultValue));
     }, [defaultValue]);
+
+    useEffect(() => {
+      setSearchQuery(getDefaultLabel(defaultValue));
+    }, []);
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
       onType?.(event.target.value);
@@ -245,7 +250,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
                 className={`bg-white border p-2 list-none rounded-input-${size}`}
               >
                 {filteredOptions.map((option, index) => (
-                  <li key={option.value + index}>
+                  <li key={option.value + String(index)}>
                     <button
                       className={buttonClasses}
                       disabled={option.disabled}

@@ -12,6 +12,7 @@ interface Option {
 }
 
 interface SelectProps {
+  id?: string;
   options: Option[];
   onSelect: (option?: { label: string; value: string | number }) => void;
   onType?: (value: string) => void;
@@ -37,6 +38,7 @@ interface SelectProps {
 const Select = forwardRef<HTMLInputElement, SelectProps>(
   (
     {
+      id,
       label,
       grow = true,
       disabled = false,
@@ -193,7 +195,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
     const iconProps = { size: 18, color: 'primary-text' };
 
     return (
-      <div ref={selectRef} className={wrapperClasses}>
+      <div id={id} ref={selectRef} className={wrapperClasses}>
         {label && (
           <label className={labelClasses}>
             {label}
@@ -235,6 +237,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
           filteredOptions.length > 0 &&
           createPortal(
             <div
+              id={id + 'select-options'}
               ref={optionsRef}
               className={pickerClasses}
               style={{

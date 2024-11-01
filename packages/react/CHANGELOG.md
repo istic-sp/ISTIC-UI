@@ -1,5 +1,11 @@
 # @istic-ui/react
 
+## 2.0.9
+
+### Patch Changes
+
+- Add id for Select options
+
 ## 2.0.8
 
 ### Patch Changes

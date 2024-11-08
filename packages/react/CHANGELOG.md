@@ -1,5 +1,11 @@
 # @istic-ui/react
 
+## 2.0.10
+
+### Patch Changes
+
+- Adjust dateInput styles
+
 ## 2.0.9
 
 ### Patch Changes
